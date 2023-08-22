@@ -1,23 +1,24 @@
-# TÍTULO DO PROJETO
+# AluguelTech Ferramentas
 
-`CURSO`
+`ANÁLISE E DESENVOLVIMENTO DE SISTEMAS`
 
-`DISCIPLINA`
+`Desenvolvimento de uma Aplicação Interativa.`
 
-`SEMESTRE`
+`EIXO 2`
 
-Descrever resumidamente, em um ou dois parágrafos, o projeto que está sendo desenvolvido.
+<p align="justify">Nos dias atuais, a demanda por modernização está transformando a maneira como operamos. Este é especialmente o caso para empresas individuais e pequenos negócios, onde a eficiência e a agilidade são vitais. Ao considerar o setor de locação de ferramentas, observamos uma oportunidade significativa de aprimorar processos e economizar tempo. </p>
 
 ## Integrantes
 
-* Nome completo do aluno 1
-* Nome completo do aluno 2
-* Nome completo do aluno 3
-* Nome completo do aluno 4
+* Lorrayne Cristine Lopes Pereira
+* Lucas Faria Verri
+* Matheus Almeida Da Rocha
+* Sandro Savio Maciel
+* Vitor Costa Oliveira Silva
 
 ## Orientador
 
-* Nome completo do professor 1
+* José Wilson da Costa
 
 ## Instruções de utilização
 
