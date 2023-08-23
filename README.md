@@ -6,7 +6,11 @@
 
 `EIXO 2`
 
-<p align="justify">Nos dias atuais, a demanda por modernização está transformando a maneira como operamos. Este é especialmente o caso para empresas individuais e pequenos negócios, onde a eficiência e a agilidade são vitais. Ao considerar o setor de locação de ferramentas, observamos uma oportunidade significativa de aprimorar processos e economizar tempo. </p>
+<p align="justify">Nos dias atuais, a demanda por modernização está transformando a maneira como operamos. Este é especialmente o caso para empresas individuais e pequenos negócios, onde a eficiência e a agilidade são vitais. Ao considerar o setor de locação de ferramentas, observamos uma oportunidade significativa de aprimorar processos e economizar tempo.<br>
+Muitos empreendedores que administram depósitos de ferramentas ainda realizam todos os processos manualmente. Eles mantêm registros em papel, anotando cada aluguel, devolução e as ferramentas disponíveis. Essa abordagem, embora funcional, pode ser demorada, suscetível a erros e não proporciona uma visão abrangente das operações.<br>
+Ao abraçar a tecnologia, podemos simplificar e otimizar esses processos. Imagine um sistema interno personalizado, especialmente projetado para gerenciar o controle de aluguel de ferramentas. Esse sistema permitiria a automação de tarefas, desde o registro de aluguéis até a geração de relatórios detalhados.<br>
+Essa modernização não apenas economizaria tempo, mas também aumentaria a eficiência operacional e a precisão dos registros. Proporcionando ao usuário uma visão clara de quais ferramentas estão em uso, quais estão disponíveis e quais precisam de manutenção. Isso permitiria tomar decisões mais informadas, planejar compras de reposição e oferecer um serviço mais eficiente aos clientes.
+ </p>
 
 ## Integrantes
 
