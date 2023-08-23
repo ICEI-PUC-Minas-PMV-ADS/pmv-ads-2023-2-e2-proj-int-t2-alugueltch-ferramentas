@@ -6,7 +6,7 @@
 
 `EIXO 2`
 
-<p align="justify">Nos dias atuais, a demanda por modernização está transformando a maneira como operamos. Este é especialmente o caso para empresas individuais e pequenos negócios, onde a eficiência e a agilidade são vitais. Ao considerar o setor de locação de ferramentas, observamos uma oportunidade significativa de aprimorar processos e economizar tempo.</p>
+<p align="justify">Nos dias atuais, a demanda por modernização está transformando a maneira como operamos. Este é especialmente o caso para empresas individuais e pequenos negócios, onde a eficiência e a agilidade são vitais. Ao considerar o setor de locação de ferramentas, observamos uma oportunidade significativa de aprimorar processos e economizar tempo. </p>
 
 ## Integrantes
 
