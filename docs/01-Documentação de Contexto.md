@@ -8,11 +8,7 @@ Ao abraçar a tecnologia, podemos simplificar e otimizar esses processos. Imagin
 Essa modernização não apenas economizaria tempo, mas também aumentaria a eficiência operacional e a precisão dos registros. Proporcionando ao usuário uma visão clara de quais ferramentas estão em uso, quais estão disponíveis e quais precisam de manutenção. Isso permitiria tomar decisões mais informadas, planejar compras de reposição e oferecer um serviço mais eficiente aos clientes.</p>
 
 ## Problema
-Nesse momento você deve apresentar o problema que a sua aplicação deve  resolver. No entanto, não é a hora de comentar sobre a aplicação.
-
-Descreva também o contexto em que essa aplicação será usada, se  houver: empresa, tecnologias, etc. Novamente, descreva apenas o que de  fato existir, pois ainda não é a hora de apresentar requisitos  detalhados ou projetos.
-
-Nesse momento, o grupo pode optar por fazer uso  de ferramentas como Design Thinking, que permite um olhar de ponta a ponta para o problema.
+<p align="justify">Diante desse cenário, surgem vários problemas significativos como a falta de controle preciso sobre prazos de locação, gestão de manutenções preventivas e corretivas, além da dificuldade em identificar ferramentas com maior rotatividade.</p>
 
 > **Links Úteis**:
 > - [Objetivos, Problema de pesquisa e Justificativa](https://medium.com/@versioparole/objetivos-problema-de-pesquisa-e-justificativa-c98c8233b9c3)
