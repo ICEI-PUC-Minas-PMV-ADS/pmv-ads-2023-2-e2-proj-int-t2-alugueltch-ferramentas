@@ -5,8 +5,7 @@ Muitos empreendedores que administram depósitos de ferramentas ainda realizam t
  
 Ao abraçar a tecnologia, podemos simplificar e otimizar esses processos. Imagine um sistema interno personalizado, especialmente projetado para gerenciar o controle de aluguel de ferramentas. Esse sistema permitiria a automação de tarefas, desde o registro de aluguéis até a geração de relatórios detalhados.<br><br>
 
-Essa modernização não apenas economizaria tempo, mas também aumentaria a eficiência operacional e a precisão dos registros. Proporcionando ao usuário uma visão clara de quais ferramentas estão em uso, quais estão disponíveis e quais precisam de manutenção. Isso permitiria tomar decisões mais informadas, planejar compras de reposição e oferecer um serviço mais eficiente aos clientes.
- </p>
+Essa modernização não apenas economizaria tempo, mas também aumentaria a eficiência operacional e a precisão dos registros. Proporcionando ao usuário uma visão clara de quais ferramentas estão em uso, quais estão disponíveis e quais precisam de manutenção. Isso permitiria tomar decisões mais informadas, planejar compras de reposição e oferecer um serviço mais eficiente aos clientes.</p>
 
 ## Problema
 Nesse momento você deve apresentar o problema que a sua aplicação deve  resolver. No entanto, não é a hora de comentar sobre a aplicação.
