@@ -12,31 +12,19 @@ Essa modernização não apenas economizaria tempo, mas também aumentaria a efi
 
 ## Objetivos
 
-Aqui você deve descrever os objetivos do trabalho indicando que o objetivo geral é desenvolver um software para solucionar o problema apresentado acima. 
+<p align="justify">O objetivo geral deste projeto é a construção de uma plataforma de gestão para locatários de ferramentas e equipamentos destinados à construção civil e bricolagem, visando a modernização e otimização do processo outrora manual.
+<p align="justify">Como objetivos específicos, temos:
 
-Apresente também alguns (pelo menos 2) objetivos específicos dependendo de onde você vai querer concentrar a sua prática investigativa, ou como você vai aprofundar no seu trabalho.
- 
-> **Links Úteis**:
-> - [Objetivo geral e objetivo específico: como fazer e quais verbos utilizar](https://blog.mettzer.com/diferenca-entre-objetivo-geral-e-objetivo-especifico/)
+- <p align="justify">Realizar o levantamento de requisitos;
+- <p align="justify">Implementar um sistema de cadastro e autenticação;
+- <p align="justify">Integrar um catálogo de ferramentas e equipamentos;
+- <p align="justify">Implementar um sistema de reserva e agendamento.<br>
+
 
 ## Justificativa
 
-Descreva a importância ou a motivação para trabalhar com esta aplicação que você escolheu. Indique as razões pelas quais você escolheu seus objetivos específicos ou as razões para aprofundar em certos aspectos do software.
-
-O grupo de trabalho pode fazer uso de questionários, entrevistas e dados estatísticos, que podem ser apresentados, com o objetivo de esclarecer detalhes do problema que será abordado pelo grupo.
-
-> **Links Úteis**:
-> - [Como montar a justificativa](https://guiadamonografia.com.br/como-montar-justificativa-do-tcc/)
+<p align="justify">A introdução de um sistema interno de gerenciamento de aluguel de ferramentas é uma iniciativa estratégica que visa atender às necessidades específicas de  empreendedores e microempreendedores, que enfrentam desafios substanciais na administração manual de seus negócios. Essa solução é uma resposta direta à busca por eficiência, precisão e crescimento sustentável em um ambiente empresarial em constante evolução.
 
 ## Público-Alvo
 
-Descreva quem serão as pessoas que usarão a sua aplicação indicando os diferentes perfis. O objetivo aqui não é definir quem serão os clientes ou quais serão os papéis dos usuários na aplicação. A ideia é, dentro do possível, conhecer um pouco mais sobre o perfil dos usuários: conhecimentos prévios, relação com a tecnologia, relações
-hierárquicas, etc.
-
-Adicione informações sobre o público-alvo por meio de uma descrição textual, diagramas de personas e mapa de stakeholders.
-
-> **Links Úteis**:
-> - [Público-alvo](https://blog.hotmart.com/pt-br/publico-alvo/)
-> - [Como definir o público alvo](https://exame.com/pme/5-dicas-essenciais-para-definir-o-publico-alvo-do-seu-negocio/)
-> - [Público-alvo: o que é, tipos, como definir seu público e exemplos](https://klickpages.com.br/blog/publico-alvo-o-que-e/)
-> - [Qual a diferença entre público-alvo e persona?](https://rockcontent.com/blog/diferenca-publico-alvo-e-persona/)
+<p align="justify">Empreendedores e  microempreendedores que atuam no setor de locação de ferramentas e equipamentos de bricolagem que desejam alinhar seus negócios a necessidade de modernização para liberar tempo e recursos, permitindo um crescimento sustentável e uma oferta de serviços mais robusta.
