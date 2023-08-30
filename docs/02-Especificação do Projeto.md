@@ -88,8 +88,14 @@ As tabelas que se seguem apresentam os requisitos funcionais e não funcionais q
 
 |ID     | Descrição do Requisito  |Prioridade |
 |-------|-------------------------|----|
-|RNF-001| O sistema deve ser responsivo para rodar em um dispositivos móvel | MÉDIA | 
-|RNF-002| Deve processar requisições do usuário em no máximo 3s |  BAIXA | 
+|RNF-001| A interface deve ser intuitiva e fácil de usar, considerando diferentes perfis de usuários. | ALTA | 
+|RNF-002| Garantir a segurança dos dados dos usuários e informações confidenciais. | ALTA | 
+|RNF-003| A plataforma deve ser flexível o suficiente para se adaptar a mudanças nos processos internos da empresa.| MÉDIA |
+|RNF-004| Implementar backups regulares dos dados para evitar perda de informações. | ALTA | 
+|RNF-005| Oferecer suporte técnico para lidar com problemas e dúvidas dos usuários. | ALTA | 
+|RNF-006| A plataforma deve estar disponível a maior parte do tempo para garantir que os usuários possam acessar quando necessário. | ALTA | 
+
+ 
 
 Com base nas Histórias de Usuário, enumere os requisitos da sua solução. Classifique esses requisitos em dois grupos:
 
