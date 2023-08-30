@@ -72,8 +72,17 @@ As tabelas que se seguem apresentam os requisitos funcionais e não funcionais q
 
 |ID    | Descrição do Requisito  | Prioridade |
 |------|-----------------------------------------|----|
-|RF-001| Permitir que o usuário cadastre tarefas | ALTA | 
-|RF-002| Emitir um relatório de tarefas no mês   | MÉDIA |
+|RF-001| Registrar as ferramentas disponíveis para aluguel, incluindo descrição, categoria e condição. Permitindo adição, edição e exclusão de ferramentas no sistema. | ALTA | 
+|RF-002| Acompanhar o status de cada ferramenta (disponível, alugada, em manutenção, etc.).   | ALTA |
+|RF-003| O usuário deve ser capaz de gerar reservas equipamentos para datas específicas. A disponibilidade dos equipamentos deve ser verificada em tempo real para evitar conflitos. | ALTA |
+|RF-004| Gerar contratos de aluguel com detalhes do cliente, ferramentas, dados e termos.   | MÉDIA |
+|RF-005| Registrar as manutenções realizadas em cada equipamento, incluindo datas e detalhes.   | ALTA |
+|RF-006| Agendar automaticamente manutenções regulares para as ferramentas. | MÉDIA |
+|RF-007| Tela contendo as informações sobre datas de retirada, devolução e manutenção. | ALTA |
+|RF-008| Gerar relatórios detalhados de gastos,ferramentas mais alugadas e alocação de recursos. | ALTA |
+
+
+
 
 ### Requisitos não Funcionais
 
