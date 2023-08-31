@@ -2,7 +2,7 @@
 
 <span style="color:red">Pré-requisitos: <a href="1-Documentação de Contexto.md"> Documentação de Contexto</a></span>
 
-A determinação do problema a ser tratado surgiu a partir de pesquisas e principalmente da observação dos métodos de operação e trabalho de comerciantes locais do ramo de aluguel de instrumentos e utensílios para atividades de bricolagem. Foi identificado que em sua maioria, os processos utilizados são ainda muito manuais e pouco efetivos. Diante disso, notamos a necessidade de um sistema interativo capaz de, além de oferecer auxílio, promover de maneira efetiva uma modernização na maneira de operar, realizando a automatização dos processos, trazendo organização, eficácia, aumentando a produtividade, e permitindo que esses empreendedores alcancem maior sucesso em seus negócios.
+<p align="justify">A determinação do problema a ser tratado surgiu a partir de pesquisas e principalmente da observação dos métodos de operação e trabalho de comerciantes locais do ramo de aluguel de instrumentos e utensílios para atividades de bricolagem. Foi identificado que em sua maioria, os processos utilizados são ainda muito manuais e pouco efetivos. Diante disso, notamos a necessidade de um sistema interativo capaz de, além de oferecer auxílio, promover de maneira efetiva uma modernização na maneira de operar, realizando a automatização dos processos, trazendo organização, eficácia, aumentando a produtividade, e permitindo que esses empreendedores alcancem maior sucesso em seus negócios.
 
 ## Personas
 
@@ -95,23 +95,6 @@ As tabelas que se seguem apresentam os requisitos funcionais e não funcionais q
 |RNF-005| Oferecer suporte técnico para lidar com problemas e dúvidas dos usuários. | ALTA | 
 |RNF-006| A plataforma deve estar disponível a maior parte do tempo para garantir que os usuários possam acessar quando necessário. | ALTA | 
 
- 
-
-Com base nas Histórias de Usuário, enumere os requisitos da sua solução. Classifique esses requisitos em dois grupos:
-
-- [Requisitos Funcionais
- (RF)](https://pt.wikipedia.org/wiki/Requisito_funcional):
- correspondem a uma funcionalidade que deve estar presente na
-  plataforma (ex: cadastro de usuário).
-- [Requisitos Não Funcionais
-  (RNF)](https://pt.wikipedia.org/wiki/Requisito_n%C3%A3o_funcional):
-  correspondem a uma característica técnica, seja de usabilidade,
-  desempenho, confiabilidade, segurança ou outro (ex: suporte a
-  dispositivos iOS e Android).
-Lembre-se que cada requisito deve corresponder à uma e somente uma
-característica alvo da sua solução. Além disso, certifique-se de que
-todos os aspectos capturados nas Histórias de Usuário foram cobertos.
-
 ## Restrições
 
 O projeto está restrito pelos itens apresentados na tabela a seguir.
@@ -122,11 +105,6 @@ O projeto está restrito pelos itens apresentados na tabela a seguir.
 |02| Não pode ser desenvolvido um módulo de backend        |
 
 
-Enumere as restrições à sua solução. Lembre-se de que as restrições geralmente limitam a solução candidata.
-
-> **Links Úteis**:
-> - [O que são Requisitos Funcionais e Requisitos Não Funcionais?](https://codificar.com.br/requisitos-funcionais-nao-funcionais/)
-> - [O que são requisitos funcionais e requisitos não funcionais?](https://analisederequisitos.com.br/requisitos-funcionais-e-requisitos-nao-funcionais-o-que-sao/)
 
 ## Diagrama de Casos de Uso
 
