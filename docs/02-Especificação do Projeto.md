@@ -107,6 +107,6 @@ O projeto está restrito pelos itens apresentados na tabela a seguir.
 
 
 ## Diagrama de Casos de Uso
+![Fluxogramas](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e2-proj-int-t2-alugueltch-ferramentas/assets/106458859/3aea834a-be95-4b6c-a107-1f9c6be0299c)
 
-(docs/img/Fluxogramas.png)
 
