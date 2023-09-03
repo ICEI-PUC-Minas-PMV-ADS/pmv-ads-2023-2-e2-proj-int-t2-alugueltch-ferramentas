@@ -102,7 +102,7 @@ O projeto está restrito pelos itens apresentados na tabela a seguir.
 |ID| Restrição                                             |
 |--|-------------------------------------------------------|
 |01| O projeto deverá ser entregue até o final do semestre |
-|02| Não pode ser desenvolvido um módulo de backend        |
+|02| O projeto deverá ter políticas de controle de acesso para garantir que apenas usuários autorizados tenham acesso às funcionalidades relevantes.        |
 
 
 
