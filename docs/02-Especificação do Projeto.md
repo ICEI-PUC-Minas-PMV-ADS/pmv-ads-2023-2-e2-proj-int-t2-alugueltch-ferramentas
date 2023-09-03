@@ -78,7 +78,7 @@ As tabelas que se seguem apresentam os requisitos funcionais e não funcionais q
 |RF-004| Gerar contratos de aluguel com detalhes do cliente, ferramentas, dados e termos.   | MÉDIA |
 |RF-005| Registrar as manutenções realizadas em cada equipamento, incluindo datas e detalhes.   | ALTA |
 |RF-006| Agendar automaticamente manutenções regulares para as ferramentas. | MÉDIA |
-|RF-007| Tela contendo as informações sobre datas de retirada, devolução e manutenção. | ALTA |
+|RF-007| Acompanhar informações sobre datas de retirada, devolução e manutenção. | ALTA |
 |RF-008| Gerar relatórios detalhados de gastos,ferramentas mais alugadas e alocação de recursos. | ALTA |
 
 
