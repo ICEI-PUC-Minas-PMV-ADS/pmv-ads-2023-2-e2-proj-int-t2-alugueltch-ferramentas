@@ -1,36 +1,22 @@
 
 # Projeto de Interface
 
-<span style="color:red">Pré-requisitos: <a href="2-Especificação do Projeto.md"> Documentação de Especificação</a></span>
-
-Visão geral da interação do usuário pelas telas do sistema e protótipo interativo das telas com as funcionalidades que fazem parte do sistema (wireframes).
-
- Apresente as principais interfaces da plataforma. Discuta como ela foi elaborada de forma a atender os requisitos funcionais, não funcionais e histórias de usuário abordados nas <a href="2-Especificação do Projeto.md"> Documentação de Especificação</a>.
+Para a modelagem da interface do sistema usamos alguns conceitos de UX/UI Design e heurísticas, dentre elas priorizamos navegabilidade, estética, consistência, padronização e flexibilidade. A paleta de cores foi selecionada pensando no público alvo do projeto, remetendo a área de construção civil, oferecendo um ambiente de navegação agradável, interativo e intuitivo para os usuários, além de respeitar a relação de contraste entre o texto e o plano de fundo, trazendo legibilidade para o site.
 
 ## Diagrama de Fluxo
 
-O diagrama apresenta o estudo do fluxo de interação do usuário com o sistema interativo e  muitas vezes sem a necessidade do desenho do design das telas da interface. Isso permite que o design das interações seja bem planejado e gere impacto na qualidade no design do wireframe interativo que será desenvolvido logo em seguida.
+O diagrama de fluxo a seguir apresenta o fluxo do usuário através das principais funcionalidades do sistema como um todo.
 
-O diagrama de fluxo pode ser desenvolvido com “boxes” que possuem internamente a indicação dos principais elementos de interface - tais como menus e acessos - e funcionalidades, tais como editar, pesquisar, filtrar, configurar - e a conexão entre esses boxes a partir do processo de interação. Você pode ver mais explicações e exemplos https://www.lucidchart.com/blog/how-to-make-a-user-flow-diagram.
 
-![Exemplo de Diagrama de Fluxo](img/diagramafluxo2.jpg)
+![Fluxograma de usuário - Página 1](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e2-proj-int-t2-alugueltch-ferramentas/assets/117364316/6424dcda-9ee7-4a15-b1f8-fbe1797db79a)
 
-As referências abaixo irão auxiliá-lo na geração do artefato “Diagramas de Fluxo”.
 
-> **Links Úteis**:
-> - [Fluxograma online: seis sites para fazer gráfico sem instalar nada | Produtividade | TechTudo](https://www.techtudo.com.br/listas/2019/03/fluxograma-online-seis-sites-para-fazer-grafico-sem-instalar-nada.ghtml)
 
 ## Wireframes
 
-![Exemplo de Wireframe](img/wireframe-example.png)
+Os Wireframes Interativos foram gerados utilizando a plataforma Figma, e estão disponíveis através do link: 
 
-São protótipos usados em design de interface para sugerir a estrutura de um site web e seu relacionamentos entre suas páginas. Um wireframe web é uma ilustração semelhante do layout de elementos fundamentais na interface.
- 
-> **Links Úteis**:
-> - [Protótipos vs Wireframes](https://www.nngroup.com/videos/prototypes-vs-wireframes-ux-projects/)
-> - [Ferramentas de Wireframes](https://rockcontent.com/blog/wireframes/)
-> - [MarvelApp](https://marvelapp.com/developers/documentation/tutorials/)
-> - [Figma](https://www.figma.com/)
-> - [Adobe XD](https://www.adobe.com/br/products/xd.html#scroll)
-> - [Axure](https://www.axure.com/edu) (Licença Educacional)
-> - [InvisionApp](https://www.invisionapp.com/) (Licença Educacional)
+[AluguelTech: Wireframe Interativo](https://www.figma.com/proto/KfJI8jaowKWYqZcXFmazX3/AluguelTech?page-id=0%3A1&type=design&node-id=1-4&viewport=556%2C199%2C0.05&t=Du5OwLS2n1uiTE6T-1&scaling=min-zoom&starting-point-node-id=1%3A4&show-proto-sidebar=1&mode=design)
+
+Baseado no Diagrama de Fluxo, as telas do sistema foram definidas com uma estrutura padrão, tornando a visualização mais prática e eficaz. Essa estrutura é baseada em um cabeçalho contendo o botão "home" e também o nome do usuário que pode ser acessado para deslogar do sistema ou em casos específicos acessar funcionalidades. O layout também conta com um menu lateral comum a todas as telas onde se encontram agrupadas as funcionalidades do sistema divididas em ícones representando as principais funcionalidades que, quando expandidos, revelam os caminhos para as funções relacionadas a tela. Por fim, ao centro da interface se encontram as funcionalidades gerais do sistema relacionadas a tela selecionada, podendo variar desde blocos de opções para serem clicados, até listas e formulários. Demais funcionalidades serão apresentadas através de modais e menus do tipo dropdown.
+
