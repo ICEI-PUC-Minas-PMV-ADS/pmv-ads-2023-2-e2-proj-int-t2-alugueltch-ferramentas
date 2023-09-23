@@ -33,6 +33,10 @@ O padrão de layout a ser utilizado pela aplicação tem correspondência ao pro
 
 ## Login de Usuário
 <div align = "justify">As telas de login são as mesmas tanto para o usuário funcionário quanto para o usuário administrador, possuindo os campos de login e senha além da funcionalidade “esqueci minha senha”.</div>
+<br>
 
+<div align = "center">
 
+ ![Tela Inicial](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e2-proj-int-t2-alugueltch-ferramentas/assets/128100886/e494d9b8-0e48-4491-8960-c198df1b9d70)
+ Figura X - Tela de Login </div>
 
