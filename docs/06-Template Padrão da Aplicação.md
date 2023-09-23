@@ -123,3 +123,62 @@ Figura X - Novo Aluguel
 ![Ver aluguel](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e2-proj-int-t2-alugueltch-ferramentas/assets/128100886/5ef6a0fd-99c1-4e12-9bf0-adf9b9aaaf0f)
 
 Figura x - Ver Aluguéis </div>
+
+## Relatórios
+<div align = "justify"> Nessa aba é possível acessar os relatórios mensais de faturamento, controle de estoque e histórico de clientes. O design desenvolvido e a forma na qual esses relatórios serão apresentados é meramente ilustrativo e passível de mudanças.</div><br>
+
+<div align = "center">
+
+![Relatórios](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e2-proj-int-t2-alugueltch-ferramentas/assets/128100886/9c77bda4-0198-42aa-ba16-9c45175a4618)
+
+Figura x - Aba de Relatórios Expandida
+
+![Faturamento Mensal](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e2-proj-int-t2-alugueltch-ferramentas/assets/128100886/6b228697-2564-4e21-97a3-795a5785d9fb)
+
+Figura X - Faturamento Mensal
+
+
+![Histórico de Clientes](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e2-proj-int-t2-alugueltch-ferramentas/assets/128100886/1e3a75b1-99e2-4541-b8db-47c69965e5e3)
+
+Figura x - Histórico de Clientes
+
+
+![Controle de Estoque](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e2-proj-int-t2-alugueltch-ferramentas/assets/128100886/47b34ff9-c725-4c9b-9cdc-0e471fb9e85a)
+
+Figura x - Controle de Estoque </div>
+
+## Equipamentos
+<div align = "justify">A aba de equipamentos conta com a listagem de equipamentos com a possibilidade de cadastro de uma nova ferramenta, edição de sua descrição, visualização e modificação de seu status através das badges.</div>
+
+<div align = "center">
+
+
+![Equipamentos](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e2-proj-int-t2-alugueltch-ferramentas/assets/128100886/e35b3775-654f-4bbd-bf09-81427ff7d895)
+
+Figura X - Aba Expandida de Equipamentos
+
+
+
+![Novo Equipamento](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e2-proj-int-t2-alugueltch-ferramentas/assets/128100886/a5efb3e8-de43-49ec-8291-b0a697c74777)
+
+Figura X - Novo Equipamento
+
+
+![Editar Equipamento](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e2-proj-int-t2-alugueltch-ferramentas/assets/128100886/f0d7ac6f-bd44-4067-a936-d2526ac18c10)
+
+Figura X - Editar Equipamento
+
+
+![Lista de Equipamentos](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e2-proj-int-t2-alugueltch-ferramentas/assets/128100886/ea0c40bd-ed92-4987-a852-c431bae793ab)
+
+Figura X - Lista de Equipamentos
+
+
+![Lista de Equipamentos modal up](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e2-proj-int-t2-alugueltch-ferramentas/assets/128100886/34697a96-3c2d-44c5-8274-32cf7cf86906)
+
+Figura X - Lista de Equipamentos Modal Up
+
+
+![Lista de Equipamentos modal up + alteracao de status](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e2-proj-int-t2-alugueltch-ferramentas/assets/128100886/5bd4a382-e3de-4254-9ff1-960657780403)
+
+Figura X - Lista de Equipamentos Modal Up e Alteração de Status </div>
