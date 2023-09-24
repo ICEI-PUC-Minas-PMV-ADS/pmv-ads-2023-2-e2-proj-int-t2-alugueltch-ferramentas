@@ -66,10 +66,3 @@ Por exemplo:
 | Critérios de Êxito 	| - Os casos de teste são executados sem erros ou falhas. <br> - O sistema permite a seleção correta do mês e ano para geração do relatório. <br> - O sistema inicia e conclui com sucesso o processo de geração do relatório. <br> - O relatório gerado está em formato PDF e pode ser aberto sem problemas.<br> - O relatório contém informações detalhadas de faturamento mensal, histórico de clientes e controle de estoque.|
 
  
-> **Links Úteis**:
-> - [IBM - Criação e Geração de Planos de Teste](https://www.ibm.com/developerworks/br/local/rational/criacao_geracao_planos_testes_software/index.html)
-> - [Práticas e Técnicas de Testes Ágeis](http://assiste.serpro.gov.br/serproagil/Apresenta/slides.pdf)
-> -  [Teste de Software: Conceitos e tipos de testes](https://blog.onedaytesting.com.br/teste-de-software/)
-> - [Criação e Geração de Planos de Teste de Software](https://www.ibm.com/developerworks/br/local/rational/criacao_geracao_planos_testes_software/index.html)
-> - [Ferramentas de Test para Java Script](https://geekflare.com/javascript-unit-testing/)
-> - [UX Tools](https://uxdesign.cc/ux-user-research-and-user-testing-tools-2d339d379dc7)
