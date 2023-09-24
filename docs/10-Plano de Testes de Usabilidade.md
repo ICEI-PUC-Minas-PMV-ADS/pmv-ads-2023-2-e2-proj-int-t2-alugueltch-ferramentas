@@ -1,9 +1,10 @@
 # Plano de Testes de Usabilidade
 
 ## Objetivos do Plano de Testes de Usabilidade
-<div align = "justify">- Avaliar a usabilidade geral do software.
+
+- Avaliar a usabilidade geral do software.
 - Identificar problemas de usabilidade que podem afetar a eficiência dos usuários.
-- Garantir que o software atenda às necessidades dos usuários de maneira eficaz e satisfatória.</div>
+- Garantir que o software atenda às necessidades dos usuários de maneira eficaz e satisfatória.
 
 ## Etapas do Plano de Testes de Usabilidade
 <div align = "justify">
