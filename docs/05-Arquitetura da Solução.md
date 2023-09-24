@@ -20,8 +20,6 @@ Diagrama de Classes AluguelTech
 
 ![Diagrama ER AluguelTech - Diagrama ER AluguelTech (1)](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e2-proj-int-t2-alugueltch-ferramentas/assets/65717646/f6eab44e-5bcc-4842-8e0c-be4ce6c8e9d4)
 
-> - [Como fazer um diagrama entidade relacionamento | Lucidchart](https://www.lucidchart.com/pages/pt/como-fazer-um-diagrama-entidade-relacionamento)
-
 ## Projeto da Base de Dados
 
 ![WhatsApp Image 2023-09-23 at 17 53 54](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e2-proj-int-t2-alugueltch-ferramentas/assets/65717646/f2fd9fd2-4428-40b0-88b3-2f51ccacbe5c)
