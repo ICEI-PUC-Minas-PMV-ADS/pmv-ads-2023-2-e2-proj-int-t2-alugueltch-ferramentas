@@ -10,6 +10,7 @@ O diagrama de fluxo a seguir apresenta o fluxo do usuário através das principa
 
 ![Fluxograma de usuário - Página 1](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e2-proj-int-t2-alugueltch-ferramentas/assets/117364316/6424dcda-9ee7-4a15-b1f8-fbe1797db79a)
 
+<p align="center">Figura 3 - Diagrama de Fluxo do Usuário</p>
 
 
 ## Wireframes
