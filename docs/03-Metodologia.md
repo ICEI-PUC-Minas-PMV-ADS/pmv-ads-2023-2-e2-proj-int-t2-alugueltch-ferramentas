@@ -47,7 +47,7 @@
 ![kanban](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e2-proj-int-t2-alugueltch-ferramentas/assets/126488218/ef007d08-7d9e-416a-99b5-2ce9ba670547)
 
 
-<p align="center">Figura 1 - Tela do Kanban utilizada pelo grupo</p>
+<p align="center">Figura 2 - Tela do Kanban utilizada pelo grupo</p>
 
 
 
