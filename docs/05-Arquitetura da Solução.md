@@ -13,16 +13,24 @@ Definição de como o software é estruturado em termos dos componentes que faze
 
 
 <div align = "center">
-Diagrama de Classes AluguelTech
+Figura 4 - Diagrama de Classes AluguelTech
 </div>
 
 ## Modelo ER (Projeto Conceitual)
 
 ![Diagrama ER AluguelTech - Diagrama ER AluguelTech (1)](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e2-proj-int-t2-alugueltch-ferramentas/assets/65717646/f6eab44e-5bcc-4842-8e0c-be4ce6c8e9d4)
 
+<div align = "center">
+Figura 5 - Modelo Entidade-Relacionamento AluguelTech
+</div>
+
 ## Projeto da Base de Dados
 
 ![WhatsApp Image 2023-09-23 at 17 53 54](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e2-proj-int-t2-alugueltch-ferramentas/assets/65717646/f2fd9fd2-4428-40b0-88b3-2f51ccacbe5c)
+
+<div align = "center">
+Figura 6 - Projeto da Base de Dados AluguelTech
+</div>
 
 ## Tecnologias Utilizadas
 
