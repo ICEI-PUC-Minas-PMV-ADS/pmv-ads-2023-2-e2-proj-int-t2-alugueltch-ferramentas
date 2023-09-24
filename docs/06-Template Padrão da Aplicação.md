@@ -39,7 +39,7 @@ O padrão de layout a ser utilizado pela aplicação tem correspondência ao pro
 
  ![Tela Inicial](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e2-proj-int-t2-alugueltch-ferramentas/assets/128100886/e494d9b8-0e48-4491-8960-c198df1b9d70)
  
- Figura X - Tela de Login </div>
+ Figura 7 - Tela de Login </div>
 
  ## Tela Inicial
 <div align = "justify">As telas iniciais se diferenciam de acordo com as especificações do fluxo de usuário. Para tanto, ao usuário Administrador foi acrescentada a funcionalidade “Gerenciar Funcionários” onde é possível adicionar um novo funcionário, editar o cadastro de um funcionário existente ou removê-lo do sistema.</div><br>
@@ -48,28 +48,28 @@ O padrão de layout a ser utilizado pela aplicação tem correspondência ao pro
 
 ![Home Funcionário](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e2-proj-int-t2-alugueltch-ferramentas/assets/128100886/c88a2b0d-35fc-41b3-b217-4574ae959579)
 
-Figura X - Tela Inicial de Usuário Funcionário
+Figura 8 - Tela Inicial de Usuário Funcionário
 
 
 
 ![Home Admin](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e2-proj-int-t2-alugueltch-ferramentas/assets/128100886/c18049c2-b607-4af5-be8c-bb9e4686f18a)
 
-Figura X - Tela Inicial de Usuário Administrador
+Figura 9 - Tela Inicial de Usuário Administrador
 
 
 ![Gerenciamento de Funcionários](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e2-proj-int-t2-alugueltch-ferramentas/assets/128100886/ba31d846-4b56-4cca-a51f-9a40b4d3661a)
 
-Figura X - Gerenciamento de Funcionários
+Figura 10 - Gerenciamento de Funcionários
 
 
 ![Gerenciamento de Funcionários botao adicionar novo](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e2-proj-int-t2-alugueltch-ferramentas/assets/128100886/89661aa3-ac6d-4102-a349-de1d7cd2fc24)
 
-Figura x - Cadastro de Novo Funcionário
+Figura 11 - Cadastro de Novo Funcionário
 
 
 ![Gerenciamento de Funcionários editar](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e2-proj-int-t2-alugueltch-ferramentas/assets/128100886/4a30a9d5-bee5-4fcb-88b4-4baac31cf2c7)
 
-Figura x - Edição ou Exclusão de Funcionário </div>
+Figura 12 - Edição ou Exclusão de Funcionário </div>
 
 ## Clientes
 <div align = "justify">Ao acessar a aba “Clientes” é possível cadastrar um novo cliente ou visualizar a lista de clientes cadastrados no sistema.</div><br>
@@ -78,16 +78,16 @@ Figura x - Edição ou Exclusão de Funcionário </div>
 
 ![Clientes](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e2-proj-int-t2-alugueltch-ferramentas/assets/128100886/6087f865-ab3e-463a-8f1b-d50ac27e917f)
 
-Figura x - Aba de Clientes expandida
+Figura 13 - Aba de Clientes expandida
 
 
 ![Cadastro de Clientes](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e2-proj-int-t2-alugueltch-ferramentas/assets/128100886/88375a6c-a59b-4961-9386-af5abfe141fe)
 
-Figura x - Cadastro de Cliente
+Figura 14 - Cadastro de Cliente
 
 ![Ver clientes](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e2-proj-int-t2-alugueltch-ferramentas/assets/128100886/eeb177cf-6231-4fd4-b337-b67784357ba4)
 
-Figura x - Tabela de Clientes</div>
+Figura 15 - Tabela de Clientes</div>
 
 
 ## Orçamentos
@@ -97,32 +97,32 @@ Figura x - Tabela de Clientes</div>
 
 ![Orçamentos](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e2-proj-int-t2-alugueltch-ferramentas/assets/128100886/1069b1cc-265f-4cde-a8b5-a37e0fbdf4d2)
 
-Figura x - Aba de orçamentos expandida
+Figura 16 - Aba de orçamentos expandida
 
 
 
 ![Novo orçamento](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e2-proj-int-t2-alugueltch-ferramentas/assets/128100886/d927da9a-2fb6-42f8-990f-367efcb5f727)
 
-Figura x - Novo Orçamento
+Figura 17 - Novo Orçamento
 
 
 ![Orçamento gerado](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e2-proj-int-t2-alugueltch-ferramentas/assets/128100886/dcfbf561-dcac-4446-998c-0f826f9ed1bb)
 
-Figura x - Orçamento Gerado em PDF
+Figura 18 - Orçamento Gerado em PDF
 
 
 ![Ver orçamentos](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e2-proj-int-t2-alugueltch-ferramentas/assets/128100886/5711aeb7-0ba5-4c3a-84ea-183072a31c2e)
 
-Figura x - Ver Orçamentos
+Figura 19 - Ver Orçamentos
 
 
 ![Aluguel edicao](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e2-proj-int-t2-alugueltch-ferramentas/assets/128100886/35ea4fd7-3347-475a-9160-5485e7d4f3e2)
 
-Figura X - Novo Aluguel
+Figura 20 - Novo Aluguel
 
 ![Ver aluguel](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e2-proj-int-t2-alugueltch-ferramentas/assets/128100886/5ef6a0fd-99c1-4e12-9bf0-adf9b9aaaf0f)
 
-Figura x - Ver Aluguéis </div>
+Figura 21 - Ver Aluguéis </div>
 
 ## Relatórios
 <div align = "justify"> Nessa aba é possível acessar os relatórios mensais de faturamento, controle de estoque e histórico de clientes. O design desenvolvido e a forma na qual esses relatórios serão apresentados é meramente ilustrativo e passível de mudanças.</div><br>
@@ -131,21 +131,21 @@ Figura x - Ver Aluguéis </div>
 
 ![Relatórios](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e2-proj-int-t2-alugueltch-ferramentas/assets/128100886/9c77bda4-0198-42aa-ba16-9c45175a4618)
 
-Figura x - Aba de Relatórios Expandida
+Figura 22 - Aba de Relatórios Expandida
 
 ![Faturamento Mensal](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e2-proj-int-t2-alugueltch-ferramentas/assets/128100886/6b228697-2564-4e21-97a3-795a5785d9fb)
 
-Figura X - Faturamento Mensal
+Figura 23 - Faturamento Mensal
 
 
 ![Histórico de Clientes](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e2-proj-int-t2-alugueltch-ferramentas/assets/128100886/1e3a75b1-99e2-4541-b8db-47c69965e5e3)
 
-Figura x - Histórico de Clientes
+Figura 24 - Histórico de Clientes
 
 
 ![Controle de Estoque](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e2-proj-int-t2-alugueltch-ferramentas/assets/128100886/47b34ff9-c725-4c9b-9cdc-0e471fb9e85a)
 
-Figura x - Controle de Estoque </div>
+Figura 25 - Controle de Estoque </div>
 
 ## Equipamentos
 <div align = "justify">A aba de equipamentos conta com a listagem de equipamentos com a possibilidade de cadastro de uma nova ferramenta, edição de sua descrição, visualização e modificação de seu status através das badges.</div>
@@ -155,30 +155,30 @@ Figura x - Controle de Estoque </div>
 
 ![Equipamentos](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e2-proj-int-t2-alugueltch-ferramentas/assets/128100886/e35b3775-654f-4bbd-bf09-81427ff7d895)
 
-Figura X - Aba Expandida de Equipamentos
+Figura 26 - Aba Expandida de Equipamentos
 
 
 
 ![Novo Equipamento](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e2-proj-int-t2-alugueltch-ferramentas/assets/128100886/a5efb3e8-de43-49ec-8291-b0a697c74777)
 
-Figura X - Novo Equipamento
+Figura 27 - Novo Equipamento
 
 
 ![Editar Equipamento](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e2-proj-int-t2-alugueltch-ferramentas/assets/128100886/f0d7ac6f-bd44-4067-a936-d2526ac18c10)
 
-Figura X - Editar Equipamento
+Figura 28 - Editar Equipamento
 
 
 ![Lista de Equipamentos](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e2-proj-int-t2-alugueltch-ferramentas/assets/128100886/ea0c40bd-ed92-4987-a852-c431bae793ab)
 
-Figura X - Lista de Equipamentos
+Figura 29 - Lista de Equipamentos
 
 
 ![Lista de Equipamentos modal up](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e2-proj-int-t2-alugueltch-ferramentas/assets/128100886/34697a96-3c2d-44c5-8274-32cf7cf86906)
 
-Figura X - Lista de Equipamentos Modal Up
+Figura 30 - Lista de Equipamentos Modal Up
 
 
 ![Lista de Equipamentos modal up + alteracao de status](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e2-proj-int-t2-alugueltch-ferramentas/assets/128100886/5bd4a382-e3de-4254-9ff1-960657780403)
 
-Figura X - Lista de Equipamentos Modal Up e Alteração de Status </div>
+Figura 31 - Lista de Equipamentos Modal Up e Alteração de Status </div>
