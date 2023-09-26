@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\vitor\\source\\repos\\pmv-ads-2023-2-e2-proj-int-t2-alugueltch-ferramentas\\backend\\MVC\\MVC.csproj": {}
+    "C:\\Users\\vitor\\Source\\Repos\\pmv-ads-2023-2-e2-proj-int-t2-alugueltch-ferramentas\\backend\\MVC\\MVC.csproj": {}
   },
   "projects": {
-    "C:\\Users\\vitor\\source\\repos\\pmv-ads-2023-2-e2-proj-int-t2-alugueltch-ferramentas\\backend\\MVC\\MVC.csproj": {
+    "C:\\Users\\vitor\\Source\\Repos\\pmv-ads-2023-2-e2-proj-int-t2-alugueltch-ferramentas\\backend\\MVC\\MVC.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\vitor\\source\\repos\\pmv-ads-2023-2-e2-proj-int-t2-alugueltch-ferramentas\\backend\\MVC\\MVC.csproj",
+        "projectUniqueName": "C:\\Users\\vitor\\Source\\Repos\\pmv-ads-2023-2-e2-proj-int-t2-alugueltch-ferramentas\\backend\\MVC\\MVC.csproj",
         "projectName": "MVC",
-        "projectPath": "C:\\Users\\vitor\\source\\repos\\pmv-ads-2023-2-e2-proj-int-t2-alugueltch-ferramentas\\backend\\MVC\\MVC.csproj",
+        "projectPath": "C:\\Users\\vitor\\Source\\Repos\\pmv-ads-2023-2-e2-proj-int-t2-alugueltch-ferramentas\\backend\\MVC\\MVC.csproj",
         "packagesPath": "C:\\Users\\vitor\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\vitor\\source\\repos\\pmv-ads-2023-2-e2-proj-int-t2-alugueltch-ferramentas\\backend\\MVC\\obj\\",
+        "outputPath": "C:\\Users\\vitor\\Source\\Repos\\pmv-ads-2023-2-e2-proj-int-t2-alugueltch-ferramentas\\backend\\MVC\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\vitor\\AppData\\Roaming\\NuGet\\NuGet.Config",

@@ -1,7 +1,9 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\backend",
+    "\\backend\\MVC"
   ],
-  "SelectedNode": "\\backend",
+  "SelectedNode": "\\backend\\MVC\\MVC.sln",
   "PreviewInSolutionExplorer": false
 }

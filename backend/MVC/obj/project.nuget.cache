@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "aUjA0/sDDQlcS4JnbnVwt0ikyyhApGpNs+JHS0eIcHL6n7kTdB+FN1t2Vsu5lI9iCuNGMYb0NzZ1yLTgk2FECQ==",
+  "dgSpecHash": "7w33JxIwb02vPE3JaXvqYSvTw/Nf27PYdDMMi5StCpgVGPW6w9u0PqDMrVKNHfLbivdlBpGQ/mb2kYdwjqwtRg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\vitor\\source\\repos\\pmv-ads-2023-2-e2-proj-int-t2-alugueltch-ferramentas\\backend\\MVC\\MVC.csproj",
+  "projectFilePath": "C:\\Users\\vitor\\Source\\Repos\\pmv-ads-2023-2-e2-proj-int-t2-alugueltch-ferramentas\\backend\\MVC\\MVC.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\vitor\\.nuget\\packages\\microsoft.visualstudio.azure.containers.tools.targets\\1.19.4\\microsoft.visualstudio.azure.containers.tools.targets.1.19.4.nupkg.sha512"
   ],
