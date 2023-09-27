@@ -18,7 +18,7 @@ namespace WEBAPI
             builder.Services.AddSwaggerGen();
             builder.Services.AddEntityFrameworkNpgsql()
                        .AddDbContext<ATDBContext>(options =>
-                         options.UseNpgsql("Host=localhost;Port=5432;Database=ATDB;User ID=postgres;Password=postgres;"));
+                         options.UseNpgsql("Host=localhost;Port=5432;Database=ATDB;User ID=postgres;Password=142815;"));
 
             var app = builder.Build();
 
@@ -43,6 +43,8 @@ namespace WEBAPI
             app.MapControllers();
 
                         app.MapClienteEndpoints();
+
+                        app.MapTipoFerramentumEndpoints();
 
             app.Run();
         }
