@@ -1,3 +1,7 @@
+using Microsoft.EntityFrameworkCore;
+using WEBAPI.Models;
+using WEBAPI.Controllers;
+
 namespace WEBAPI
 {
     public class Program
@@ -12,6 +16,9 @@ namespace WEBAPI
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
+            builder.Services.AddEntityFrameworkNpgsql()
+                       .AddDbContext<ATDBContext>(options =>
+                         options.UseNpgsql("Host=localhost;Port=5432;Database=ATDB;User ID=postgres;Password=postgres;"));
 
             var app = builder.Build();
 
@@ -22,12 +29,20 @@ namespace WEBAPI
                 app.UseSwaggerUI();
             }
 
+                        if (app.Environment.IsDevelopment())
+{
+    app.UseSwagger();
+    app.UseSwaggerUI();
+};
+
             app.UseHttpsRedirection();
 
             app.UseAuthorization();
 
 
             app.MapControllers();
+
+                        app.MapClienteEndpoints();
 
             app.Run();
         }

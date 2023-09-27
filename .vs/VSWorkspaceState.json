@@ -2,8 +2,7 @@
   "ExpandedNodes": [
     "",
     "\\backend",
-    "\\backend\\MVC"
+    "\\backend\\WEBAPI"
   ],
-  "SelectedNode": "\\backend\\MVC\\MVC.sln",
   "PreviewInSolutionExplorer": false
 }
