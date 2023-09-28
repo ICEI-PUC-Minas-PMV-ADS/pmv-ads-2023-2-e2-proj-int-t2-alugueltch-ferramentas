@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using MVC.Models;
+using MVC.Controllers;
 
 namespace MVC
 {
@@ -16,6 +17,10 @@ namespace MVC
                       .AddDbContext<ATDBContext>(options =>
                         options.UseNpgsql("Host=localhost;Port=5432;Database=ATDB;User ID=postgres;Password=postgres;"));
 
+                        builder.Services.AddEndpointsApiExplorer();
+
+                        builder.Services.AddSwaggerGen();
+
 
             var app = builder.Build();
 
@@ -27,6 +32,12 @@ namespace MVC
                 app.UseHsts();
             }
 
+                        if (app.Environment.IsDevelopment())
+{
+    app.UseSwagger();
+    app.UseSwaggerUI();
+};
+
             app.UseHttpsRedirection();
             app.UseStaticFiles();
 
@@ -37,6 +48,8 @@ namespace MVC
             app.MapControllerRoute(
                 name: "default",
                 pattern: "{controller=Home}/{action=Index}/{id?}");
+
+                        app.MapFerramentumEndpoints();
 
             app.Run();
         }
