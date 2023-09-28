@@ -16,6 +16,26 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\lucas\OneDrive\Área de Trabalho\AluguelTech\backend\MVC
 build_property._RazorSourceGeneratorDebug = 
 
+[C:/Users/lucas/OneDrive/Área de Trabalho/AluguelTech/backend/MVC/Views/Ferramentums/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRmVycmFtZW50dW1zXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/lucas/OneDrive/Área de Trabalho/AluguelTech/backend/MVC/Views/Ferramentums/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRmVycmFtZW50dW1zXERlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/lucas/OneDrive/Área de Trabalho/AluguelTech/backend/MVC/Views/Ferramentums/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRmVycmFtZW50dW1zXERldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/lucas/OneDrive/Área de Trabalho/AluguelTech/backend/MVC/Views/Ferramentums/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRmVycmFtZW50dW1zXEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/lucas/OneDrive/Área de Trabalho/AluguelTech/backend/MVC/Views/Ferramentums/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRmVycmFtZW50dW1zXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/lucas/OneDrive/Área de Trabalho/AluguelTech/backend/MVC/Views/Funcionarios/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRnVuY2lvbmFyaW9zXENyZWF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
