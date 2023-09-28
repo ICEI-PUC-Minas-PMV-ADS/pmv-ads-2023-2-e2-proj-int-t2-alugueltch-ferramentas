@@ -1,3 +1,6 @@
+using Microsoft.EntityFrameworkCore;
+using MVC.Models;
+
 namespace MVC
 {
     public class Program
@@ -8,6 +11,11 @@ namespace MVC
 
             // Add services to the container.
             builder.Services.AddControllersWithViews();
+
+            builder.Services.AddEntityFrameworkNpgsql()
+                      .AddDbContext<ATDBContext>(options =>
+                        options.UseNpgsql("Host=localhost;Port=5432;Database=ATDB;User ID=postgres;Password=postgres;"));
+
 
             var app = builder.Build();
 

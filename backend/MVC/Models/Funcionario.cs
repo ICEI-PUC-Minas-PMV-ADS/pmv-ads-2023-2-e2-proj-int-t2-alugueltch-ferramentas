@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace MVC.Models
 {
@@ -12,6 +13,9 @@ namespace MVC.Models
 
         public long Id { get; set; }
         public string Funcional { get; set; } = null!;
+
+        [Required(ErrorMessage = "Obrigatório inforrmar a senha")]
+        [DataType(DataType.Password)]
         public string Senha { get; set; } = null!;
         public short PermissaoId { get; set; }
         public long PapelId { get; set; }
@@ -30,4 +34,6 @@ namespace MVC.Models
         public virtual TipoPermissao Permissao { get; set; } = null!;
         public virtual ICollection<Processo> Processos { get; set; }
     }
+
+
 }

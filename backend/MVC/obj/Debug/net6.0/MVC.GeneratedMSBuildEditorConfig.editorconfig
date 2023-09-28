@@ -16,6 +16,26 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\vitor\source\repos\pmv-ads-2023-2-e2-proj-int-t2-alugueltch-ferramentas\backend\MVC
 build_property._RazorSourceGeneratorDebug = 
 
+[C:/Users/vitor/source/repos/pmv-ads-2023-2-e2-proj-int-t2-alugueltch-ferramentas/backend/MVC/Views/Funcionarios/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRnVuY2lvbmFyaW9zXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/vitor/source/repos/pmv-ads-2023-2-e2-proj-int-t2-alugueltch-ferramentas/backend/MVC/Views/Funcionarios/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRnVuY2lvbmFyaW9zXERlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/vitor/source/repos/pmv-ads-2023-2-e2-proj-int-t2-alugueltch-ferramentas/backend/MVC/Views/Funcionarios/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRnVuY2lvbmFyaW9zXERldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/vitor/source/repos/pmv-ads-2023-2-e2-proj-int-t2-alugueltch-ferramentas/backend/MVC/Views/Funcionarios/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRnVuY2lvbmFyaW9zXEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/vitor/source/repos/pmv-ads-2023-2-e2-proj-int-t2-alugueltch-ferramentas/backend/MVC/Views/Funcionarios/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRnVuY2lvbmFyaW9zXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/vitor/source/repos/pmv-ads-2023-2-e2-proj-int-t2-alugueltch-ferramentas/backend/MVC/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
