@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "yYO7HXquWHQ1t8yFcB/fZT3F60eijfuMh/BtTkQWqT7YA5OkcCHlIfIJXWDqdjvGOEZ9v+CFA3HlVdjxpPjKAA==",
+  "dgSpecHash": "+95UX67ZEjUUnNnA6YZwE1VHX/1DIJzIoDLE9ehS28PwMGClvwQ9AommkABykTZwUsouiq+3pEcPDUMEC49BVg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\vitor\\source\\repos\\pmv-ads-2023-2-e2-proj-int-t2-alugueltch-ferramentas\\backend\\MVC\\MVC.csproj",
+  "projectFilePath": "C:\\Users\\vitor\\Source\\Repos\\pmv-ads-2023-2-e2-proj-int-t2-alugueltch-ferramentas\\backend\\MVC\\MVC.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\vitor\\.nuget\\packages\\humanizer\\2.14.1\\humanizer.2.14.1.nupkg.sha512",
     "C:\\Users\\vitor\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
