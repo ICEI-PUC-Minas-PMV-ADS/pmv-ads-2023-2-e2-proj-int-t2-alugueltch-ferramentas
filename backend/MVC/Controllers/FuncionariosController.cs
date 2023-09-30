@@ -13,7 +13,7 @@ using MVC.Models;
 
 namespace MVC.Controllers
 {
-    [Authorize(Roles = "Admin")]
+   
     public class FuncionariosController : Controller
     {
         private readonly atdbContext _context;
