@@ -1,8 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Claims;
 using System.Threading.Tasks;
 using BCrypt.Net;
+using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
@@ -10,6 +13,7 @@ using MVC.Models;
 
 namespace MVC.Controllers
 {
+    [Authorize(Roles = "Admin")]
     public class FuncionariosController : Controller
     {
         private readonly atdbContext _context;
@@ -63,28 +67,56 @@ namespace MVC.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("Id,Cpf,Nome,Sexo,DataNascimento,Email,Telefone,EnderecoId,Funcional,Senha,PermissaoId,PapelId,DataAdmissao,DataDemissao")] Funcionario funcionario)
         {
-            if (ModelState.IsValid)
+          var endereco = _context.Enderecos.Find(funcionario.EnderecoId);
+            funcionario.Endereco = endereco;
+
+            var papel = _context.TipoPapels.Find(funcionario.PapelId);
+            funcionario.Papel = papel;
+
+            var permissao = _context.TipoPermissaos.Find(funcionario.PermissaoId);
+            funcionario.Permissao = permissao;
+
+
+            if (!ModelState.IsValid)
             {
                 funcionario.Senha = BCrypt.Net.BCrypt.HashPassword(funcionario.Senha);
                 _context.Add(funcionario);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
+            else
+            {
+                // Se o ModelState não for válido, verifique os erros associados a cada campo.
+                foreach (var entry in ModelState)
+                {
+                    var key = entry.Key; // O nome do campo
+                    var errors = entry.Value.Errors; // Erros associados a esse campo
+
+                    foreach (var error in errors)
+                    {
+                        var errorMessage = error.ErrorMessage; // Mensagem de erro
+                                                               // Faça algo com a mensagem de erro, por exemplo, registrá-la ou tratá-la.
+                        Console.WriteLine($"Campo: {key}, Erro: {errorMessage}");
+                    }
+                }
+            }
+
             ViewData["EnderecoId"] = new SelectList(_context.Enderecos, "Id", "Id", funcionario.EnderecoId);
             ViewData["PapelId"] = new SelectList(_context.TipoPapels, "Id", "Id", funcionario.PapelId);
             ViewData["PermissaoId"] = new SelectList(_context.TipoPermissaos, "Id", "Id", funcionario.PermissaoId);
+
             return View(funcionario);
         }
 
         // GET: Funcionarios/Edit/5
-        public async Task<IActionResult> Edit(long? id)
+        public async Task<IActionResult> Edit(long? id, string cpf, string funcional)
         {
             if (id == null || _context.Funcionarios == null)
             {
                 return NotFound();
             }
 
-            var funcionario = await _context.Funcionarios.FindAsync(id);
+            var funcionario = await _context.Funcionarios.FindAsync(id,cpf,funcional);
             if (funcionario == null)
             {
                 return NotFound();
@@ -178,5 +210,79 @@ namespace MVC.Controllers
         {
           return (_context.Funcionarios?.Any(e => e.Id == id)).GetValueOrDefault();
         }
+
+        [AllowAnonymous]
+
+        public IActionResult Login()
+        {
+            return View();  
+        }
+
+        [HttpPost]
+        [AllowAnonymous]
+        public async Task<IActionResult> Login(Funcionario funcionario)
+        {
+            var funcDB = await _context.Funcionarios
+                  .Where(f => f.Funcional == funcionario.Funcional) // Substitua 'Funcional' pelo nome da propriedade correta
+                 .FirstOrDefaultAsync();
+
+            if (funcDB == null)
+            {
+                ViewBag.Message = "Usuário e/ou senha inválidos!";
+                return View();
+            }
+
+            /* var senha = BCrypt.Net.BCrypt.Verify(funcionario.Senha, funcDB.Senha); */
+            
+
+            if (funcionario.Senha == funcDB.Senha)
+            {
+                var claims = new List<Claim>
+                {
+                    new Claim(ClaimTypes.Name, funcDB.Nome),
+                    new Claim(ClaimTypes.NameIdentifier, funcDB.Funcional)
+
+                 
+                };
+
+                /* new Claim(ClaimTypes.Role, funcDB.Permissao.Nome) */
+
+                var funcionarioIdentity = new ClaimsIdentity(claims, "login");
+                ClaimsPrincipal principal = new ClaimsPrincipal(funcionarioIdentity);
+
+                var props = new AuthenticationProperties
+                {
+                    AllowRefresh = true,
+                    ExpiresUtc = DateTime.UtcNow.ToLocalTime().AddHours(8),
+                    IsPersistent = true,
+                };
+
+                await HttpContext.SignInAsync(principal, props);
+                return Redirect("/");
+            }
+            else
+            {
+                ViewBag.Message = "Usuário e/ou senha inválidos!";
+            }
+
+            return View();
+        }
+
+        [AllowAnonymous]
+        public async  Task<IActionResult> Logout()
+        {
+            await HttpContext.SignOutAsync();
+
+            return RedirectToAction("Login", "Funcionarios");
+        }
+
+
+        [AllowAnonymous]
+
+        public async Task<IActionResult> AccessDenied()
+        {
+            return View();  
+        }
+    
     }
 }

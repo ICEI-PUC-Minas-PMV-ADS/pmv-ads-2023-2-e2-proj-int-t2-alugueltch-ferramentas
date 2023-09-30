@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.EntityFrameworkCore;
 using MVC.Models;
 
@@ -16,6 +17,21 @@ namespace MVC
                        options.UseNpgsql("Host=atdb-pg.postgres.database.azure.com;Port=5432;Database=atdb;User ID=vitor@atdb-pg;Password=puc123;"));
 
 
+            builder.Services.Configure<CookiePolicyOptions>(options =>
+            {
+                options.CheckConsentNeeded = context => true;
+                options.MinimumSameSitePolicy = SameSiteMode.None;
+
+            });
+
+            builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
+                     .AddCookie(options =>
+                     {
+                         options.AccessDeniedPath = "/Funcionarios/AcessDenied/";
+                         options.LoginPath = "/Funcionarios/Login/";
+                     });
+
+
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.
@@ -31,7 +47,9 @@ namespace MVC
 
             app.UseRouting();
 
+            app.UseAuthentication();
             app.UseAuthorization();
+            
 
             app.MapControllerRoute(
                 name: "default",
