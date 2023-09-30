@@ -15,7 +15,7 @@ namespace MVC
 
             builder.Services.AddEntityFrameworkNpgsql()
                       .AddDbContext<ATDBContext>(options =>
-                        options.UseNpgsql("Host=localhost;Port=5432;Database=ATDB;User ID=postgres;Password=postgres;"));
+                        options.UseNpgsql("Host=atdb-pg.postgres.database.azure.com;Port=5432;Database=atdb;User ID=vitor@atdb-pg;Password=puc123;"));
 
                         builder.Services.AddEndpointsApiExplorer();
 

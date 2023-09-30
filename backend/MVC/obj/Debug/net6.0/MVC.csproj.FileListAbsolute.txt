@@ -561,3 +561,8 @@ C:\Users\lucas\OneDrive\Área de Trabalho\AluguelTech\backend\MVC\obj\Debug\net6
 C:\Users\lucas\OneDrive\Área de Trabalho\AluguelTech\backend\MVC\obj\Debug\net6.0\MVC.pdb
 C:\Users\lucas\OneDrive\Área de Trabalho\AluguelTech\backend\MVC\obj\Debug\net6.0\MVC.genruntimeconfig.cache
 C:\Users\lucas\OneDrive\Área de Trabalho\AluguelTech\backend\MVC\obj\Debug\net6.0\ref\MVC.dll
+C:\Users\vitor\Source\Repos\pmv-ads-2023-2-e2-proj-int-t2-alugueltch-ferramentas\backend\MVC\bin\Debug\net6.0\Microsoft.OpenApi.dll
+C:\Users\vitor\Source\Repos\pmv-ads-2023-2-e2-proj-int-t2-alugueltch-ferramentas\backend\MVC\bin\Debug\net6.0\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\vitor\Source\Repos\pmv-ads-2023-2-e2-proj-int-t2-alugueltch-ferramentas\backend\MVC\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\vitor\Source\Repos\pmv-ads-2023-2-e2-proj-int-t2-alugueltch-ferramentas\backend\MVC\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\vitor\Source\Repos\pmv-ads-2023-2-e2-proj-int-t2-alugueltch-ferramentas\backend\MVC\obj\Debug\net6.0\MVC.MvcApplicationPartsAssemblyInfo.cs
