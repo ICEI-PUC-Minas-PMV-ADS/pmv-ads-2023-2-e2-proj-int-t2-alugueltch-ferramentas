@@ -19,19 +19,21 @@ namespace MVC.Models
         public DateOnly DataNascimento { get; set; }
         public string Email { get; set; } = null!;
         public string Telefone { get; set; } = null!;
-        public long EnderecoId { get; set; }
+
         public string Funcional { get; set; } = null!;
 
         [DataType(DataType.Password)]
         public string Senha { get; set; } = null!;
+
         public short PermissaoId { get; set; }
         public short PapelId { get; set; }
+        public long  EnderecoId { get; set; }
         public DateOnly DataAdmissao { get; set; }
         public DateOnly? DataDemissao { get; set; }
 
-        public virtual Endereco Endereco { get; set; } = null!;
-        public virtual TipoPapel Papel { get; set; } = null!;
-        public virtual TipoPermissao Permissao { get; set; } = null!;
+        public virtual Endereco? Endereco { get; set; }
+        public virtual TipoPapel? Papel { get; set; }
+        public virtual TipoPermissao? Permissao { get; set; }
         public virtual ICollection<Ferramentum> Ferramenta { get; set; }
         public virtual ICollection<Processo> Processos { get; set; }
     }

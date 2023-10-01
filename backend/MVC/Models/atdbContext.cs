@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
+using MVC.NewClasses;
 
 namespace MVC.Models
 {
@@ -40,6 +41,9 @@ namespace MVC.Models
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+
+            modelBuilder.Entity<CadastrarFuncionario>().HasNoKey();
+
             modelBuilder.HasPostgresExtension("pg_buffercache")
                 .HasPostgresExtension("pg_stat_statements");
 

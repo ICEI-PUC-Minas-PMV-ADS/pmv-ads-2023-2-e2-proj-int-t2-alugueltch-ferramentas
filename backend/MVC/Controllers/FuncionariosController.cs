@@ -54,9 +54,8 @@ namespace MVC.Controllers
         // GET: Funcionarios/Create
         public IActionResult Create()
         {
-            ViewData["EnderecoId"] = new SelectList(_context.Enderecos, "Id", "Id");
-            ViewData["PapelId"] = new SelectList(_context.TipoPapels, "Id", "Id");
-            ViewData["PermissaoId"] = new SelectList(_context.TipoPermissaos, "Id", "Id");
+            ViewData["Papel"] = new SelectList(_context.TipoPapels, "Nome", "Nome");
+            ViewData["Permissao"] = new SelectList(_context.TipoPermissaos, "Nome", "Nome");
             return View();
         }
 
@@ -66,18 +65,19 @@ namespace MVC.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("Id,Cpf,Nome,Sexo,DataNascimento,Email,Telefone,EnderecoId,Funcional,Senha,PermissaoId,PapelId,DataAdmissao,DataDemissao")] Funcionario funcionario)
-        {
-          var endereco = _context.Enderecos.Find(funcionario.EnderecoId);
+        { 
+            var endereco = _context.Enderecos.Find(funcionario.EnderecoId);
             funcionario.Endereco = endereco;
 
             var papel = _context.TipoPapels.Find(funcionario.PapelId);
             funcionario.Papel = papel;
 
             var permissao = _context.TipoPermissaos.Find(funcionario.PermissaoId);
-            funcionario.Permissao = permissao;
+            funcionario.Permissao = permissao; 
+         
 
 
-            if (!ModelState.IsValid)
+            if (ModelState.IsValid)
             {
                 funcionario.Senha = BCrypt.Net.BCrypt.HashPassword(funcionario.Senha);
                 _context.Add(funcionario);
@@ -167,7 +167,7 @@ namespace MVC.Controllers
         }
 
         // GET: Funcionarios/Delete/5
-        public async Task<IActionResult> Delete(long? id)
+        public async Task<IActionResult> Delete(long? id, string cpf, string funcional)
         {
             if (id == null || _context.Funcionarios == null)
             {
@@ -190,13 +190,13 @@ namespace MVC.Controllers
         // POST: Funcionarios/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> DeleteConfirmed(long id)
+        public async Task<IActionResult> DeleteConfirmed(long? id, string cpf, string funcional)
         {
             if (_context.Funcionarios == null)
             {
                 return Problem("Entity set 'atdbContext.Funcionarios'  is null.");
             }
-            var funcionario = await _context.Funcionarios.FindAsync(id);
+            var funcionario = await _context.Funcionarios.FindAsync(id,cpf,funcional);
             if (funcionario != null)
             {
                 _context.Funcionarios.Remove(funcionario);

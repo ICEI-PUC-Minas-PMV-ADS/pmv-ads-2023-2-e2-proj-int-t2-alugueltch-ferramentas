@@ -16,24 +16,8 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\vitor\source\repos\pmv-ads-2023-2-e2-proj-int-t2-alugueltch-ferramentas\backend\MVC
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/vitor/source/repos/pmv-ads-2023-2-e2-proj-int-t2-alugueltch-ferramentas/backend/MVC/Views/Enderecoes/Create.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW5kZXJlY29lc1xDcmVhdGUuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/vitor/source/repos/pmv-ads-2023-2-e2-proj-int-t2-alugueltch-ferramentas/backend/MVC/Views/Enderecoes/Delete.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW5kZXJlY29lc1xEZWxldGUuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/vitor/source/repos/pmv-ads-2023-2-e2-proj-int-t2-alugueltch-ferramentas/backend/MVC/Views/Enderecoes/Details.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW5kZXJlY29lc1xEZXRhaWxzLmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/vitor/source/repos/pmv-ads-2023-2-e2-proj-int-t2-alugueltch-ferramentas/backend/MVC/Views/Enderecoes/Edit.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW5kZXJlY29lc1xFZGl0LmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/vitor/source/repos/pmv-ads-2023-2-e2-proj-int-t2-alugueltch-ferramentas/backend/MVC/Views/Enderecoes/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW5kZXJlY29lc1xJbmRleC5jc2h0bWw=
+[C:/Users/vitor/source/repos/pmv-ads-2023-2-e2-proj-int-t2-alugueltch-ferramentas/backend/MVC/Views/cadastrarFuncionarios/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcY2FkYXN0cmFyRnVuY2lvbmFyaW9zXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/vitor/source/repos/pmv-ads-2023-2-e2-proj-int-t2-alugueltch-ferramentas/backend/MVC/Views/Funcionarios/AccessDenied.cshtml]
