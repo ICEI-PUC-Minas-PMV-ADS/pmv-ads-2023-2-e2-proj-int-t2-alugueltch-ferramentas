@@ -13,7 +13,7 @@ using MVC.Models;
 
 namespace MVC.Controllers
 {
-   
+    [Authorize(Roles ="Admin")]
     public class FuncionariosController : Controller
     {
         private readonly atdbContext _context;
@@ -237,13 +237,21 @@ namespace MVC.Controllers
 
             if (funcionario.Senha == funcDB.Senha)
             {
+
+                var teste = "";
+
+                if (funcDB.PermissaoId == 1) teste = "Admin";
+                if (funcDB.PermissaoId == 2) teste = "User";
+
+
                 var claims = new List<Claim>
                 {
                     new Claim(ClaimTypes.Name, funcDB.Nome),
-                    new Claim(ClaimTypes.NameIdentifier, funcDB.Funcional)
+                    new Claim(ClaimTypes.NameIdentifier, funcDB.Funcional),
+                    new Claim(ClaimTypes.Role, teste)
 
-                 
                 };
+
 
                 /* new Claim(ClaimTypes.Role, funcDB.Permissao.Nome) */
 
