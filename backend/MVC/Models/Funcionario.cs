@@ -31,7 +31,7 @@ namespace MVC.Models
         public DateOnly DataAdmissao { get; set; }
         public DateOnly? DataDemissao { get; set; }
 
-        public virtual Endereco? Endereco { get; set; }
+        public virtual Endereco Endereco { get; set; }
         public virtual TipoPapel? Papel { get; set; }
         public virtual TipoPermissao? Permissao { get; set; }
         public virtual ICollection<Ferramentum> Ferramenta { get; set; }

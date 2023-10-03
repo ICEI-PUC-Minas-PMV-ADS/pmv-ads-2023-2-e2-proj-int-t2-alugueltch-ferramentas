@@ -10,6 +10,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using MVC.Models;
+using MVC.NewClasses;
 
 namespace MVC.Controllers
 {
@@ -54,8 +55,8 @@ namespace MVC.Controllers
         // GET: Funcionarios/Create
         public IActionResult Create()
         {
-            ViewData["Papel"] = new SelectList(_context.TipoPapels, "Nome", "Nome");
-            ViewData["Permissao"] = new SelectList(_context.TipoPermissaos, "Nome", "Nome");
+            ViewData["Papel"] = new SelectList(_context.TipoPapels, "Id", "Nome");
+            ViewData["Permissao"] = new SelectList(_context.TipoPermissaos, "Id", "Nome");
             return View();
         }
 
@@ -64,17 +65,25 @@ namespace MVC.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Cpf,Nome,Sexo,DataNascimento,Email,Telefone,EnderecoId,Funcional,Senha,PermissaoId,PapelId,DataAdmissao,DataDemissao")] Funcionario funcionario)
-        { 
-            var endereco = _context.Enderecos.Find(funcionario.EnderecoId);
-            funcionario.Endereco = endereco;
+        public async Task<IActionResult> Create([Bind("Id,Cpf,Nome,Sexo,DataNascimento,Email,Telefone,EnderecoId,Funcional,Senha,PermissaoId,PapelId,DataAdmissao,DataDemissao,Endereco")] Funcionario funcionario)
+        {
+
+
+
+            _context.Add(funcionario.Endereco);
+            await _context.SaveChangesAsync();
+
+            funcionario.EnderecoId = funcionario.Endereco.Id;
+
+
+
 
             var papel = _context.TipoPapels.Find(funcionario.PapelId);
             funcionario.Papel = papel;
 
+
             var permissao = _context.TipoPermissaos.Find(funcionario.PermissaoId);
-            funcionario.Permissao = permissao; 
-         
+            funcionario.Permissao = permissao;
 
 
             if (ModelState.IsValid)
