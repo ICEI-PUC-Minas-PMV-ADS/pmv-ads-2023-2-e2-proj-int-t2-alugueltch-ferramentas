@@ -23,10 +23,29 @@ public class cadastrarFuncionariosController : Controller
 
     [HttpPost]
     [ValidateAntiForgeryToken]
-    public async Task<IActionResult> Create(CadastrarFuncionario funcionarioFormulary)
+    public async Task<IActionResult> Create(CadastrarFuncionario cadastrarFuncionario)
     {
+        _context.Add(cadastrarFuncionario.Endereco);
+        await _context.SaveChangesAsync();
 
-    
+        cadastrarFuncionario.Funcionario.Endereco = cadastrarFuncionario.Endereco;
+        cadastrarFuncionario.Funcionario.EnderecoId = cadastrarFuncionario.Endereco.Id;
+
+        var endereco = _context.Enderecos.Find(cadastrarFuncionario.Funcionario.EnderecoId);
+        cadastrarFuncionario.Funcionario.Endereco = endereco;
+
+        var papel = _context.TipoPapels.Find(cadastrarFuncionario.Papel);
+        cadastrarFuncionario.Funcionario.Papel = papel;
+        cadastrarFuncionario.Funcionario.PapelId = cadastrarFuncionario.Papel;
+
+
+        var permissao = _context.TipoPermissaos.Find(cadastrarFuncionario.Permissao);
+        cadastrarFuncionario.Funcionario.Permissao = permissao;
+        cadastrarFuncionario.Funcionario.PermissaoId = cadastrarFuncionario.Permissao;
+
+        _context.Add(cadastrarFuncionario.Funcionario);
+        await _context.SaveChangesAsync();
+
 
         return View();
     }

@@ -249,6 +249,7 @@ namespace MVC.Controllers
                     new Claim(ClaimTypes.Name, funcDB.Nome),
                     new Claim(ClaimTypes.NameIdentifier, funcDB.Funcional),
                     new Claim(ClaimTypes.Role, teste)
+                   
 
                 };
 
