@@ -4,10 +4,10 @@
     ViewData["Title"] = "Index";
 }
 
-<h1>Index</h1>
+<h1>Gerenciar Funcionários</h1>
 
 <p>
-    <a asp-action="Create">Create New</a>
+    <a asp-action="Create">Criar novo Funcionário</a>
 </p>
 <table class="table">
     <thead>
@@ -16,77 +16,45 @@
                 @Html.DisplayNameFor(model => model.Nome)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Sexo)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.DataNascimento)
-            </th>
-            <th>
                 @Html.DisplayNameFor(model => model.Email)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Telefone)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Senha)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.DataAdmissao)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.DataDemissao)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Endereco)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Papel)
-            </th>
-            <th>
                 @Html.DisplayNameFor(model => model.Permissao)
             </th>
+
+            
             <th></th>
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Nome)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Sexo)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.DataNascimento)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Email)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Telefone)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.DataAdmissao)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.DataDemissao)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Endereco.Id)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Papel.Id)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Permissao.Id)
-            </td>
-            <td>
-                    @Html.ActionLink("Edit", "Edit", new {id = item.Id, cpf = item.Cpf, funcional = item.Funcional}) |
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nome)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Email)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Telefone)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Permissao.Id)
+                </td>
+                <td>
+                      
+                </td>
+                
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.Id, cpf = item.Cpf, funcional = item.Funcional }) |
                     @Html.ActionLink("Details", "Details", new { id = item.Id, cpf = item.Cpf, funcional = item.Funcional }) |
-                    @Html.ActionLink("Delete", "Delete", new { id = item.Id, cpf = item.Cpf, funcional = item.Funcional})
-            </td>
-        </tr>
-}
+                    @Html.ActionLink("Delete", "Delete", new { id = item.Id, cpf = item.Cpf, funcional = item.Funcional })
+                </td>
+            </tr>
+        }
     </tbody>
 </table>

@@ -58,6 +58,7 @@ namespace MVC.Controllers
             ViewData["Papel"] = new SelectList(_context.TipoPapels, "Id", "Nome");
             ViewData["Permissao"] = new SelectList(_context.TipoPermissaos, "Id", "Nome");
             return View();
+
         }
 
         // POST: Funcionarios/Create
@@ -252,6 +253,9 @@ namespace MVC.Controllers
                 if (funcDB.PermissaoId == 1) teste = "Admin";
                 if (funcDB.PermissaoId == 2) teste = "User";
 
+                
+
+               
 
                 var claims = new List<Claim>
                 {

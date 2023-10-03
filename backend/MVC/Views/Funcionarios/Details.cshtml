@@ -23,7 +23,8 @@
             @Html.DisplayFor(model => model.Sexo)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.DataNascimento)
+            @Html.DisplayFor(model => model.DataNascimento, "dd/MM/yyyy")
+            
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.DataNascimento)

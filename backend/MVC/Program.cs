@@ -10,6 +10,10 @@ namespace MVC
         {
             var builder = WebApplication.CreateBuilder(args);
 
+            builder.Services.AddRazorPages();
+                
+
+
             // Add services to the container.
             builder.Services.AddControllersWithViews();
             builder.Services.AddEntityFrameworkNpgsql()
