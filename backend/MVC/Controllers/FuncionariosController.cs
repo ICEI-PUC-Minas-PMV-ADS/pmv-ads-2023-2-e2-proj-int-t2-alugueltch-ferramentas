@@ -75,7 +75,7 @@ namespace MVC.Controllers
             _context.Add(funcionario.Endereco);
             await _context.SaveChangesAsync();
 
-            funcionario.EnderecoId = funcionario.Endereco.Id;
+     
 
 
 
@@ -86,6 +86,9 @@ namespace MVC.Controllers
 
             var papel = _context.TipoPapels.Find(funcionario.PapelId);
             funcionario.Papel = papel;
+
+
+            funcionario.EnderecoId = funcionario.Endereco.Id;
 
             if (ModelState.IsValid)
             {
