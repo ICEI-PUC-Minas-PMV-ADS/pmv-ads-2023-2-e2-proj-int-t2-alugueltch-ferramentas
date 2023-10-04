@@ -69,16 +69,11 @@ namespace MVC.Controllers
         public async Task<IActionResult> Create([Bind("Id,Cpf,Nome,Sexo,DataNascimento,Email,Telefone,EnderecoId,Funcional,Senha,PermissaoId,PapelId,DataAdmissao,DataDemissao,Endereco")] Funcionario funcionario)
         {
 
- 
-
-
-            _context.Add(funcionario.Endereco);
-            await _context.SaveChangesAsync();
-
-
 
             funcionario.EnderecoId = funcionario.Endereco.Id;
 
+            _context.Add(funcionario.Endereco);
+            await _context.SaveChangesAsync();
 
 
             var permissao = _context.TipoPermissaos.Find(funcionario.PermissaoId);
