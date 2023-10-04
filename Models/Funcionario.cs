@@ -24,11 +24,14 @@ namespace MVC.Models
         [Required(ErrorMessage = "Insira o sexo")]
         public char Sexo { get; set; }
 
+
         [DataType(DataType.Date)]
-        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
-        [Required(ErrorMessage = "Insira o a data de nascimento")]
+        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
+        [Required(ErrorMessage = "Insira a data de nascimento")]
+       
         public DateOnly DataNascimento { get; set; }
 
+        [DataType(DataType.EmailAddress)]
         [Required(ErrorMessage = "Insira o e-mail")]
         public string Email { get; set; } = null!;
 

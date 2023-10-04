@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
-using MVC.NewClasses;
+
 
 namespace MVC.Models
 {
@@ -42,58 +42,7 @@ namespace MVC.Models
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
 
-            modelBuilder.Entity<CadastrarFuncionario>().HasNoKey();
-
-            modelBuilder.HasPostgresExtension("pg_buffercache")
-                .HasPostgresExtension("pg_stat_statements");
-
-            modelBuilder.Entity<Cliente>(entity =>
-            {
-                entity.HasKey(e => new { e.Id, e.Cpf })
-                    .HasName("cliente_pkey");
-
-                entity.ToTable("cliente");
-
-                entity.HasIndex(e => e.Cpf, "UQ_Cliente_Cpf")
-                    .IsUnique();
-
-                entity.HasIndex(e => e.Email, "UQ_Cliente_Email")
-                    .IsUnique();
-
-                entity.Property(e => e.Id)
-                    .ValueGeneratedOnAdd()
-                    .HasColumnName("id");
-
-                entity.Property(e => e.Cpf)
-                    .HasMaxLength(11)
-                    .HasColumnName("cpf");
-
-                entity.Property(e => e.DataNascimento).HasColumnName("data_nascimento");
-
-                entity.Property(e => e.Email)
-                    .HasMaxLength(255)
-                    .HasColumnName("email");
-
-                entity.Property(e => e.EnderecoId).HasColumnName("endereco_id");
-
-                entity.Property(e => e.Nome)
-                    .HasMaxLength(255)
-                    .HasColumnName("nome");
-
-                entity.Property(e => e.Sexo)
-                    .HasColumnType("char")
-                    .HasColumnName("sexo");
-
-                entity.Property(e => e.Telefone)
-                    .HasMaxLength(13)
-                    .HasColumnName("telefone");
-
-                entity.HasOne(d => d.Endereco)
-                    .WithMany(p => p.Clientes)
-                    .HasForeignKey(d => d.EnderecoId)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK_Cliente_Endereco");
-            });
+       
 
             modelBuilder.Entity<Emprestimo>(entity =>
             {

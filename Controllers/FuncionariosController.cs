@@ -10,7 +10,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using MVC.Models;
-using MVC.NewClasses;
+
 
 namespace MVC.Controllers
 {
@@ -66,27 +66,28 @@ namespace MVC.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Cpf,Nome,Sexo,DataNascimento,Email,Telefone,EnderecoId,Funcional,Senha,PermissaoId,PapelId,DataAdmissao,DataDemissao,Endereco")] Funcionario funcionario)
+        public async Task<IActionResult> Create(Funcionario funcionario)
         {
 
-
-            funcionario.EnderecoId = funcionario.Endereco.Id;
-
-            _context.Add(funcionario.Endereco);
-            await _context.SaveChangesAsync();
-
-
-            var permissao = _context.TipoPermissaos.Find(funcionario.PermissaoId);
-            funcionario.Permissao = permissao;
-
-            var papel = _context.TipoPapels.Find(funcionario.PapelId);
-            funcionario.Papel = papel;
-
-
-      
+  
 
             if (ModelState.IsValid)
             {
+                funcionario.EnderecoId = funcionario.Endereco.Id;
+
+                _context.Add(funcionario.Endereco);
+                await _context.SaveChangesAsync();
+
+
+                var permissao = _context.TipoPermissaos.Find(funcionario.PermissaoId);
+                funcionario.Permissao = permissao;
+
+
+                var papel = _context.TipoPapels.Find(funcionario.PapelId);
+                funcionario.Papel = papel;
+
+
+
                 funcionario.Senha = BCrypt.Net.BCrypt.HashPassword(funcionario.Senha);
                 _context.Add(funcionario);
                 await _context.SaveChangesAsync();
