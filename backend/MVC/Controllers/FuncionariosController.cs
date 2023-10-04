@@ -75,14 +75,16 @@ namespace MVC.Controllers
             _context.Add(funcionario.Endereco);
             await _context.SaveChangesAsync();
 
-            funcionario.EnderecoId = funcionario.Endereco.Id;
-
+            
+            
 
 
 
           
             var permissao = _context.TipoPermissaos.Find(funcionario.PermissaoId);
             funcionario.Permissao = permissao;
+
+            funcionario.EnderecoId = funcionario.Endereco.Id;
 
             var papel = _context.TipoPapels.Find(funcionario.PapelId);
             funcionario.Papel = papel;
