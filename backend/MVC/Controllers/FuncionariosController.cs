@@ -68,8 +68,8 @@ namespace MVC.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("Id,Cpf,Nome,Sexo,DataNascimento,Email,Telefone,EnderecoId,Funcional,Senha,PermissaoId,PapelId,DataAdmissao,DataDemissao,Endereco")] Funcionario funcionario)
         {
-               
 
+            funcionario.EnderecoId = funcionario.Endereco.Id;
 
 
             _context.Add(funcionario.Endereco);
@@ -88,7 +88,7 @@ namespace MVC.Controllers
             funcionario.Papel = papel;
 
 
-            funcionario.EnderecoId = funcionario.Endereco.Id;
+      
 
             if (ModelState.IsValid)
             {
