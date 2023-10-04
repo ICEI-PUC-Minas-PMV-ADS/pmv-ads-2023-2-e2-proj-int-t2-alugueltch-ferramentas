@@ -80,13 +80,12 @@ namespace MVC.Controllers
 
 
 
-            var papel = _context.TipoPapels.Find(funcionario.PapelId);
-            funcionario.Papel = papel;
-
-
+          
             var permissao = _context.TipoPermissaos.Find(funcionario.PermissaoId);
             funcionario.Permissao = permissao;
 
+            var papel = _context.TipoPapels.Find(funcionario.PapelId);
+            funcionario.Papel = papel;
 
             if (ModelState.IsValid)
             {
