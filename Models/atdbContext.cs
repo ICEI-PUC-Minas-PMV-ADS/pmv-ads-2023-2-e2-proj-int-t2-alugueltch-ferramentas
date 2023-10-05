@@ -214,11 +214,12 @@ namespace MVC.Models
                     .HasMaxLength(9)
                     .HasColumnName("funcional");
 
-                entity.Property(e => e.DataAdmissao).HasColumnName("data_admissao");
-
-                entity.Property(e => e.DataDemissao).HasColumnName("data_demissao");
-
-                entity.Property(e => e.DataNascimento).HasColumnName("data_nascimento");
+                entity.Property(e => e.DataAdmissao).HasColumnName("data_admissao")
+                          .HasColumnType("timestamp without time zone");
+                entity.Property(e => e.DataDemissao).HasColumnName("data_demissao")
+                          .HasColumnType("timestamp without time zone");
+                entity.Property(e => e.DataNascimento).HasColumnName("data_nascimento")
+                         .HasColumnType("timestamp without time zone");
 
                 entity.Property(e => e.Email)
                     .HasMaxLength(255)
@@ -424,6 +425,11 @@ namespace MVC.Models
             });
 
             OnModelCreatingPartial(modelBuilder);
+        }
+
+        private void HasColumnType(string v)
+        {
+            throw new NotImplementedException();
         }
 
         partial void OnModelCreatingPartial(ModelBuilder modelBuilder);

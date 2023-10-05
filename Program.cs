@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.EntityFrameworkCore;
 using MVC.Models;
+using System.Globalization;
 
 namespace MVC
 {
@@ -8,6 +9,9 @@ namespace MVC
     {
         public static void Main(string[] args)
         {
+
+
+
             var builder = WebApplication.CreateBuilder(args);
 
             builder.Services.AddRazorPages().AddRazorRuntimeCompilation();

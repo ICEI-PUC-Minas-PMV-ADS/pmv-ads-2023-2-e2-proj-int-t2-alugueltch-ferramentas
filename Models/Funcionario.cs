@@ -26,10 +26,10 @@ namespace MVC.Models
 
 
         [DataType(DataType.Date)]
-        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
+        [DisplayFormat(DataFormatString = "{0:dd-MM-yyyy}", ApplyFormatInEditMode = true)]
         [Required(ErrorMessage = "Insira a data de nascimento")]
        
-        public DateOnly DataNascimento { get; set; }
+        public DateTime DataNascimento { get; set; }
 
         [DataType(DataType.EmailAddress)]
         [Required(ErrorMessage = "Insira o e-mail")]
@@ -44,7 +44,7 @@ namespace MVC.Models
 
         public string Funcional { get; set; } = null!;
 
-        [StringLength(6, MinimumLength = 6, ErrorMessage = "O campo senha deve conter no mínimo 6 caracteres.")]
+        [StringLength(12, MinimumLength = 6, ErrorMessage = "O campo senha deve conter no mínimo 6 caracteres.")]
 
         [DataType(DataType.Password)]
         [Required(ErrorMessage = "Insira o senha")]
@@ -64,11 +64,11 @@ namespace MVC.Models
         [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "{0:MM/dd/yyyy}", ApplyFormatInEditMode = true)]
         [Required(ErrorMessage = "O campo data de adimissão é obrigatório.")]
-        public DateOnly DataAdmissao { get; set; }
+        public DateTime DataAdmissao { get; set; }
 
         [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "{0:MM/dd/yyyy}", ApplyFormatInEditMode = true)]
-        public DateOnly? DataDemissao { get; set; }
+        public DateTime? DataDemissao { get; set; }
 
 
  
@@ -84,5 +84,8 @@ namespace MVC.Models
       
         public virtual ICollection<Ferramentum> Ferramenta { get; set; }
         public virtual ICollection<Processo> Processos { get; set; }
+
+
+
     }
 }

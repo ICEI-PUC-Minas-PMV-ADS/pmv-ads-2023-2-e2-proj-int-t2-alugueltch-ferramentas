@@ -57,6 +57,7 @@ namespace MVC.Controllers
         {
             ViewData["Papel"] = new SelectList(_context.TipoPapels, "Id", "Nome");
             ViewData["Permissao"] = new SelectList(_context.TipoPermissaos, "Id", "Nome");
+
             return View();
 
         }
@@ -73,6 +74,7 @@ namespace MVC.Controllers
 
             if (ModelState.IsValid)
             {
+                // funcionario.DataNascimento = funcionario.DataNascimento.ToUniversalTime();
                 funcionario.EnderecoId = funcionario.Endereco.Id;
 
                 _context.Add(funcionario.Endereco);
@@ -88,7 +90,7 @@ namespace MVC.Controllers
 
 
 
-                funcionario.Senha = BCrypt.Net.BCrypt.HashPassword(funcionario.Senha);
+               // funcionario.Senha = BCrypt.Net.BCrypt.HashPassword(funcionario.Senha);
                 _context.Add(funcionario);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
@@ -261,7 +263,7 @@ namespace MVC.Controllers
                     new Claim(ClaimTypes.Name, funcDB.Nome),
                     new Claim(ClaimTypes.NameIdentifier, funcDB.Funcional),
                     new Claim(ClaimTypes.Role, teste)
-                   
+              
 
                 };
 
