@@ -4,10 +4,10 @@
     ViewData["Title"] = "Index";
 }
 
-<h1>Equipamentos</h1>
+<h1>Lista de Equipamentos</h1>
 
 <p>
-    <a asp-action="Create">Adicionar novo Equiapemento</a>
+    <a class="btn btn-primary" asp-action="Create">Adicionar novo Equiapemento</a>
 </p>
 <table class="table">
     <thead>
@@ -37,6 +37,7 @@
             <th>
                 @Html.DisplayNameFor(model => model.Codigo)
             </th>
+
             <th></th>
         </tr>
     </thead>
