@@ -12,7 +12,7 @@ namespace MVC.Models
         public DateOnly DataOrcamento { get; set; }
         public DateOnly DataValidade { get; set; }
 
-        public virtual Cliente ClienteCpfNavigation { get; set; } = null!;
-        public virtual Ferramentum FerramentaCodigoNavigation { get; set; } = null!;
+        public virtual Cliente? ClienteCpfNavigation { get; set; } = null!;
+        public virtual Ferramentum? FerramentaCodigoNavigation { get; set; } = null!;
     }
 }

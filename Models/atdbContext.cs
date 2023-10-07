@@ -42,6 +42,55 @@ namespace MVC.Models
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
 
+            modelBuilder.Entity<Cliente>(entity =>
+
+            {
+
+                entity.HasKey(e => new { e.Id, e.Cpf })
+                     .HasName("cliente_pkey");
+                     entity.ToTable("cliente");
+                entity.Property(e => e.Id)
+                    .ValueGeneratedOnAdd()
+                    .HasColumnName("id");
+
+                entity.Property(e => e.Cpf)
+                        .HasMaxLength(11)
+                        .HasColumnName("cpf");
+
+                entity.Property(e => e.Nome)
+                        .HasMaxLength(255)
+                        .HasColumnName("nome");
+
+                entity.Property(e => e.Sexo)
+                      .HasColumnType("char")
+                      .HasColumnName("sexo");
+
+                entity.Property(e => e.DataNascimento).HasColumnName("data_nascimento");
+
+                entity.Property(e => e.Email)
+                     .HasMaxLength(255)
+                     .HasColumnName("email");
+
+                entity.Property(e => e.Telefone)
+                     .HasMaxLength(13)
+                     .HasColumnName("telefone");
+
+
+                entity.Property(e => e.EnderecoId)
+                        .HasPrecision(10, 2)
+                        .HasColumnName("endereco_id");
+
+                entity.HasOne(d => d.Endereco)
+                        .WithMany(p => p.Clientes)
+                        .HasPrincipalKey(p => p.Id)
+                        .HasForeignKey(d => d.EnderecoId)
+                        .OnDelete(DeleteBehavior.ClientSetNull)
+                        .HasConstraintName("FK_Cliente_Endereco");
+
+
+
+
+            });
        
 
             modelBuilder.Entity<Emprestimo>(entity =>
