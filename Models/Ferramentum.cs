@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace MVC.Models
 {
@@ -21,7 +22,7 @@ namespace MVC.Models
         public string FuncionarioCadastroFuncional { get; set; } = null!;
         public decimal ValorDiaria { get; set; }
         public decimal ValorCompra { get; set; }
-
+        [Display(Name = "CPF")]
         public virtual Funcionario FuncionarioCadastroFuncionalNavigation { get; set; } = null!;
         public virtual TipoSituacao Situacao { get; set; } = null!;
         public virtual TipoFerramentum Tipo { get; set; } = null!;
