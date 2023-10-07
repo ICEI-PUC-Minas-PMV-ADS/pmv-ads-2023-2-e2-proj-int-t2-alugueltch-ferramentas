@@ -65,7 +65,8 @@ namespace MVC.Models
                       .HasColumnType("char")
                       .HasColumnName("sexo");
 
-                entity.Property(e => e.DataNascimento).HasColumnName("data_nascimento");
+                entity.Property(e => e.DataNascimento).HasColumnName("data_nascimento")
+                       .HasColumnType("timestamp without time zone");
 
                 entity.Property(e => e.Email)
                      .HasMaxLength(255)
@@ -74,6 +75,11 @@ namespace MVC.Models
                 entity.Property(e => e.Telefone)
                      .HasMaxLength(13)
                      .HasColumnName("telefone");
+
+                entity.Property(e => e.tipoPessoa)
+                     .HasMaxLength(255)
+                     .HasColumnName("tipo_pessoa");
+
 
 
                 entity.Property(e => e.EnderecoId)

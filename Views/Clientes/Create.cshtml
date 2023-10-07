@@ -1,20 +1,26 @@
-﻿@model MVC.Models.Funcionario
+﻿@model MVC.Models.Cliente
 
 @{
     ViewData["Title"] = "Create";
 }
 
-<h1>Criar</h1>
+<h1>Create</h1>
 
-<h4>Funcionário</h4>
+<h4>Cliente</h4>
 <hr />
 <div class="row">
-
     <div class="col-md-4">
         <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
 
+            <div class="form-group">
+                <label asp-for="Tpessoa" class="control-label"></label>
+                <select asp-for="Tpessoa" class="form-control" asp-items="Html.GetEnumSelectList<Tpessoa>()"></select>
+                <span asp-validation-for="Tpessoa" class="text-danger"></span>
+            </div>
+
+
+            <div class="form-group">
                 <label asp-for="Cpf" class="control-label"></label>
                 <input asp-for="Cpf" class="form-control" />
                 <span asp-validation-for="Cpf" class="text-danger"></span>
@@ -25,13 +31,13 @@
                 <span asp-validation-for="Nome" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Enum_sexo" class="control-label"></label>
-                <select asp-for="Enum_sexo" class="form-control" asp-items="Html.GetEnumSelectList<Enum_sexo>()"></select>
-                <span asp-validation-for="Enum_sexo" class="text-danger"></span>
+                <label asp-for="Enum_sexo_client" class="control-label"></label>
+                <select asp-for="Enum_sexo_client" class="form-control" asp-items="Html.GetEnumSelectList<Enum_sexo_client>()"></select>
+                <span asp-validation-for="Sexo" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="DataNascimento" class="control-label"></label>
-                <input asp-for="DataNascimento" class="form-control" type="date" />
+                <input asp-for="DataNascimento" class="form-control" />
                 <span asp-validation-for="DataNascimento" class="text-danger"></span>
             </div>
             <div class="form-group">
@@ -43,29 +49,6 @@
                 <label asp-for="Telefone" class="control-label"></label>
                 <input asp-for="Telefone" class="form-control" />
                 <span asp-validation-for="Telefone" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Funcional" class="control-label"></label>
-                <input asp-for="Funcional" class="form-control" />
-                <span asp-validation-for="Funcional" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Senha" class="control-label"></label>
-                <input asp-for="Senha" class="form-control" />
-                <span asp-validation-for="Senha" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="PermissaoId" class="control-label">Tipo de usuário</label>
-                <select asp-for="PermissaoId" class="form-control" asp-items="ViewBag.Permissao"></select>
-            </div>
-            <div class="form-group">
-                <label asp-for="PapelId" class="control-label">Área de atuação</label>
-                <select asp-for="PapelId" class="form-control" asp-items="ViewBag.Papel"></select>
-            </div>
-            <div class="form-group">
-                <label asp-for="DataAdmissao" class="control-label"></label>
-                <input asp-for="DataAdmissao" class="form-control" />
-                <span asp-validation-for="DataAdmissao" class="text-danger"></span>
             </div>
 
             <div class="form-group">
@@ -110,18 +93,15 @@
                 <input asp-for="Endereco.Cep" class="form-control" />
                 <span asp-validation-for="Endereco.Cep" class="text-danger"></span>
             </div>
-
             <div class="form-group">
-                <input type="submit" value="Criar" class="btn btn-primary" />
+                <input type="submit" value="Create" class="btn btn-primary" />
             </div>
         </form>
     </div>
 </div>
 
-
-
 <div>
-    <a asp-action="Index">Voltar</a>
+    <a asp-action="Index">Back to List</a>
 </div>
 
 @section Scripts {

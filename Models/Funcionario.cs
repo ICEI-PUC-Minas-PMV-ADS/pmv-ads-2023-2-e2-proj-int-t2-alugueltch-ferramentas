@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace MVC.Models
 {
@@ -86,6 +87,17 @@ namespace MVC.Models
         public virtual ICollection<Processo> Processos { get; set; }
 
 
+        [NotMapped]
+        public Enum_sexo Enum_sexo { get; set; }
 
     }
+
+    public enum Enum_sexo { 
+
+         Masculino,
+         Feminino
+    
+    }
+
+
 }
