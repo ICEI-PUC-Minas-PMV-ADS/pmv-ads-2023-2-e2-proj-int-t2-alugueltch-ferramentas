@@ -1,0 +1,56 @@
+﻿@import url("variables.css");
+
+*{
+    font-family: var(--default-font);
+}
+
+.btn-custom-primary {
+    font-weight: 600;
+    border: none;
+
+    color: var(--color-black);
+    background-color: var(--color-yellow);
+}
+
+.btn-custom-primary:hover {
+    background-color: var(--color-orange);
+}
+
+.btn-custom-primary:focus,
+.btn-custom-secondary:focus,
+.btn-custom-ghost:focus {
+    outline: none;
+    box-shadow: none;
+    }
+
+.btn-custom-primary,
+.btn-custom-secondary,
+.btn-custom-ghost {
+    border: 1px solid transparent;
+}
+
+.btn-custom-secondary {
+    border: none;
+    font-weight: 600;
+
+    background-color: var(--color-dark-grey);
+    color: var(--color-yellow);
+
+}
+
+.btn-custom-secondary:hover {
+    background-color: var(--color-blue-grey);
+}
+
+.btn-custom-ghost {
+    color: var(--color-black);
+    background-color: transparent;
+    border: 1px solid transparent;
+
+    font-weight: 600;
+    text-decoration: underline;
+}
+
+.btn-custom-ghost:focus {
+    border-color: var(--color-yellow);
+}

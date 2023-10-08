@@ -42,6 +42,7 @@ namespace MVC.Models
         [StringLength(7, MinimumLength = 7, ErrorMessage = "A matrícula deve conter o seguinte formato: FUNC+NNN.")]
         [Required(ErrorMessage = "Insira a matrícula")]
 
+        [Display(Name = "Login")]
         public string Funcional { get; set; } = null!;
 
         [StringLength(12, MinimumLength = 6, ErrorMessage = "O campo senha deve conter no mínimo 6 caracteres.")]
