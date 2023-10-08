@@ -39,19 +39,19 @@
             @Html.DisplayNameFor(model => model.FuncionarioCadastroFuncionalNavigation)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.FuncionarioCadastroFuncionalNavigation.Cpf)
+            @Html.DisplayFor(model => model.FuncionarioCadastroFuncionalNavigation.Nome)
         </dd>
         <dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.Situacao)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Situacao.Id)
+            @Html.DisplayFor(model => model.Situacao.Nome)
         </dd>
         <dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.Tipo)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Tipo.Id)
+            @Html.DisplayFor(model => model.Tipo.Nome)
         </dd>
     </dl>
     
@@ -59,6 +59,7 @@
         <input type="hidden" asp-for="Id" />
         <input type="hidden" asp-for="Codigo" />
         <input type="submit" value="Delete" class="btn btn-danger" /> |
-        <a asp-action="Index">Back to List</a>
+        <a asp-action="Index" class="btn btn-primary">Back to List</a>
+
     </form>
 </div>
