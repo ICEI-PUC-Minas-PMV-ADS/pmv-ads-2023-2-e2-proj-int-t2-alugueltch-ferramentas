@@ -115,9 +115,9 @@ namespace MVC.Controllers
             {
                 return NotFound();
             }
-            ViewData["FuncionarioCadastroFuncional"] = new SelectList(_context.Funcionarios, "Funcional", "Cpf", ferramentum.FuncionarioCadastroFuncional);
-            ViewData["SituacaoId"] = new SelectList(_context.TipoSituacaos, "Id", "Id", ferramentum.SituacaoId);
-            ViewData["TipoId"] = new SelectList(_context.TipoFerramenta, "Id", "Id", ferramentum.TipoId);
+            ViewData["FuncionarioCadastroFuncional"] = new SelectList(_context.Funcionarios, "Funcional", "Nome", ferramentum.FuncionarioCadastroFuncional);
+            ViewData["SituacaoId"] = new SelectList(_context.TipoSituacaos, "Id", "Nome", ferramentum.SituacaoId);
+            ViewData["TipoId"] = new SelectList(_context.TipoFerramenta, "Id", "Nome", ferramentum.TipoId);
             return View(ferramentum);
         }
 
