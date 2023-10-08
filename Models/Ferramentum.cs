@@ -23,9 +23,9 @@ namespace MVC.Models
         public decimal ValorDiaria { get; set; }
         public decimal ValorCompra { get; set; }
         [Display(Name = "Funcional")]
-        public virtual Funcionario FuncionarioCadastroFuncionalNavigation { get; set; } = null!;
-        public virtual TipoSituacao Situacao { get; set; } = null!;
-        public virtual TipoFerramentum Tipo { get; set; } = null!;
+        public virtual Funcionario? FuncionarioCadastroFuncionalNavigation { get; set; } = null!;
+        public virtual TipoSituacao? Situacao { get; set; } = null!;
+        public virtual TipoFerramentum? Tipo { get; set; } = null!;
         public virtual ICollection<Emprestimo> Emprestimos { get; set; }
         public virtual ICollection<Orcamento> Orcamentos { get; set; }
         public virtual ICollection<Processo> Processos { get; set; }

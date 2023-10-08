@@ -49,9 +49,9 @@ namespace MVC.Controllers
         // GET: Ferramentums/Create
         public IActionResult Create()
         {
-            ViewData["FuncionarioCadastroFuncional"] = new SelectList(_context.Funcionarios, "Funcional", "Cpf");
-            ViewData["SituacaoId"] = new SelectList(_context.TipoSituacaos, "Id", "Id");
-            ViewData["TipoId"] = new SelectList(_context.TipoFerramenta, "Id", "Id");
+            ViewData["FuncionarioCadastroFuncional"] = new SelectList(_context.Funcionarios, "Funcional", "Nome");
+            ViewData["SituacaoId"] = new SelectList(_context.TipoSituacaos, "Id", "Nome");
+            ViewData["TipoId"] = new SelectList(_context.TipoFerramenta, "Id", "Nome");
 
 
             return View();
@@ -66,6 +66,7 @@ namespace MVC.Controllers
          [ValidateAntiForgeryToken]
          public async Task<IActionResult> Create( Ferramentum ferramentum)
          {
+
              if (ModelState.IsValid)
              {
 
@@ -78,7 +79,7 @@ namespace MVC.Controllers
             {
                 Console.WriteLine(ModelState);
                 
-                /*
+                
                 foreach (var entry in ModelState)
                 {
                     var key = entry.Key; 
@@ -91,7 +92,7 @@ namespace MVC.Controllers
                                                                
                         Console.WriteLine($"Campo: {key}, Erro: {errorMessage}");
                     }
-                } */
+                } 
             }
             ViewData["FuncionarioCadastroFuncional"] = new SelectList(_context.Funcionarios, "Funcional", "Cpf", ferramentum.FuncionarioCadastroFuncional);
              ViewData["SituacaoId"] = new SelectList(_context.TipoSituacaos, "Id", "Id", ferramentum.SituacaoId);

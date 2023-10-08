@@ -65,6 +65,12 @@
             </div>
 
             <div class="form-group">
+                <label asp-for="Tipo.Nome" class="control-label"></label>
+                <input asp-for="Tipo.Nome" class="form-control" />
+                <span asp-validation-for="Tipo.Nome" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-primary" />
             </div>
         </form>
