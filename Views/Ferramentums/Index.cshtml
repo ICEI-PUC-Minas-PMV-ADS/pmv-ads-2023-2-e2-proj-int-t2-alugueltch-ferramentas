@@ -18,12 +18,12 @@
             <th>
                 @Html.DisplayNameFor(model => model.Descricao)
             </th>
+
             <th>
-                @Html.DisplayNameFor(model => model.ValorDiaria)
+                @Html.DisplayNameFor(model => model.Codigo)
             </th>
-            <th>
-                @Html.DisplayNameFor(model => model.ValorCompra)
-            </th>
+
+           
             <th>
                 @Html.DisplayNameFor(model => model.FuncionarioCadastroFuncionalNavigation)
             </th>
@@ -35,8 +35,13 @@
             </th>
 
             <th>
-                @Html.DisplayNameFor(model => model.Codigo)
+                @Html.DisplayNameFor(model => model.ValorDiaria)
             </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ValorCompra)
+            </th>
+
+            
 
             <th></th>
         </tr>
@@ -50,12 +55,11 @@
             <td>
                 @Html.DisplayFor(modelItem => item.Descricao)
             </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ValorDiaria)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ValorCompra)
-            </td>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.Codigo)
+                </td>
+           
             <td>
                 @Html.DisplayFor(modelItem => item.FuncionarioCadastroFuncionalNavigation.Cpf)
             </td>
@@ -65,9 +69,15 @@
             <td>
                 @Html.DisplayFor(modelItem => item.Tipo.Id)
             </td>
+
                 <td>
-                    @Html.DisplayFor(modelItem => item.Codigo)
+                    @Html.DisplayFor(modelItem => item.ValorDiaria)
                 </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ValorCompra)
+                </td>
+
+                
             <td>
                     @Html.ActionLink("Edit", "Edit", new {  id=item.Id, item.Codigo/* id=item.PrimaryKey */}) |
                     @Html.ActionLink("Details", "Details", new { id=item.Id, item.Codigo/* id=item.PrimaryKey */ }) |

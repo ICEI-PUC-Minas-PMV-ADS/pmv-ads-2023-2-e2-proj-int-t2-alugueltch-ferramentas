@@ -52,27 +52,53 @@ namespace MVC.Controllers
             ViewData["FuncionarioCadastroFuncional"] = new SelectList(_context.Funcionarios, "Funcional", "Cpf");
             ViewData["SituacaoId"] = new SelectList(_context.TipoSituacaos, "Id", "Id");
             ViewData["TipoId"] = new SelectList(_context.TipoFerramenta, "Id", "Id");
+
+
             return View();
         }
+        
+
 
         // POST: Ferramentums/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Codigo,TipoId,Marca,Descricao,SituacaoId,FuncionarioCadastroFuncional,ValorDiaria,ValorCompra")] Ferramentum ferramentum)
-        {
-            if (ModelState.IsValid)
+         [HttpPost]
+         [ValidateAntiForgeryToken]
+         public async Task<IActionResult> Create( Ferramentum ferramentum)
+         {
+             if (ModelState.IsValid)
+             {
+
+                 _context.Add(ferramentum);
+                 await _context.SaveChangesAsync();
+                 return RedirectToAction(nameof(Index));
+             }
+            else
+
             {
-                _context.Add(ferramentum);
-                await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
+                Console.WriteLine(ModelState);
+                
+                /*
+                foreach (var entry in ModelState)
+                {
+                    var key = entry.Key; 
+                    var errors = entry.Value.Errors; 
+
+                    
+                    foreach (var error in errors)
+                    {
+                        var errorMessage = error.ErrorMessage; 
+                                                               
+                        Console.WriteLine($"Campo: {key}, Erro: {errorMessage}");
+                    }
+                } */
             }
             ViewData["FuncionarioCadastroFuncional"] = new SelectList(_context.Funcionarios, "Funcional", "Cpf", ferramentum.FuncionarioCadastroFuncional);
-            ViewData["SituacaoId"] = new SelectList(_context.TipoSituacaos, "Id", "Id", ferramentum.SituacaoId);
-            ViewData["TipoId"] = new SelectList(_context.TipoFerramenta, "Id", "Id", ferramentum.TipoId);
-            return View(ferramentum);
-        }
+             ViewData["SituacaoId"] = new SelectList(_context.TipoSituacaos, "Id", "Id", ferramentum.SituacaoId);
+             ViewData["TipoId"] = new SelectList(_context.TipoFerramenta, "Id", "Id", ferramentum.TipoId);
+             return View(ferramentum);
+         } 
+
 
         // GET: Ferramentums/Edit/5
         public async Task<IActionResult> Edit(long? id, string codigo)
