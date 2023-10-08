@@ -1,5 +1,6 @@
 ﻿@import url("variables.css");
 
+
 *{
     font-family: var(--default-font);
 }
@@ -53,4 +54,12 @@
 
 .btn-custom-ghost:focus {
     border-color: var(--color-yellow);
+}
+
+.bg-custom-yellow {
+    background-color: var(--color-yellow);
+}
+
+.bg-custom-dark-grey {
+    background-color: var(--color-dark-grey);
 }
