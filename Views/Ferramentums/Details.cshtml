@@ -58,9 +58,8 @@
 
 <div>
 
-    @*@Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |*@
+   
+        @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+        <a asp-action="Index">Back to List</a>
     
-    <a class="btn btn-success asp-action="Index">Editar</a> |
-
-    <a class="btn btn-primary asp-action="Index">Voltar</a>
 </div>
