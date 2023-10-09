@@ -48,7 +48,7 @@ namespace MVC.Controllers
         // GET: Orcamentoes/Create
         public IActionResult Create()
         {
-            ViewData["ClienteCpf"] = new SelectList(_context.Clientes, "Cpf", "Cpf");
+            ViewData["ClienteCpf"] = new SelectList(_context.Clientes, "Cpf", "Nome");
             ViewData["FerramentaCodigo"] = new SelectList(_context.Ferramenta, "Codigo", "Codigo");
             return View();
         }

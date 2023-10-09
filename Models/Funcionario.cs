@@ -22,12 +22,10 @@ namespace MVC.Models
         [Required(ErrorMessage = "Insira o nome")]
         public string Nome { get; set; } = null!;
 
-        [Required(ErrorMessage = "Insira o sexo")]
-        public char Sexo { get; set; }
+        public string? Sexo { get; set; } = null!;
 
 
         [DataType(DataType.Date)]
-        [DisplayFormat(DataFormatString = "{0:dd-MM-yyyy}", ApplyFormatInEditMode = true)]
         [Required(ErrorMessage = "Insira a data de nascimento")]
        
         public DateTime DataNascimento { get; set; }
@@ -36,6 +34,8 @@ namespace MVC.Models
         [Required(ErrorMessage = "Insira o e-mail")]
         public string Email { get; set; } = null!;
 
+
+   
         [StringLength(11, MinimumLength = 11, ErrorMessage = "O telefone deve conter 11 dígitos.")]
         [Required(ErrorMessage = "Insira o telefone")]
         public string Telefone { get; set; } = null!;

@@ -25,6 +25,8 @@ namespace MVC.Models
         [Required(ErrorMessage = "Insira a data de nascimento")]
         public DateTime DataNascimento { get; set; }
         public string Email { get; set; } = null!;
+
+        
         public string Telefone { get; set; } = null!;
         public long EnderecoId { get; set; }
 

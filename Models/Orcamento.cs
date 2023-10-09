@@ -1,11 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace MVC.Models
 {
     public partial class Orcamento
     {
         public long Id { get; set; }
+
+        [Display(Name = "Cliente")]
         public string ClienteCpf { get; set; } = null!;
         public string FerramentaCodigo { get; set; } = null!;
         public decimal ValorTotal { get; set; }

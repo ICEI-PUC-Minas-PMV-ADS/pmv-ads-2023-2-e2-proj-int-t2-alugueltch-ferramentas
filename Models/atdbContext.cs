@@ -295,7 +295,7 @@ namespace MVC.Models
                     .HasColumnName("senha");
 
                 entity.Property(e => e.Sexo)
-                    .HasColumnType("char")
+                    .HasMaxLength(255)
                     .HasColumnName("sexo");
 
                 entity.Property(e => e.Telefone)
