@@ -1,0 +1,29 @@
+﻿
+
+.main {
+    width: 100%;
+    min-height: 100vh;
+
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-image: url("../assets/img/loginbackground.jpg");
+}
+
+.login-container {
+    background-color: var(--color-light-grey);
+}
+
+.max-width-300 {
+    max-width: 300px;
+    width: 100%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@media (max-width: 768px) {
+    .responsive-container {
+        justify-content: center;
+    }
+}

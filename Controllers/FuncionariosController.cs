@@ -59,7 +59,7 @@ namespace MVC.Controllers
             ViewData["Permissao"] = new SelectList(_context.TipoPermissaos, "Id", "Nome");
 
             return View();
-
+             
         }
 
         // POST: Funcionarios/Create
