@@ -81,6 +81,10 @@ namespace MVC.Controllers
                 await _context.SaveChangesAsync();
 
 
+                string sexo = (funcionario.Enum_sexo.ToString() == "Masculino") ? "Masculino" : "Feminino";
+
+                funcionario.Sexo = sexo;
+
                 var permissao = _context.TipoPermissaos.Find(funcionario.PermissaoId);
                 funcionario.Permissao = permissao;
 
@@ -154,7 +158,7 @@ namespace MVC.Controllers
             {
                 try
                 {
-                    funcionario.Senha = BCrypt.Net.BCrypt.HashPassword(funcionario.Senha);
+                   // funcionario.Senha = BCrypt.Net.BCrypt.HashPassword(funcionario.Senha);
                     _context.Update(funcionario);
                     await _context.SaveChangesAsync();
                 }
@@ -249,14 +253,10 @@ namespace MVC.Controllers
             if (funcionario.Senha == funcDB.Senha)
             {
 
-                var teste = "";
 
-                if (funcDB.PermissaoId == 1) teste = "Admin";
-                if (funcDB.PermissaoId == 2) teste = "User";
-
-                
-
-               
+                string teste =  (funcDB.PermissaoId == 1) ? "Admin": "User";
+    
+    
 
                 var claims = new List<Claim>
                 {
