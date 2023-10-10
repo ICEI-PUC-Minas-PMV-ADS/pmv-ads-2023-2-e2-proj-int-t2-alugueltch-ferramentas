@@ -66,8 +66,6 @@
 
 </header>*@
 
-
-
 <div class="container-fluid">
     <div class="row flex-nowrap">
         <div class="col-auto col-md-3 col-xl-2 px-sm-2 px-0 bg-custom-dark-grey">
@@ -85,27 +83,27 @@
                         </a>
                         <ul class="collapse nav flex-column ms-1" id="submenu1" data-bs-parent="#menu">
                             <li class="w-100">
-                                <a href="#" class="nav-link px-0"> <span class="d-none d-sm-inline">Novo Cliente</span></a>
+                                <a href="#" class="nav-link px-0 bi-person-add"> <span class="d-none d-sm-inline">Novo Cliente</span></a>
                             </li>
                             <li>
-                                <a href="#" class="nav-link px-0"> <span class="d-none d-sm-inline">Ver Clientes</span></a>
+                                <a href="#" class="nav-link px-0 bi-person-vcard-fill"> <span class="d-none d-sm-inline">Ver Clientes</span></a>
                             </li>
                         </ul>
                     </li>
                     <li>
                         <a href="#submenu2" data-bs-toggle="collapse" class="nav-link px-0 align-middle">
-                            <i class="fs-4 bi-file-earmark-plus"></i> <span class="ms-1 d-none d-sm-inline">Alugar</span>
+                            <i class="fs-4 bi-basket3-fill"></i> <span class="ms-1 d-none d-sm-inline">Alugar</span>
                         </a>
                         <ul class="collapse nav flex-column ms-1" id="submenu2" data-bs-parent="#menu">
                             <li class="w-100">
-                                <a href="#" class="nav-link px-0"> <span class="d-none d-sm-inline">Novo Aluguel/Orçamento</span></a>
+                                <a href="#" class="nav-link px-0 bi-file-earmark-plus"> <span class="d-none d-sm-inline">Novo Orçamento</span></a>
                             </li>
                             <li>
-                                <a href="#" class="nav-link px-0"> <span class="d-none d-sm-inline">Ver Aluguéis</span></a>
+                                <a href="#" class="nav-link px-0 bi-file-text"> <span class="d-none d-sm-inline">Ver Orçamentos</span></a>
                             </li>
                             <li>
-                                <a href="#" class="nav-link px-0"> <span class="d-none d-sm-inline">Ver Orçamentos</span></a>
-                            </li>
+                                <a href="#" class="nav-link px-0 bi-bag-check"> <span class="d-none d-sm-inline">Ver Aluguéis</span></a>
+                            </li>                            
                         </ul>
                     </li>
                     <li>
@@ -114,13 +112,13 @@
                         </a>
                         <ul class="collapse nav flex-column ms-1" id="submenu3" data-bs-parent="#menu">
                             <li class="w-100">
-                                <a href="#" class="nav-link px-0"> <span class="d-none d-sm-inline">Faturamento Mensal</span></a>
+                                <a href="#" class="nav-link px-0 bi-currency-dollar"> <span class="d-none d-sm-inline">Faturamento Mensal</span></a>
                             </li>
                             <li>
-                                <a href="#" class="nav-link px-0"> <span class="d-none d-sm-inline">Histórico de Clientes</span></a>
+                                <a href="#" class="nav-link px-0 bi-person-video2"> <span class="d-none d-sm-inline">Histórico de Clientes</span></a>
                             </li>
                             <li>
-                                <a href="#" class="nav-link px-0"> <span class="d-none d-sm-inline">Controle de Estoque</span></a>
+                                <a href="#" class="nav-link px-0 bi-basket"> <span class="d-none d-sm-inline">Controle de Estoque</span></a>
                             </li>
                         </ul>
                     </li>
@@ -130,10 +128,10 @@
                         </a>
                         <ul class="collapse nav flex-column ms-1" id="submenu4" data-bs-parent="#menu">
                             <li class="w-100">
-                                <a href="#" class="nav-link px-0"> <span class="d-none d-sm-inline">Novo Equipamento</span></a>
+                                <a href="#" class="nav-link px-0 bi-wrench-adjustable-circle"> <span class="d-none d-sm-inline">Novo Equipamento</span></a>
                             </li>
                             <li>
-                                <a href="#" class="nav-link px-0"> <span class="d-none d-sm-inline">Lista de Equipamentos</span></a>
+                                <a href="#" class="nav-link px-0 bi-gear"> <span class="d-none d-sm-inline">Lista de Equipamentos</span></a>
                             </li>
                         </ul>
                     </li>
@@ -151,8 +149,8 @@
                         {
                             @if (User.IsInRole("Admin"))
                             {
-                                <li class="dropdown-item">
-                                    <a class="nav-link text-dark" asp-area="" asp-controller="Funcionarios" asp-action="Index">Gerenciar Funcionários</a>
+                                <li class="dropdown-item sidebar-ul">
+                                    <a class="nav-link" asp-area="" asp-controller="Funcionarios" asp-action="Index">Gerenciar Funcionários</a>
                                 </li>
 
                                 <li>
@@ -164,8 +162,8 @@
                         <li>
                             @if (User.Identity.IsAuthenticated)
                             {
-                            <li class="nav-item">
-                                 <a class="nav-link text-dark" asp-area="" asp-controller="Funcionarios" asp-action="Logout">Sair</a>
+                            <li class="nav-item sidebar-ul">
+                                 <a class="nav-link" asp-area="" asp-controller="Funcionarios" asp-action="Logout">Sair</a>
                             </li>
                             }
 
@@ -176,7 +174,6 @@
             </div>
         </div>
         <div class="col py-3">
-            Content area...
-        </div>
+           TESTE TESTE
     </div>
 </div>
