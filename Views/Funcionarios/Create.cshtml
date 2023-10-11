@@ -112,10 +112,9 @@
                 </div>
             </div>
         </div>
-    </div>
-</div>
-        <div class="col-6 py-3 container-fluid">
-            <div class="table-bg">
+
+        <div class="col-6 py-3 container-fluid" >
+            <div class="table-bg" style="max-height: 100vh; overflow:auto;">
                 <h3>Cadastrar Novo Funcionário</h3>
                 <div>
                     <form asp-action="Create">
@@ -226,6 +225,8 @@
                 </div>
             </div>
         </div>
+    </div>
+</div>
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
 }
