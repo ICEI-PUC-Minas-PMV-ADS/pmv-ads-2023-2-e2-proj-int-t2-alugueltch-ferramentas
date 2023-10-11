@@ -1,0 +1,22 @@
+﻿a {
+    text-decoration: none;
+    color: inherit;
+}
+
+a:hover{
+    color:inherit;
+}
+
+.bg-yellow {
+    background-color: var(--color-yellow);
+}
+
+.table-bg {
+    display: block;
+    background-color: var(--color-dark-gray-variation);
+    padding: 20px 40px
+}
+
+.table-actions {
+    color: var(--color-dark-grey);
+}
