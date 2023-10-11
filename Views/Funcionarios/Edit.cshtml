@@ -3,15 +3,121 @@
 @{
     ViewData["Title"] = "Edit";
 }
+<link rel="stylesheet" href="~/css/home.css" asp-append-version="true" />
+<link rel="stylesheet" href="~/css/funcionarios.css" asp-append-version="true" />
 
-<h1>Edit</h1>
+<div class="container-fluid position-fixed">
+    <div class="row flex-nowrap">
+        <div class="col-auto col-md-3 col-xl-2 px-sm-2 px-0 bg-custom-dark-grey">
+            <div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white min-vh-100">
+                <div class="bg-custom-dark-grey">
+                    <a href="/" class="d-flex align-items-center pb-3 mb-md-0 me-md-auto text-white text-decoration-none">
+                        <img src="~/assets/img/alugueltechlogo2.svg" class="fs-5 d-none d-sm-inline max-width-200"></img>
+                    </a>
+                </div>
 
-<h4>Funcionario</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
+                <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start sidebar-ul" id="menu">
+                    <li class="nav-item">
+                        <a href="#submenu1" data-bs-toggle="collapse" class="nav-link px-0 align-middle">
+                            <i class="fs-4 bi-person-circle"></i> <span class="ms-1 d-none d-sm-inline">Clientes</span>
+                        </a>
+                        <ul class="collapse nav flex-column ms-1" id="submenu1" data-bs-parent="#menu">
+                            <li class="w-100">
+                                <a href="#" class="nav-link px-0 bi-person-add"> <span class="d-none d-sm-inline">Novo Cliente</span></a>
+                            </li>
+                            <li>
+                                <a href="#" class="nav-link px-0 bi-person-vcard-fill"> <span class="d-none d-sm-inline">Ver Clientes</span></a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#submenu2" data-bs-toggle="collapse" class="nav-link px-0 align-middle">
+                            <i class="fs-4 bi-basket3-fill"></i> <span class="ms-1 d-none d-sm-inline">Alugar</span>
+                        </a>
+                        <ul class="collapse nav flex-column ms-1" id="submenu2" data-bs-parent="#menu">
+                            <li class="w-100">
+                                <a href="#" class="nav-link px-0 bi-file-earmark-plus"> <span class="d-none d-sm-inline">Novo Orçamento</span></a>
+                            </li>
+                            <li>
+                                <a href="#" class="nav-link px-0 bi-file-text"> <span class="d-none d-sm-inline">Ver Orçamentos</span></a>
+                            </li>
+                            <li>
+                                <a href="#" class="nav-link px-0 bi-bag-check"> <span class="d-none d-sm-inline">Ver Aluguéis</span></a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#submenu3" data-bs-toggle="collapse" class="nav-link px-0 align-middle ">
+                            <i class="fs-4 bi-table"></i> <span class="ms-1 d-none d-sm-inline">Relatórios</span>
+                        </a>
+                        <ul class="collapse nav flex-column ms-1" id="submenu3" data-bs-parent="#menu">
+                            <li class="w-100">
+                                <a href="#" class="nav-link px-0 bi-currency-dollar"> <span class="d-none d-sm-inline">Faturamento Mensal</span></a>
+                            </li>
+                            <li>
+                                <a href="#" class="nav-link px-0 bi-person-video2"> <span class="d-none d-sm-inline">Histórico de Clientes</span></a>
+                            </li>
+                            <li>
+                                <a href="#" class="nav-link px-0 bi-basket"> <span class="d-none d-sm-inline">Controle de Estoque</span></a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#submenu4" data-bs-toggle="collapse" class="nav-link px-0 align-middle ">
+                            <i class="fs-4 bi-tools"></i> <span class="ms-1 d-none d-sm-inline">Equipamentos</span>
+                        </a>
+                        <ul class="collapse nav flex-column ms-1" id="submenu4" data-bs-parent="#menu">
+                            <li class="w-100">
+                                <a href="#" class="nav-link px-0 bi-wrench-adjustable-circle"> <span class="d-none d-sm-inline">Novo Equipamento</span></a>
+                            </li>
+                            <li>
+                                <a href="#" class="nav-link px-0 bi-gear"> <span class="d-none d-sm-inline">Lista de Equipamentos</span></a>
+                            </li>
+                        </ul>
+                    </li>
 
-        <form asp-action="Edit">
+                </ul>
+                <hr>
+                <div class="dropdown pb-4">
+                    <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
+                        <img src="~/assets/icons/person-fill.svg" alt="hugenerd" width="20" height="20" class="rounded-circle">
+                        <span class="d-none d-sm-inline mx-1"> @User.Identity.Name </span>
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-dark text-small shadow">
+
+                        @if (User.Identity.IsAuthenticated)
+                        {
+                            @if (User.IsInRole("Admin"))
+                            {
+                                <li class="dropdown-item sidebar-ul">
+                                    <a class="nav-link" asp-area="" asp-controller="Funcionarios" asp-action="Index">Gerenciar Funcionários</a>
+                                </li>
+
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                            }
+
+                        }
+                        <li>
+                            @if (User.Identity.IsAuthenticated)
+                            {
+                            <li class="nav-item sidebar-ul">
+                                <a class="nav-link" asp-area="" asp-controller="Funcionarios" asp-action="Logout">Sair</a>
+                            </li>
+                            }
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="col-6 py-3 container-fluid">
+            <div class="table-bg">
+
+        <form class="d-flex flex-column gap-2" asp-action="Edit">
+            <h3>Editar Funcionário</h3>
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" asp-for="Id" />
             <input type="hidden" asp-for="Cpf" />
@@ -41,7 +147,7 @@
                 <span asp-validation-for="Telefone" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="EnderecoId" class="control-label"></label>
+                <label asp-for="EnderecoId" class="control-label">Endereço</label>
                 <select asp-for="EnderecoId" class="form-control" asp-items="ViewBag.EnderecoId"></select>
                 <span asp-validation-for="EnderecoId" class="text-danger"></span>
             </div>
@@ -52,12 +158,12 @@
                 <span asp-validation-for="Senha" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="PermissaoId" class="control-label"></label>
+                <label asp-for="PermissaoId" class="control-label">Permissão</label>
                 <select asp-for="PermissaoId" class="form-control" asp-items="ViewBag.PermissaoId"></select>
                 <span asp-validation-for="PermissaoId" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <label asp-for="PapelId" class="control-label"></label>
+            <div class="form-group d-none">
+                <label asp-for="PapelId" class="control-label">Papel</label>
                 <select asp-for="PapelId" class="form-control" asp-items="ViewBag.PapelId"></select>
                 <span asp-validation-for="PapelId" class="text-danger"></span>
             </div>
@@ -72,14 +178,11 @@
                 <span asp-validation-for="DataDemissao" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-primary" />
+                <a class="btn btn-custom-secondary" asp-action="Index">Voltar</a>
+                <input type="submit" value="Salvar" class="btn btn-custom-primary" />
             </div>
         </form>
     </div>
-</div>
-
-<div>
-    <a asp-action="Index">Back to List</a>
 </div>
 
 @section Scripts {
