@@ -65,12 +65,12 @@ const filterEmployeesByName = async (searchTherm) => {
 
     console.log(employees)
 
-    //return employees.filter(({ Nome }) => {
-    //    const employeeName = Nome.toLowerCase();
-    //    const lowerCaseSearchTherm = searchTherm.toLowerCase()
+    return employees.filter(({ Nome }) => {
+        const employeeName = Nome.toLowerCase();
+        const lowerCaseSearchTherm = searchTherm.toLowerCase()
 
-    //    return employeeName.includes(lowerCaseSearchTherm)
-    //})
+        return employeeName.includes(lowerCaseSearchTherm)
+    })
 }
 
 const handleInputChanges = debounce(async (event) => {
