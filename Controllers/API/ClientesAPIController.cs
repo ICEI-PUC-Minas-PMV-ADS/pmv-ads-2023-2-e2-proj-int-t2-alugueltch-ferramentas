@@ -24,10 +24,19 @@ namespace MVC.Controllers.API
         }
 
         [HttpGet("{nome}")]
-        public async Task<ActionResult<Cliente>> BuscarClientePorNome(string nome)
+        public async Task<ActionResult<Endereco>> BuscarClientePorNome(string nome)
         {
 
-            return Ok(await _context.Clientes.FirstOrDefaultAsync(x => x.Descricao == nome)); 
+            Cliente client = await _context.Clientes.FirstOrDefaultAsync(x => x.Nome == nome);
+
+            List<Cliente> client1 = await _context.Clientes.Include(a => a.Endereco).ToList();
+
+
+            Endereco endereco = await _context.Enderecos.FirstOrDefaultAsync(x => x.Id == client.EnderecoId);
+
+
+
+            return Ok(endereco); 
         }
 
     }

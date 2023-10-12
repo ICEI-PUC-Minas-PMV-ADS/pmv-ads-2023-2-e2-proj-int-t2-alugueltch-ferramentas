@@ -57,7 +57,7 @@ namespace MVC.Models
                         .HasMaxLength(11)
                         .HasColumnName("cpf");
 
-                entity.Property(e => e.Descricao)
+                entity.Property(e => e.Nome)
                         .HasMaxLength(255)
                         .HasColumnName("nome");
 
