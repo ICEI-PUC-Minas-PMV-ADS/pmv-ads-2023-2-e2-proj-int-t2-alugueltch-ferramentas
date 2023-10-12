@@ -10,7 +10,9 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using MVC.Models;
-
+using System.Text.Json;
+using System.Text.Json.Serialization;
+using Microsoft.DotNet.Scaffolding.Shared.ProjectModel;
 
 namespace MVC.Controllers
 {
@@ -28,8 +30,23 @@ namespace MVC.Controllers
         public async Task<IActionResult> Index()
         {
             var atdbContext = _context.Funcionarios.Include(f => f.Endereco).Include(f => f.Papel).Include(f => f.Permissao);
+
             return View(await atdbContext.ToListAsync());
         }
+
+        public async Task<IActionResult> GetAllEmployees()
+        {
+            var employees = await _context.Funcionarios.Include(f => f.Endereco).Include(f => f.Papel).Include(f => f.Permissao).ToListAsync();
+            var jsonOptions = new JsonSerializerOptions
+            {
+                ReferenceHandler = ReferenceHandler.Preserve
+            };
+
+            return Json(employees, jsonOptions);
+        }
+
+
+
 
         // GET: Funcionarios/Details/5
         public async Task<IActionResult> Details(long? id)
