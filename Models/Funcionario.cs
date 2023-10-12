@@ -17,6 +17,7 @@ namespace MVC.Models
 
         [Required(ErrorMessage = "Insira o cpf")]
         [StringLength(11, MinimumLength = 11, ErrorMessage = "O cpf deve conter 11 dígitos.")]
+        [Display(Name = "CPF")]
         public string Cpf { get; set; } = null!;
 
         [Required(ErrorMessage = "Insira o nome")]
@@ -24,8 +25,9 @@ namespace MVC.Models
 
         public string? Sexo { get; set; } = null!;
 
-
+        [Display(Name = "Data de Nascimento")]
         [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
         [Required(ErrorMessage = "Insira a data de nascimento")]
        
         public DateTime DataNascimento { get; set; }
@@ -62,18 +64,19 @@ namespace MVC.Models
 
 
 
-
+        [Display(Name = "Data de Admissão")]
         [DataType(DataType.Date)]
-        [DisplayFormat(DataFormatString = "{0:MM/dd/yyyy}", ApplyFormatInEditMode = true)]
+        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
         [Required(ErrorMessage = "O campo data de adimissão é obrigatório.")]
         public DateTime DataAdmissao { get; set; }
 
+        [Display(Name = "Data de Demissão")]
         [DataType(DataType.Date)]
-        [DisplayFormat(DataFormatString = "{0:MM/dd/yyyy}", ApplyFormatInEditMode = true)]
+        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
         public DateTime? DataDemissao { get; set; }
 
 
- 
+        [Display(Name = "Endereço")]
         public virtual Endereco Endereco { get; set; }
 
         

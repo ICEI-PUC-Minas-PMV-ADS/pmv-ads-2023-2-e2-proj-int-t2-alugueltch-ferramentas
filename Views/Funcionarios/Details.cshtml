@@ -110,8 +110,6 @@
                 </div>
             </div>
         </div>
-    </div>
-</div>
 
         <div class="col-6 container-fluid py-3 container-fluid">
             <div class="col py-3 table-bg">
@@ -129,9 +127,8 @@
                     <dd class = "col-sm-10">
                         @Html.DisplayFor(model => model.Sexo)
                     </dd>
-                    <dt class = "col-sm-2">
-                        @Html.DisplayFor(model => model.DataNascimento)
-            
+                    <dt class = "col-sm-10">
+                        @Html.DisplayNameFor(model => model.DataNascimento)            
                     </dt>
                     <dd class = "col-sm-10">
                         @Html.DisplayFor(model => model.DataNascimento)
@@ -154,13 +151,13 @@
                     <dd class = "col-sm-10">
                         @Html.DisplayFor(model => model.Senha)
                     </dd>*@
-                    <dt class = "col-sm-2">
+                    <dt class = "col-sm-10">
                         @Html.DisplayNameFor(model => model.DataAdmissao)
                     </dt>
                     <dd class = "col-sm-10">
                         @Html.DisplayFor(model => model.DataAdmissao)
                     </dd>
-                    <dt class = "col-sm-2">
+                    <dt class = "col-sm-10">
                         @Html.DisplayNameFor(model => model.DataDemissao)
                     </dt>
                     <dd class = "col-sm-10">
@@ -170,8 +167,9 @@
                         @Html.DisplayNameFor(model => model.Endereco)
                     </dt>
                     <dd class = "col-sm-10">
-                        @Html.DisplayFor(model => model.Endereco.Id)
+                        @Html.DisplayFor(model => model.Endereco.Logradouro), @Html.DisplayFor(model => model.Endereco.Numero), @Html.DisplayFor(model => model.Endereco.Bairro), @Html.DisplayFor(model => model.Endereco.Cidade) - @Html.DisplayFor(model => model.Endereco.Estado)
                     </dd>
+
             @*        <dt class = "col-sm-2">
                         @Html.DisplayNameFor(model => model.Papel)
                     </dt>
@@ -191,3 +189,5 @@
                 @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
             </div>*@
         </div>
+    </div>
+</div>

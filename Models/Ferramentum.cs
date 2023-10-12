@@ -38,6 +38,9 @@ namespace MVC.Models
 
         [Display(Name = "Responsável")]
         public virtual Funcionario? FuncionarioCadastroFuncionalNavigation { get; set; } = null!;
+        [Display(Name = "Responsável")]
+
+       
         public virtual TipoSituacao? Situacao { get; set; } = null!;
         public virtual TipoFerramentum? Tipo { get; set; } = null!;
         public virtual ICollection<Emprestimo> Emprestimos { get; set; }

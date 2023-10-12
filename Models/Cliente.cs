@@ -17,7 +17,7 @@ namespace MVC.Models
         public long Id { get; set; }
 
         public string Cpf { get; set; } = null!;
-        public string Nome { get; set; } = null!;
+        public string Descricao { get; set; } = null!;
         public char Sexo { get; set; }
 
         [DataType(DataType.Date)]
