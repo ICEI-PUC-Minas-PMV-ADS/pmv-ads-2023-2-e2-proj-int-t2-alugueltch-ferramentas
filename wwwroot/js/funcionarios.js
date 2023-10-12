@@ -1,56 +1,37 @@
-﻿import { debounce } from "../js/utils.js"
+﻿import { debounce, formatPhoneNumber } from "../js/utils.js"
+
+
+const createActionLink = (title='', iconClassesArray = [], baseURL = '', employee) => {
+    const url = `${baseURL}?id=${employee.Id}&cpf=${employee.Cpf}&funcional=${employee.Funcional}`;
+    const iconTag = `<i class="${iconClassesArray.join(' ')}" title="${title}"></i>`;
+
+    return `<a href="${url}" class="action-link">${iconTag}</a>`;
+}
 
 const createTable = (filteredEmployees) => {
     const tableBody = document.querySelector('#employee-table-body');
-
     tableBody.innerHTML = '';
 
-    filteredEmployees.forEach((employee) => {
-        console.log(employee)
-
+    const rows = filteredEmployees.map((employee) => {
         const row = document.createElement('tr');
+        const { Nome, Email, Telefone, Permissao } = employee;
 
-        const nameCell = document.createElement('td');
-        nameCell.textContent = employee.Nome;
+        row.innerHTML = `
+            <td>${Nome}</td>
+            <td>${Email}</td>
+            <td>${formatPhoneNumber(Telefone)}</td>
+            <td>${Permissao.Nome}</td>
+            <td class="table-actions d-flex gap-2">
+                ${createActionLink('Editar',['bi', 'bi-pencil-square'], '/Funcionarios/Edit', employee)}
+                ${createActionLink('Detalhes',['bi', 'bi-info-circle'], '/Funcionarios/Details', employee)}
+                ${createActionLink('Excluir',['bi', 'bi-trash'], '/Funcionarios/Delete', employee)}
+            </td>
+        `;
 
-        const emailCell = document.createElement('td');
-        emailCell.textContent = employee.Email;
-
-        const telefoneCell = document.createElement('td');
-        telefoneCell.textContent = employee.Telefone;
-
-        const permissaoCell = document.createElement('td');
-        permissaoCell.textContent = employee.Permissao.Nome;
-
-        const actionsCell = document.createElement('td');
-
-        const editLink = document.createElement('a');
-        editLink.textContent = 'Editar';
-        editLink.href = `/Funcionarios/Edit?id=${employee.Id}&cpf=${employee.Cpf}&funcional=${employee.Funcional}`;
-        editLink.classList.add('action-link');
-
-        const detailsLink = document.createElement('a');
-        detailsLink.textContent = 'Detalhes';
-        detailsLink.href = `/Funcionarios/Details?id=${employee.Id}&cpf=${employee.Cpf}&funcional=${employee.Funcional}`;
-        detailsLink.classList.add('action-link');
-
-        const deleteLink = document.createElement('a');
-        deleteLink.textContent = 'Deletar';
-        deleteLink.href = `/Funcionarios/Delete?id=${employee.Id}&cpf=${employee.Cpf}&funcional=${employee.Funcional}`;
-        deleteLink.classList.add('action-link');
-
-        actionsCell.appendChild(editLink);
-        actionsCell.appendChild(detailsLink);
-        actionsCell.appendChild(deleteLink);
-
-        row.appendChild(nameCell);
-        row.appendChild(emailCell);
-        row.appendChild(telefoneCell);
-        row.appendChild(permissaoCell);
-        row.appendChild(actionsCell);
-
-        tableBody.appendChild(row);
+        return row;
     });
+
+    tableBody.append(...rows);
 };
 
 const getEmployees = async () => {
@@ -61,9 +42,7 @@ const getEmployees = async () => {
 }
 
 const filterEmployeesByName = async (searchTherm) => {
-    const employees = (await getEmployees()).$values;
-
-    console.log(employees)
+    const employees = await getEmployees()
 
     return employees.filter(({ Nome }) => {
         const employeeName = Nome.toLowerCase();
@@ -78,10 +57,11 @@ const handleInputChanges = debounce(async (event) => {
     const searchTherm = inputElement.value
     const filteredEmployees = await filterEmployeesByName(searchTherm)
 
-    //createTable(filteredEmployees)
+    createTable(filteredEmployees)
 }, 300)
 
 window.onload = () => {
     const searchInput = document.querySelector('#search')
-    searchInput.addEventListener('input', handleInputChanges);
+
+    searchInput.addEventListener('input', handleInputChanges)
 }
