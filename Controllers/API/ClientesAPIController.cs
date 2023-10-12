@@ -27,7 +27,7 @@ namespace MVC.Controllers.API
         public async Task<ActionResult<Cliente>> BuscarClientePorNome(string nome)
         {
 
-            return Ok(await _context.Clientes.FirstOrDefaultAsync(x => x.Nome == nome)); 
+            return Ok(await _context.Clientes.FirstOrDefaultAsync(x => x.Descricao == nome)); 
         }
 
     }
