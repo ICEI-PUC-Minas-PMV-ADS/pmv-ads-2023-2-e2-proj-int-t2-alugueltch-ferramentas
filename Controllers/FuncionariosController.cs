@@ -36,10 +36,15 @@ namespace MVC.Controllers
 
         public async Task<IActionResult> GetAllEmployees()
         {
-            var employees = await _context.Funcionarios.Include(f => f.Endereco).Include(f => f.Papel).Include(f => f.Permissao).ToListAsync();
+            var employees = await _context.Funcionarios
+                .Include(f => f.Endereco)
+                .Include(f => f.Papel)
+                .Include(f => f.Permissao)
+                .ToListAsync();
+
             var jsonOptions = new JsonSerializerOptions
             {
-                ReferenceHandler = ReferenceHandler.Preserve
+                ReferenceHandler = ReferenceHandler.IgnoreCycles,
             };
 
             return Json(employees, jsonOptions);

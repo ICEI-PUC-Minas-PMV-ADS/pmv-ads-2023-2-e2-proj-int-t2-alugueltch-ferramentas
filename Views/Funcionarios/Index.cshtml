@@ -7,7 +7,10 @@
 <link rel="stylesheet" href="~/css/home.css" asp-append-version="true" />
 <link rel="stylesheet" href="~/css/funcionarios.css" asp-append-version="true" />
 
-<script src="~/js/funcionarios.js" type="module"></script>
+
+@section scripts {
+    <script src="~/js/funcionarios.js" type="module"></script>
+}
 
 <div class="container-fluid position-fixed">
     <div class="row flex-nowrap">
@@ -113,19 +116,17 @@
                 </div>
             </div>
         </div>
-
-
-
-
         <div class="col py-3">
             <div class="d-flex flex-column table-bg align-items-end gap-5">
-                <button class="btn btn-custom-primary">
-                    <a asp-action="Create">Adicionar novo</a>
-                </button>
 
-                <label>Pesquisar</label>
-                <input id="search"/>
-                
+                <div class="d-flex w-100 gap-3 search-bar">
+                    <input id="search" placeholder="Pesquisar" class="rounded-2 border-0"/>
+
+                    <button class="btn btn-custom-primary" >
+                        <a asp-action="Create">Adicionar novo</a>
+                    </button>
+                </div>
+
                 <table class="table">
                     <thead class="bg-yellow">
                         <tr>
@@ -145,7 +146,7 @@
                         </tr>
                     </thead>
 
-                    <tbody>
+                    <tbody id="employee-table-body">
                         @foreach (var item in Model)
                         {
                             <tr>
@@ -163,15 +164,15 @@
                                 </td>
 
                                 <td class="table-actions d-flex gap-2">
-                                    <a href="@Url.Action("Edit", new { id = item.Id, cpf = item.Cpf, funcional = item.Funcional })">
+                                    <a href="@Url.Action("Edit", new { id = item.Id, cpf = item.Cpf, funcional = item.Funcional })" title="Editar">
                                         <i class="bi bi-pencil-square"></i>
                                     </a>
 
-                                    <a href="@Url.Action("Details", new { id = item.Id, cpf = item.Cpf, funcional = item.Funcional })">
+                                    <a href="@Url.Action("Details", new { id = item.Id, cpf = item.Cpf, funcional = item.Funcional })"  title="Detalhes" >
                                         <i class="bi bi-info-circle"></i>
                                     </a>
 
-                                    <a href="@Url.Action("Delete", new { id = item.Id, cpf = item.Cpf, funcional = item.Funcional })">
+                                    <a href="@Url.Action("Delete", new { id = item.Id, cpf = item.Cpf, funcional = item.Funcional })" title="Deletar">
                                         <i class="bi bi-trash"></i>
                                     </a>
                                 </td>
