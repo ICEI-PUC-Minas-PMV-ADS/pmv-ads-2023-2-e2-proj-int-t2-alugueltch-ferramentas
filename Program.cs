@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.EntityFrameworkCore;
 using MVC.Models;
 using System.Globalization;
+using System.Text.Json.Serialization;
 
 namespace MVC
 {
@@ -39,6 +40,8 @@ namespace MVC
                          options.LoginPath = "/Funcionarios/Login/";
                      });
 
+            builder.Services.AddControllers().AddJsonOptions(x =>
+                            x.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.Preserve);
 
             var app = builder.Build();
 

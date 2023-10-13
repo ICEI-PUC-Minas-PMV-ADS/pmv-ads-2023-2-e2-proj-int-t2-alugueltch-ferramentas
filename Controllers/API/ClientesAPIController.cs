@@ -27,16 +27,12 @@ namespace MVC.Controllers.API
         public async Task<ActionResult<Endereco>> BuscarClientePorNome(string nome)
         {
 
-            Cliente client = await _context.Clientes.FirstOrDefaultAsync(x => x.Nome == nome);
-
-            List<Cliente> client1 = await _context.Clientes.Include(a => a.Endereco).ToList();
-
+            Cliente client = await _context.Clientes
+                        .Include(c => c.Endereco) 
+                        .FirstOrDefaultAsync(x => x.Nome == nome);
 
             Endereco endereco = await _context.Enderecos.FirstOrDefaultAsync(x => x.Id == client.EnderecoId);
-
-
-
-            return Ok(endereco); 
+            return Ok(client); 
         }
 
     }
