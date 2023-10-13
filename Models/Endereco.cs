@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.Text.Json.Serialization;
 
 namespace MVC.Models
 {
@@ -36,7 +37,9 @@ namespace MVC.Models
         [Required(ErrorMessage = "Insira o CEP")]
         public string Cep { get; set; } = null!;
 
+        [JsonIgnore]
         public virtual ICollection<Cliente> Clientes { get; set; }
+        [JsonIgnore]
         public virtual ICollection<Funcionario> Funcionarios { get; set; }
     }
 }

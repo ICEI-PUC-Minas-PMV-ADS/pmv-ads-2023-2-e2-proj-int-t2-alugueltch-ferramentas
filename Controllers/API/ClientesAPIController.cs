@@ -31,7 +31,6 @@ namespace MVC.Controllers.API
                         .Include(c => c.Endereco) 
                         .FirstOrDefaultAsync(x => x.Nome == nome);
 
-            Endereco endereco = await _context.Enderecos.FirstOrDefaultAsync(x => x.Id == client.EnderecoId);
             return Ok(client); 
         }
 

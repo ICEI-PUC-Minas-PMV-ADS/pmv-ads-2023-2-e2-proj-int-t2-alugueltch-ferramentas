@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Text.Json.Serialization;
 
 namespace MVC.Models
 {
@@ -36,11 +37,11 @@ namespace MVC.Models
         public virtual ICollection<Emprestimo> Emprestimos { get; set; }
         public virtual ICollection<Orcamento> Orcamentos { get; set; }
 
-
+        [JsonIgnore]
         [NotMapped]
         public Tpessoa Tpessoa { get; set; }
 
-
+        [JsonIgnore]
         [NotMapped]
         public Enum_sexo_client Enum_sexo_client { get; set; }
 
