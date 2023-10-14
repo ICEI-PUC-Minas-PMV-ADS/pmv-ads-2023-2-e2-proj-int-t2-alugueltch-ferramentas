@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace MVC.Models
 {
@@ -11,6 +12,8 @@ namespace MVC.Models
         }
 
         public short Id { get; set; }
+
+        [Display(Name = "Situação")]
         public string Nome { get; set; } = null!;
 
         public virtual ICollection<Ferramentum> Ferramenta { get; set; }
