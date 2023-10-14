@@ -23,11 +23,38 @@ namespace MVC.Controllers.API
         }
 
         [HttpGet("{descricao}")]
-        public async Task<ActionResult<Cliente>> BuscarFerramentaPorDescricaoOuMarca(string descricao, [FromQuery] string marca)
+        public async Task<ActionResult<Ferramentum>> BuscarFerramentaPorDescricaoOuMarca(string descricao, [FromQuery] string marca)
         {
 
-            return Ok(await _context.Ferramenta.FirstOrDefaultAsync(x => x.Descricao == descricao &&  x.Marca == marca));
+            if (string.IsNullOrEmpty(descricao) || string.IsNullOrEmpty(marca))
+            {
+                return BadRequest("Os parâmetros 'descricao' e 'marca' precisam ser preenchidos.");
+            }
+            var query = _context.Ferramenta.AsQueryable(); //consulta sem filtro.
+
+            if (!string.IsNullOrEmpty(descricao))
+            {
+                query = query.Where(x => x.Descricao.Contains(descricao) && x.Marca.Contains(descricao));
+            }
+
+            if (!string.IsNullOrEmpty(marca))
+            {
+                query = query.Where(x => x.Marca.Contains(marca));
+            }
+
+            var resultados = await query.ToListAsync();
+
+            if (resultados == null)
+            {
+                return NotFound("Nenhuma ferramenta correspondente encontrada.");
+            }
+
+            return Ok(resultados);
+
+           
         }
+
+
     }
     }
 

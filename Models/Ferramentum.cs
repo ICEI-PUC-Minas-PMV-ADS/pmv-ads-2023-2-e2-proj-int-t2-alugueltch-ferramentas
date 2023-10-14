@@ -14,11 +14,13 @@ namespace MVC.Models
         }
 
         public long Id { get; set; }
+
+        [Display(Name = "Código")]
         public string Codigo { get; set; } = null!;
         [Display(Name = "Tipo Ferramenta")]
         public long TipoId { get; set; }
 
-        public string Marca { get; set; } = null!;
+        public string? Marca { get; set; } = null!;
 
         [Display(Name = "Descrição")]
         public string Descricao { get; set; } = null!;
@@ -38,10 +40,12 @@ namespace MVC.Models
 
         [Display(Name = "Responsável")]
         public virtual Funcionario? FuncionarioCadastroFuncionalNavigation { get; set; } = null!;
-        [Display(Name = "Responsável")]
+
 
        
         public virtual TipoSituacao? Situacao { get; set; } = null!;
+
+        
         public virtual TipoFerramentum? Tipo { get; set; } = null!;
         public virtual ICollection<Emprestimo> Emprestimos { get; set; }
         public virtual ICollection<Orcamento> Orcamentos { get; set; }
