@@ -41,7 +41,7 @@ namespace MVC
                      });
 
             builder.Services.AddControllers().AddJsonOptions(x =>
-                            x.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.Preserve);
+                            x.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles);
 
             var app = builder.Build();
 

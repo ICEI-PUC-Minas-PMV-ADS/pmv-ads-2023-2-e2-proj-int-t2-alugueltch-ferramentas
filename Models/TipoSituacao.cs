@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.Text.Json.Serialization;
 
 namespace MVC.Models
 {
@@ -16,6 +17,7 @@ namespace MVC.Models
         [Display(Name = "Situação")]
         public string Nome { get; set; } = null!;
 
+        [JsonIgnore]
         public virtual ICollection<Ferramentum> Ferramenta { get; set; }
     }
 }

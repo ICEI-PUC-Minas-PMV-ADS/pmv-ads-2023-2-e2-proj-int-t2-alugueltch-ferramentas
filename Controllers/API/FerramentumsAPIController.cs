@@ -1,5 +1,4 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using MVC.Models;
 
@@ -14,42 +13,27 @@ namespace MVC.Controllers.API
         {
             _context = context;
         }
-        [HttpGet]
-        public async Task<ActionResult<List<Ferramentum>>> ListarFerramentums()
-        {
-            List<Ferramentum> ferramentums = await _context.Ferramenta.ToListAsync();
-
-            return Ok(ferramentums);
-        }
 
         [HttpGet("{descricao}")]
-
-        public async Task<ActionResult<Ferramentum>> BuscarFerramentaPorDescricao([FromQuery] string descricao)
-
+        public async Task<ActionResult<List<Ferramentum>>> Listar([FromQuery] string? descricao)
         {
-            if (string.IsNullOrEmpty(descricao))
-            {
-                return BadRequest("O parâmetro 'descricao' precisa ser preenchido");
-            }
-            var query = _context.Ferramenta.AsQueryable(); //consulta sem filtro.
+            var query = _context.Ferramenta.AsQueryable();
 
             if (!string.IsNullOrEmpty(descricao))
             {
-                query = query.Where(x => x.Descricao.Contains(descricao));
+                query = query.Where(ferramenta => 
+                    ferramenta.Descricao
+                        .ToUpper()
+                        .Contains(descricao.ToUpper()));
             }
-            var resultados = await query.ToListAsync();
 
-            if (resultados == null)
-            {
-                return NotFound("Nenhuma ferramenta correspondente encontrada.");
-            }
+            var resultados = await query
+                .Include(ferramenta => ferramenta.Situacao)
+                .ToListAsync();
 
             return Ok(resultados);
         }
-
     }
-
-
 }
 
 

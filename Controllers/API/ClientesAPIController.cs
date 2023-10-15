@@ -18,7 +18,9 @@ namespace MVC.Controllers.API
         [HttpGet]
         public async Task<ActionResult<List<Cliente>>> ListarClientes()
         {
-            List<Cliente> clientes = await _context.Clientes.ToListAsync();
+            List<Cliente> clientes = await _context.Clientes
+                .Include(cliente => cliente.Endereco)
+                .ToListAsync();
 
             return Ok(clientes);
         }
@@ -26,13 +28,19 @@ namespace MVC.Controllers.API
         [HttpGet("{nome}")]
         public async Task<ActionResult<Endereco>> BuscarClientePorNome(string nome)
         {
+            IQueryable<Cliente> query = _context.Clientes.AsQueryable();
 
-            Cliente client = await _context.Clientes
-                        .Include(c => c.Endereco) 
-                        .FirstOrDefaultAsync(x => x.Nome == nome);
+            query = query.Where(cliente => 
+                    cliente.Nome
+                        .ToUpper()
+                        .Contains(nome.ToUpper()));
+            
 
-            return Ok(client); 
+            List<Cliente> clientes = await query
+            .Include(cliente => cliente.Endereco)
+            .ToListAsync();
+
+            return Ok(clientes); 
         }
-
     }
 }
