@@ -23,25 +23,20 @@ namespace MVC.Controllers.API
         }
 
         [HttpGet("{descricao}")]
-        public async Task<ActionResult<Ferramentum>> BuscarFerramentaPorDescricaoOuMarca(string descricao, [FromQuery] string marca)
-        {
 
-            if (string.IsNullOrEmpty(descricao) || string.IsNullOrEmpty(marca))
+        public async Task<ActionResult<Ferramentum>> BuscarFerramentaPorDescricao([FromQuery] string descricao)
+
+        {
+            if (string.IsNullOrEmpty(descricao))
             {
-                return BadRequest("Os parâmetros 'descricao' e 'marca' precisam ser preenchidos.");
+                return BadRequest("O parâmetro 'descricao' precisa ser preenchido");
             }
             var query = _context.Ferramenta.AsQueryable(); //consulta sem filtro.
 
             if (!string.IsNullOrEmpty(descricao))
             {
-                query = query.Where(x => x.Descricao.Contains(descricao) && x.Marca.Contains(descricao));
+                query = query.Where(x => x.Descricao.Contains(descricao));
             }
-
-            if (!string.IsNullOrEmpty(marca))
-            {
-                query = query.Where(x => x.Marca.Contains(marca));
-            }
-
             var resultados = await query.ToListAsync();
 
             if (resultados == null)
@@ -50,11 +45,11 @@ namespace MVC.Controllers.API
             }
 
             return Ok(resultados);
-
-           
         }
 
+    }
 
-    }
-    }
+
+}
+
 
