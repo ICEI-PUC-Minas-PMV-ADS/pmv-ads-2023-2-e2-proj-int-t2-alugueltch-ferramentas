@@ -5,6 +5,7 @@
 }
 
 <link rel="stylesheet" href="~/css/sidebar.css" asp-append-version="true" />
+<link rel="stylesheet" href="~/css/tables.css" asp-append-version="true" />
 
 
 <div class="container-fluid position-fixed">
@@ -12,13 +13,13 @@
         @Html.Partial("_SidebarComponent")
 
 
-        <div class="col-8 container-fluid py-3 container-fluid">
-            <div class="py-3 table-bg">
-                <p>
-                    <a asp-action="Create">Create New</a>
-                </p>
+        <div class="col py-3">
+            <div class="d-flex flex-column table-bg align-items-end gap-5">
+                <button class="btn btn-custom-primary">
+                    <a asp-action="Create">Cadastrar Novo Cliente</a>
+                </button>
                 <table class="table">
-                    <thead>
+                    <thead class="bg-yellow">
                         <tr>
                             <th>
                                 @Html.DisplayNameFor(model => model.Nome)
@@ -37,6 +38,7 @@
                             <th>
                                 Ultimo Aluguel
                             </th>
+                            <th></th>
                         </tr>
                     </thead>
                     <tbody>
@@ -61,10 +63,18 @@
                                 </td>
 
 
-                                <td>
-                                    @Html.ActionLink("Edit", "Edit", new {  id=item.Id, cpf=item.Cpf  }) |
-                                    @Html.ActionLink("Details", "Details", new {id=item.Id, cpf=item.Cpf  }) |
-                                    @Html.ActionLink("Delete", "Delete", new { id=item.Id, cpf=item.Cpf  })
+
+                                <td class="table-actions d-flex gap-2">
+                                    <a href="@Url.Action("Edit", new { id = item.Id, cpf = item.Cpf })" title="Editar">
+                                        <i class="bi bi-pencil-square"></i>
+                                    </a>
+                                    <a href="@Url.Action("Details", new { id = item.Id, cpf = item.Cpf })" title="Detalhes">
+                                        <i class="bi bi-info-circle"></i>
+                                    </a>
+
+                                    <a href="@Url.Action("Delete", new { id = item.Id, cpf = item.Cpf })" title="Delete">
+                                        <i class="bi bi-trash"></i>
+                                    </a>
                                 </td>
                             </tr>
                         }

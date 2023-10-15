@@ -21,6 +21,7 @@ namespace MVC.Models
         public string Nome { get; set; } = null!;
         public char Sexo { get; set; }
 
+        [Display(Name = "Data de Nascimento")]
         [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "{0:dd-MM-yyyy}", ApplyFormatInEditMode = true)]
         [Required(ErrorMessage = "Insira a data de nascimento")]
