@@ -47,6 +47,7 @@ namespace MVC.Controllers
         // GET: Clientes/Create
         public IActionResult Create()
         {
+
             ViewData["EnderecoId"] = new SelectList(_context.Enderecos, "Id", "Bairro");
             return View();
         }

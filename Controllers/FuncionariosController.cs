@@ -116,7 +116,7 @@ namespace MVC.Controllers
 
 
 
-               // funcionario.Senha = BCrypt.Net.BCrypt.HashPassword(funcionario.Senha);
+                funcionario.Senha = BCrypt.Net.BCrypt.HashPassword(funcionario.Senha);
                 _context.Add(funcionario);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
@@ -153,7 +153,11 @@ namespace MVC.Controllers
                 return NotFound();
             }
 
-            var funcionario = await _context.Funcionarios.FindAsync(id,cpf,funcional);
+
+            Funcionario funcionario = await _context.Funcionarios
+             .Include(c => c.Endereco)
+             .FirstOrDefaultAsync(x => x.Id == id && x.Cpf == cpf && x.Funcional == funcional);
+           
             if (funcionario == null)
             {
                 return NotFound();
@@ -169,7 +173,7 @@ namespace MVC.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(long id, [Bind("Id,Cpf,Nome,Sexo,DataNascimento,Email,Telefone,EnderecoId,Funcional,Senha,PermissaoId,PapelId,DataAdmissao,DataDemissao")] Funcionario funcionario)
+        public async Task<IActionResult> Edit(long id,Funcionario funcionario)
         {
             if (id != funcionario.Id)
             {
@@ -180,7 +184,7 @@ namespace MVC.Controllers
             {
                 try
                 {
-                   // funcionario.Senha = BCrypt.Net.BCrypt.HashPassword(funcionario.Senha);
+                    funcionario.Senha = BCrypt.Net.BCrypt.HashPassword(funcionario.Senha);
                     _context.Update(funcionario);
                     await _context.SaveChangesAsync();
                 }
@@ -234,9 +238,12 @@ namespace MVC.Controllers
                 return Problem("Entity set 'atdbContext.Funcionarios'  is null.");
             }
             var funcionario = await _context.Funcionarios.FindAsync(id,cpf,funcional);
+           
             if (funcionario != null)
             {
+                var endereco = await _context.Enderecos.FindAsync(funcionario.EnderecoId);
                 _context.Funcionarios.Remove(funcionario);
+                _context.Enderecos.Remove(endereco);
             }
             
             await _context.SaveChangesAsync();
@@ -269,10 +276,10 @@ namespace MVC.Controllers
                 return View();
             }
 
-            /* var senha = BCrypt.Net.BCrypt.Verify(funcionario.Senha, funcDB.Senha); */
+             var senha = BCrypt.Net.BCrypt.Verify(funcionario.Senha, funcDB.Senha); 
             
 
-            if (funcionario.Senha == funcDB.Senha)
+            if (senha)
             {
 
 
