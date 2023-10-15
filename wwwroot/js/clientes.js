@@ -5,8 +5,8 @@ const formatClientAddress = ({logradouro, numero, bairro}) => {
     return `${logradouro}, ${numero}, ${bairro}` 
 }
 
-const createActionLink = (title='', iconClassesArray = [], baseURL = '', employee) => {
-    const url = `${baseURL}?id=${employee.Id}&cpf=${employee.Cpf}&funcional=${employee.Funcional}`;
+const createActionLink = (title='', iconClassesArray = [], baseURL = '', cliente) => {
+    const url = `${baseURL}?id=${cliente.Id}&cpf=${cliente.Cpf}&funcional=${cliente.Funcional}`;
     const iconTag = `<i class="${iconClassesArray.join(' ')}" title="${title}"></i>`;
 
     return `<a href="${url}" class="action-link">${iconTag}</a>`;
