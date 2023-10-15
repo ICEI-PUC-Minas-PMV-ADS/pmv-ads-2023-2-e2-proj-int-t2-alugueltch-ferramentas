@@ -32,8 +32,10 @@ namespace MVC.Models
         public string Telefone { get; set; } = null!;
         public long EnderecoId { get; set; }
 
+        [Display(Name = "Tipo de Pessoa")]
         public string? tipoPessoa { get; set; }
 
+        [Display(Name = "Endereço")]
         public virtual Endereco? Endereco { get; set; } = null!;
         public virtual ICollection<Emprestimo> Emprestimos { get; set; }
         public virtual ICollection<Orcamento> Orcamentos { get; set; }
