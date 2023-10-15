@@ -6,7 +6,7 @@ const formatClientAddress = ({logradouro, numero, bairro}) => {
 }
 
 const createActionLink = (title='', iconClassesArray = [], baseURL = '', cliente) => {
-    const url = `${baseURL}?id=${cliente.Id}&cpf=${cliente.Cpf}&funcional=${cliente.Funcional}`;
+    const url = `${baseURL}?id=${cliente.Id}&cpf=${cliente.Cpf}`;
     const iconTag = `<i class="${iconClassesArray.join(' ')}" title="${title}"></i>`;
 
     return `<a href="${url}" class="action-link">${iconTag}</a>`;
