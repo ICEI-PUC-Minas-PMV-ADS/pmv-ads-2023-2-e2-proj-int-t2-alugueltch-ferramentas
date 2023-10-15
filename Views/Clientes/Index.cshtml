@@ -7,6 +7,10 @@
 <link rel="stylesheet" href="~/css/sidebar.css" asp-append-version="true" />
 <link rel="stylesheet" href="~/css/tables.css" asp-append-version="true" />
 
+@section scripts {
+    <script src="~/js/clientes.js" type="module"></script>
+}
+
 
 <div class="container-fluid position-fixed">
     <div class="row flex-nowrap">
@@ -15,9 +19,13 @@
 
         <div class="col py-3">
             <div class="d-flex flex-column table-bg align-items-end gap-5">
-                <button class="btn btn-custom-primary">
-                    <a asp-action="Create">Cadastrar Novo Cliente</a>
-                </button>
+           <div class="d-flex w-100 gap-3 search-bar">
+                    <input id="search-input" placeholder="Pesquisar" class="rounded-2 border-0"/>
+
+                    <button class="btn btn-custom-primary" >
+                        <a asp-action="Create">Cadastrar novo cliente</a>
+                    </button>
+                </div>
                 <table class="table">
                     <thead class="bg-yellow">
                         <tr>
@@ -41,7 +49,7 @@
                             <th></th>
                         </tr>
                     </thead>
-                    <tbody>
+                    <tbody id="client-table-body">
                         @foreach (var item in Model)
                         {
                             <tr>

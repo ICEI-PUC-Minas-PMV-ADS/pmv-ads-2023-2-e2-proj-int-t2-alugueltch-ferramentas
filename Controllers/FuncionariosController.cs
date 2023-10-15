@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Security.Claims;
-using System.Threading.Tasks;
-using BCrypt.Net;
+﻿using System.Security.Claims;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -12,7 +7,6 @@ using Microsoft.EntityFrameworkCore;
 using MVC.Models;
 using System.Text.Json;
 using System.Text.Json.Serialization;
-using Microsoft.DotNet.Scaffolding.Shared.ProjectModel;
 
 namespace MVC.Controllers
 {
