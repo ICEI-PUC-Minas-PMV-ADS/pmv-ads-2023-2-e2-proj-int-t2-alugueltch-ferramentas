@@ -1,0 +1,5 @@
+﻿.form-bg {
+    display: block;
+    padding: 20px 40px;
+    background-color: var(--color-dark-gray-variation);
+}

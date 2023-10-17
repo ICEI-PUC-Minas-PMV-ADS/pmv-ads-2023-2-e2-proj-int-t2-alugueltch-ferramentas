@@ -17,6 +17,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Content Remove="wwwroot\css\Orcamento.css" />
     <Content Remove="wwwroot\js\JavaScript.js" />
     <Content Remove="wwwroot\js\JavaScript1.js" />
   </ItemGroup>
