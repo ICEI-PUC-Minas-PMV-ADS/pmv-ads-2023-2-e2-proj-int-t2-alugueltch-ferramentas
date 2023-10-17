@@ -83,7 +83,11 @@ namespace MVC.Controllers
                 return NotFound();
             }
 
-            var cliente = await _context.Clientes.FindAsync(id,cpf);
+            var cliente = await _context.Clientes
+                .Include(c => c.Endereco)
+                .FirstOrDefaultAsync(c=>c.Id == id && c.Cpf==cpf);
+
+
             if (cliente == null)
             {
                 return NotFound();
