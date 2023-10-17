@@ -4,27 +4,44 @@
     ViewData["Title"] = "Create";
 }
 
-<h1>Create</h1>
+<link rel="stylesheet" href="~/css/sidebar.css" asp-append-version="true" />
+<link rel="stylesheet" href="~/css/tables.css" asp-append-version="true" />
 
-<h4>Orcamento</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="Create">
+<div class="container-fluid position-fixed">
+<div class="row flex-nowrap">
+    @Html.Partial("_SidebarComponent")
+        <div class="col-md-4 py-5 container-fluid">
+            <div class= "table-bg">
+            <form class="d-flex flex-column gap-2" asp-action="Create">
+                <h3>Novo Orçamento</h3>                
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">               
+                        <label asp-for="ClienteCpfNavigation.Nome" class="control-label">Cliente</label>
+                        <input asp-for="ClienteCpfNavigation.Nome" id="client-input" class="form-control" list="client-names"/>
+
+                        <datalist id="client-names">
+                            
+                        </datalist>
+            </div>
+            
             <div class="form-group">
-                <label asp-for="ClienteCpf" class="control-label"></label>
-                <select asp-for="ClienteCpf" class ="form-control" asp-items="ViewBag.ClienteCpf"></select>
+                <label asp-for="ClienteCpfNavigation.Telefone" class="control-label">Telefone</label>
+                        <input asp-for="ClienteCpfNavigation.Telefone" class="form-control" id="phone-input" />
+            </div>
+            
+            <div class="form-group">
+                <label asp-for="ClienteCpfNavigation.Email" class="control-label">E-mail</label>
+                        <input asp-for="ClienteCpfNavigation.Email" class="form-control" id="email-input" />
+            </div>
+            
+            <div class="form-group">
+                        <label asp-for="ClienteCpfNavigation.Endereco" class="control-label">Endereço</label>
+                        <input asp-for="ClienteCpfNavigation.Endereco" class="form-control" id="adress-input"/>
             </div>
             <div class="form-group">
                 <label asp-for="FerramentaCodigo" class="control-label"></label>
                 <select asp-for="FerramentaCodigo" class ="form-control" asp-items="ViewBag.FerramentaCodigo"></select>
-            </div>
-            <div class="form-group">
-                <label asp-for="ValorTotal" class="control-label"></label>
-                <input asp-for="ValorTotal" class="form-control" />
-                <span asp-validation-for="ValorTotal" class="text-danger"></span>
-            </div>
+            </div>            
             <div class="form-group">
                 <label asp-for="DataOrcamento" class="control-label"></label>
                 <input asp-for="DataOrcamento" class="form-control" />
@@ -36,16 +53,23 @@
                 <span asp-validation-for="DataValidade" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
+                <label asp-for="ValorTotal" class="control-label"></label>
+                <input asp-for="ValorTotal" class="form-control" />
+                <span asp-validation-for="ValorTotal" class="text-danger"></span>
             </div>
+            <div class="form-group">
+                <a class="btn btn-custom-ghost" asp-action="Index">Gerar Orçamento</a>
+                <input type="submit" value="Gerar Aluguel" class="btn btn-custom-primary" />
+            </div>
+            
         </form>
+            </div>
     </div>
 </div>
-
-<div>
-    <a asp-action="Index">Back to List</a>
 </div>
+
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+   <script src="~/js/orcamentos.js"></script>
 }
