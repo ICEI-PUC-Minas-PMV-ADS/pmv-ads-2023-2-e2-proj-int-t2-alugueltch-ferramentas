@@ -158,7 +158,7 @@ namespace MVC.Controllers
             }
             ViewData["EnderecoId"] = new SelectList(_context.Enderecos, "Id", "Id", funcionario.EnderecoId);
             ViewData["PapelId"] = new SelectList(_context.TipoPapels, "Id", "Id", funcionario.PapelId);
-            ViewData["PermissaoId"] = new SelectList(_context.TipoPermissaos, "Id", "Id", funcionario.PermissaoId);
+            ViewData["PermissaoId"] = new SelectList(_context.TipoPermissaos, "Id", "Nome", funcionario.PermissaoId);
             return View(funcionario);
         }
 
@@ -197,7 +197,7 @@ namespace MVC.Controllers
             }
             ViewData["EnderecoId"] = new SelectList(_context.Enderecos, "Id", "Id", funcionario.EnderecoId);
             ViewData["PapelId"] = new SelectList(_context.TipoPapels, "Id", "Id", funcionario.PapelId);
-            ViewData["PermissaoId"] = new SelectList(_context.TipoPermissaos, "Id", "Id", funcionario.PermissaoId);
+            ViewData["PermissaoId"] = new SelectList(_context.TipoPermissaos, "Id", "Nome", funcionario.PermissaoId);
             return View(funcionario);
         }
 

@@ -27,7 +27,7 @@ namespace MVC.Models
 
         [Display(Name = "Data de Nascimento")]
         [DataType(DataType.Date)]
-        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
+        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = false)]
         [Required(ErrorMessage = "Insira a data de nascimento")]
        
         public DateTime DataNascimento { get; set; }
@@ -66,13 +66,13 @@ namespace MVC.Models
 
         [Display(Name = "Data de Admissão")]
         [DataType(DataType.Date)]
-        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
+        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = false)]
         [Required(ErrorMessage = "O campo data de adimissão é obrigatório.")]
         public DateTime DataAdmissao { get; set; }
 
         [Display(Name = "Data de Demissão")]
         [DataType(DataType.Date)]
-        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
+        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = false)]
         public DateTime? DataDemissao { get; set; }
 
 
