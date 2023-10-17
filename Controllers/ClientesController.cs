@@ -76,7 +76,7 @@ namespace MVC.Controllers
         }
 
         // GET: Clientes/Edit/5
-        public async Task<IActionResult> Edit(long? id,string cpf)
+        public async Task<IActionResult> Edit(long? id,string? cpf)
         {
             if (id == null || _context.Clientes == null)
             {
@@ -97,7 +97,7 @@ namespace MVC.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(long id, [Bind("Id,Cpf,Nome,Sexo,DataNascimento,Email,Telefone,EnderecoId,tipoPessoa")] Cliente cliente)
+        public async Task<IActionResult> Edit(long id,string cpf, [Bind("Id,Cpf,Nome,Sexo,DataNascimento,Email,Telefone,EnderecoId,tipoPessoa")] Cliente cliente)
         {
             if (id != cliente.Id)
             {
@@ -129,7 +129,7 @@ namespace MVC.Controllers
         }
 
         // GET: Clientes/Delete/5
-        public async Task<IActionResult> Delete(long? id)
+        public async Task<IActionResult> Delete(long? id, string cpf)
         {
             if (id == null || _context.Clientes == null)
             {
@@ -150,13 +150,13 @@ namespace MVC.Controllers
         // POST: Clientes/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> DeleteConfirmed(long id)
+        public async Task<IActionResult> DeleteConfirmed(long id, string cpf)
         {
             if (_context.Clientes == null)
             {
                 return Problem("Entity set 'atdbContext.Clientes'  is null.");
             }
-            var cliente = await _context.Clientes.FindAsync(id);
+            var cliente = await _context.Clientes.FindAsync(id, cpf);
             if (cliente != null)
             {
                 _context.Clientes.Remove(cliente);

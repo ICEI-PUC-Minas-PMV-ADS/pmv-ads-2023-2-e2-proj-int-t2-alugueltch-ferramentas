@@ -46,6 +46,7 @@ namespace MVC.Models
 
         [JsonIgnore]
         [NotMapped]
+        [Display(Name = "Sexo")]
         public Enum_sexo_client Enum_sexo_client { get; set; }
 
 
