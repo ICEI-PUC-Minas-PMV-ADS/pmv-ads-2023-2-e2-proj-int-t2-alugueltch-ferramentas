@@ -12,7 +12,7 @@
     <div class="row flex-nowrap">
         @Html.Partial("_SidebarComponent")
         
-        <div class="col-6 py-3 container-fluid" >
+        <div class="col-6 py-6 container-fluid" >
             <div class="table-bg" style="max-height: 100vh; overflow:auto;">
                 <h3>Cadastrar Novo Funcionário</h3>
                 <div>
@@ -72,7 +72,11 @@
                             <input asp-for="DataAdmissao" class="form-control" />
                             <span asp-validation-for="DataAdmissao" class="text-danger"></span>
                         </div>
-
+                        <div class="form-group">
+                            <label asp-for="Endereco.Cep" class="control-label"></label>
+                            <input asp-for="Endereco.Cep" class="form-control" />
+                            <span asp-validation-for="Endereco.Cep" class="text-danger"></span>
+                        </div>
                         <div class="form-group">
                             <label asp-for="Endereco.Logradouro" class="control-label"></label>
                             <input asp-for="Endereco.Logradouro" class="form-control" />
@@ -82,6 +86,11 @@
                             <label asp-for="Endereco.Numero" class="control-label">Número</label>
                             <input asp-for="Endereco.Numero" class="form-control" />
                             <span asp-validation-for="Endereco.Numero" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Endereco.Complemento" class="control-label"></label>
+                            <input asp-for="Endereco.Complemento" class="form-control" />
+                            <span asp-validation-for="Endereco.Complemento" class="text-danger"></span>
                         </div>
                         <div class="form-group">
                             <label asp-for="Endereco.Bairro" class="control-label"></label>
@@ -94,11 +103,6 @@
                             <span asp-validation-for="Endereco.Cidade" class="text-danger"></span>
                         </div>
                         <div class="form-group">
-                            <label asp-for="Endereco.Complemento" class="control-label"></label>
-                            <input asp-for="Endereco.Complemento" class="form-control" />
-                            <span asp-validation-for="Endereco.Complemento" class="text-danger"></span>
-                        </div>
-                        <div class="form-group">
                             <label asp-for="Endereco.Estado" class="control-label"></label>
                             <input asp-for="Endereco.Estado" class="form-control" />
                             <span asp-validation-for="Endereco.Estado" class="text-danger"></span>
@@ -107,11 +111,6 @@
                             <label asp-for="Endereco.Pais" class="control-label">País</label>
                             <input asp-for="Endereco.Pais" class="form-control" />
                             <span asp-validation-for="Endereco.Pais" class="text-danger"></span>
-                        </div>
-                        <div class="form-group">
-                            <label asp-for="Endereco.Cep" class="control-label"></label>
-                            <input asp-for="Endereco.Cep" class="form-control" />
-                            <span asp-validation-for="Endereco.Cep" class="text-danger"></span>
                         </div>
 
                         <div class="form-group mt-3">
