@@ -39,8 +39,10 @@
                         <input asp-for="ClienteCpfNavigation.Endereco" class="form-control" id="adress-input"/>
             </div>
             <div class="form-group">
-                <label asp-for="FerramentaCodigo" class="control-label"></label>
-                <select asp-for="FerramentaCodigo" class ="form-control" asp-items="ViewBag.FerramentaCodigo"></select>
+                        <label asp-for="FerramentaCodigoNavigation.Descricao" class="control-label">Ferramenta</label>
+                        <input asp-for="FerramentaCodigoNavigation.Descricao" class="form-control" id="tools-input" list="tools-names"/>
+                        <datalist id="tools-names">
+                        </datalist>
             </div>            
             <div class="form-group">
                 <label asp-for="DataOrcamento" class="control-label"></label>
@@ -53,7 +55,7 @@
                 <span asp-validation-for="DataValidade" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="ValorTotal" class="control-label"></label>
+                <label asp-for="ValorTotal" class="control-label">Valor Total</label>
                 <input asp-for="ValorTotal" class="form-control" />
                 <span asp-validation-for="ValorTotal" class="text-danger"></span>
             </div>

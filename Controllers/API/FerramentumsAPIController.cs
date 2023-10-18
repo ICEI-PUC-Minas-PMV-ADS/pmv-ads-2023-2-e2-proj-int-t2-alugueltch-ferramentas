@@ -14,7 +14,7 @@ namespace MVC.Controllers.API
             _context = context;
         }
 
-        [HttpGet("{descricao}")]
+        [HttpGet]
         public async Task<ActionResult<List<Ferramentum>>> Listar([FromQuery] string? descricao)
         {
             var query = _context.Ferramenta.AsQueryable();
