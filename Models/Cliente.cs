@@ -17,8 +17,13 @@ namespace MVC.Models
 
         public long Id { get; set; }
 
+        [Required(ErrorMessage = "O CPF deve conter 11 dígitos")]
         public string Cpf { get; set; } = null!;
+
+        [Required(ErrorMessage = "O campo Nome é obrigatório")]
         public string Nome { get; set; } = null!;
+
+        [Required(ErrorMessage = "M ou F")]
         public char Sexo { get; set; }
 
         [Display(Name = "Data de Nascimento")]
@@ -26,9 +31,11 @@ namespace MVC.Models
         [DisplayFormat(DataFormatString = "{0:dd-MM-yyyy}", ApplyFormatInEditMode = true)]
         [Required(ErrorMessage = "Insira a data de nascimento")]
         public DateTime DataNascimento { get; set; }
+
+        [Required(ErrorMessage = "O campo Email é obrigatório")]
         public string Email { get; set; } = null!;
 
-        
+        [Required(ErrorMessage = "O campo telefone é obrigatório")]
         public string Telefone { get; set; } = null!;
         public long EnderecoId { get; set; }
 

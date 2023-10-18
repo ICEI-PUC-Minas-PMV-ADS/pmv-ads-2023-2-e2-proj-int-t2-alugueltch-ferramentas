@@ -97,7 +97,7 @@ namespace MVC.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(long id,string cpf, [Bind("Id,Cpf,Nome,Sexo,DataNascimento,Email,Telefone,EnderecoId,tipoPessoa")] Cliente cliente)
+        public async Task<IActionResult> Edit(long id,string cpf, [Bind("Id,Cpf,Nome,Email,Telefone")] Cliente cliente)
         {
             if (id != cliente.Id)
             {

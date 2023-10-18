@@ -31,7 +31,7 @@ namespace MVC.Models
         [Required(ErrorMessage = "Insira o estado")]
         public string Estado { get; set; } = null!;
 
-        [Required(ErrorMessage = "Insira o país")]
+        [Required(ErrorMessage = "Insira o país com apenas 2 caracteres")]
         public string Pais { get; set; } = null!;
 
         [Required(ErrorMessage = "Insira o CEP")]
