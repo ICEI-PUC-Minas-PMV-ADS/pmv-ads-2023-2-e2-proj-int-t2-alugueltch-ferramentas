@@ -1,11 +1,11 @@
-﻿ /* api/ClientesAPI/var */
+﻿/* api/ClientesAPI/var */
 
-let clientesArray = []
+
 
 const getClients = async (nome) => {
 
     const response = await fetch(`/API/ClientesAPI/${nome}`)
-    const jsonResponse = await response.json()      
+    const jsonResponse = await response.json()
     return jsonResponse;
 
 }
@@ -15,7 +15,7 @@ const obterInputCliente = () => {
 
     inputName.addEventListener('input', async (event) => {
         const inputValue = event.target.value
-        clientesArray = await getClients(inputValue)
+        const clientesArray = await getClients(inputValue)
         const dataList = document.getElementById("client-names")
 
         dataList.innerHTML = ""
@@ -23,7 +23,7 @@ const obterInputCliente = () => {
         clientesArray.forEach((cliente) => {
             dataList.innerHTML += `<option value="${cliente.nome}"></option>`
         })
-        
+
     })
 
     inputName.addEventListener('change', async (event) => {
@@ -36,13 +36,42 @@ const obterInputCliente = () => {
 
             const emailInput = document.getElementById("email-input")
             emailInput.value = dadosCliente.email
-            console.log(dadosCliente.endereco)
             const enderecoInput = document.getElementById("adress-input")
             const enderecoCliente = `${dadosCliente.endereco.logradouro}, ${dadosCliente.endereco.numero}`
             enderecoInput.value = enderecoCliente
         }
-        
+
     })
 }
 
-window.onload = obterInputCliente
+
+
+
+const getTools = async (descricao) => {
+
+    const response = await fetch(`/API/ferramentumsapi?descricao=${descricao}`)
+    const jsonResponse = await response.json()
+    return jsonResponse;
+
+}
+
+const obterInputFerramenta = () => {
+    const inputTools = document.getElementById("tools-input");
+
+    inputTools.addEventListener('input', async (event) => {
+        const inputValue = event.target.value
+        const ferramentasArray = await getTools(inputValue)
+        const dataList = document.getElementById("tools-names")
+
+        dataList.innerHTML = ""
+
+        ferramentasArray.forEach((ferramentum) => {           
+           dataList.innerHTML += `<option value="${ferramentum.descricao}"></option>`
+        })
+    })    
+}
+
+window.onload = () => {
+    obterInputFerramenta()
+    obterInputCliente()
+}
