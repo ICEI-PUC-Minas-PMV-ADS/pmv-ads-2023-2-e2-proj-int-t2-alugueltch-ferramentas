@@ -29,16 +29,17 @@
                     <input asp-for="Sexo" class="form-control" />
                     <span asp-validation-for="Sexo" class="text-danger"></span>
                     </div>
+                    *@
                     <div class="form-group">
                     <label asp-for="DataNascimento" class="control-label"></label>
                     <input asp-for="DataNascimento" class="form-control" />
                     <span asp-validation-for="DataNascimento" class="text-danger"></span>
                     </div>
-                    *@
+                    
                     <div class="form-group">
                         <label asp-for="Enum_sexo_client" class="control-label"></label>
                         <select asp-for="Enum_sexo_client" class="form-control" asp-items="Html.GetEnumSelectList<Enum_sexo_client>()"></select>
-                        <span asp-validation-for="Sexo" class="text-danger"></span>
+                        <span asp-validation-for="Enum_sexo_client" class="text-danger"></span>
                     </div>
                     <div class="form-group">
                         <label asp-for="Email" class="control-label"></label>

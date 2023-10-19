@@ -23,12 +23,11 @@ namespace MVC.Models
         [Required(ErrorMessage = "O campo Nome é obrigatório")]
         public string Nome { get; set; } = null!;
 
-        [Required(ErrorMessage = "M ou F")]
-        public char Sexo { get; set; }
+        public string? Sexo { get; set; } = null!;
 
         [Display(Name = "Data de Nascimento")]
         [DataType(DataType.Date)]
-        [DisplayFormat(DataFormatString = "{0:dd-MM-yyyy}", ApplyFormatInEditMode = true)]
+        [DisplayFormat(DataFormatString = "{0:dd-MM-yyyy}", ApplyFormatInEditMode = false)]
         [Required(ErrorMessage = "Insira a data de nascimento")]
         public DateTime DataNascimento { get; set; }
 

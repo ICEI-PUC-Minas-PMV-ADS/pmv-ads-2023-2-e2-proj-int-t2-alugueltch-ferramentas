@@ -62,7 +62,7 @@ namespace MVC.Models
                         .HasColumnName("nome");
 
                 entity.Property(e => e.Sexo)
-                      .HasColumnType("char")
+                      .HasMaxLength(20)
                       .HasColumnName("sexo");
 
                 entity.Property(e => e.DataNascimento).HasColumnName("data_nascimento")

@@ -64,9 +64,10 @@ namespace MVC.Controllers
             {
                 cliente.EnderecoId = cliente.Endereco.Id;
 
-                _context.Add(cliente.Endereco);
-                await _context.SaveChangesAsync();
+                string sexo = (cliente.Enum_sexo_client.ToString() == "Masculino") ? "Masculino" : "Feminino";
 
+                cliente.Sexo = sexo;
+                _context.Add(cliente.Endereco);
                 _context.Add(cliente);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
@@ -101,17 +102,14 @@ namespace MVC.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(long id,string cpf, [Bind("Id,Cpf,Nome,Email,Telefone")] Cliente cliente)
+        public async Task<IActionResult> Edit(Cliente cliente)
         {
-            if (id != cliente.Id)
-            {
-                return NotFound();
-            }
-
             if (ModelState.IsValid)
             {
                 try
                 {
+                    _context.Update(cliente.Endereco);
+                    await _context.SaveChangesAsync();
                     _context.Update(cliente);
                     await _context.SaveChangesAsync();
                 }
