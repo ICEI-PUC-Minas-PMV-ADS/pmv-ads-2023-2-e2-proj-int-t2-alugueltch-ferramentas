@@ -92,6 +92,7 @@ namespace MVC.Models
 
 
         [NotMapped]
+        [Display(Name = "Sexo")]
         public Enum_sexo Enum_sexo { get; set; }
 
     }

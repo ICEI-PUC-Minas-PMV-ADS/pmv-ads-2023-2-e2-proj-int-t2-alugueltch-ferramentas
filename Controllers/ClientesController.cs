@@ -93,7 +93,17 @@ namespace MVC.Controllers
             {
                 return NotFound();
             }
-         
+
+            if (cliente.Sexo == "Masculino")
+            {
+                cliente.Enum_sexo_client = Enum_sexo_client.Masculino;
+            }
+            else
+            {
+                cliente.Enum_sexo_client = Enum_sexo_client.Feminino;
+            }
+
+
             ViewData["EnderecoId"] = new SelectList(_context.Enderecos, "Id", "Bairro", cliente.EnderecoId);
             return View(cliente);
         }

@@ -24,9 +24,9 @@
                         <span asp-validation-for="Nome" class="text-danger"></span>
                     </div>
                     <div class="form-group">
-                        <label asp-for="Sexo" class="control-label"></label>
-                        <input asp-for="Sexo" class="form-control" />
-                        <span asp-validation-for="Sexo" class="text-danger"></span>
+                        <label asp-for="Enum_sexo" class="control-label"></label>
+                        <select asp-for="Enum_sexo" class="form-control" asp-items="Html.GetEnumSelectList<Enum_sexo>()"></select>
+                        <span asp-validation-for="Enum_sexo" class="text-danger"></span>
                     </div>
                     <div class="form-group">
                         <label asp-for="DataNascimento" class="control-label">Data de Nascimento</label>

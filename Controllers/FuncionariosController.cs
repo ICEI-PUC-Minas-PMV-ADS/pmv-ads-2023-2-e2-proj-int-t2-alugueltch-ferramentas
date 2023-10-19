@@ -156,6 +156,15 @@ namespace MVC.Controllers
             {
                 return NotFound();
             }
+
+            if (funcionario.Sexo == "Masculino")
+            {
+                funcionario.Enum_sexo = Enum_sexo.Masculino;
+            }
+            else
+            {
+                funcionario.Enum_sexo = Enum_sexo.Feminino;
+            }
             ViewData["EnderecoId"] = new SelectList(_context.Enderecos, "Id", "Id", funcionario.EnderecoId);
             ViewData["PapelId"] = new SelectList(_context.TipoPapels, "Id", "Id", funcionario.PapelId);
             ViewData["PermissaoId"] = new SelectList(_context.TipoPermissaos, "Id", "Nome", funcionario.PermissaoId);
@@ -179,6 +188,8 @@ namespace MVC.Controllers
                 try
                 {
                     funcionario.Senha = BCrypt.Net.BCrypt.HashPassword(funcionario.Senha);
+                    string sexo = (funcionario.Enum_sexo.ToString() == "Masculino") ? "Masculino" : "Feminino";
+                    funcionario.Sexo = sexo;
                     _context.Update(funcionario);
                     await _context.SaveChangesAsync();
                 }
