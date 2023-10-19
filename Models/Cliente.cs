@@ -13,6 +13,16 @@ namespace MVC.Models
         {
             Emprestimos = new HashSet<Emprestimo>();
             Orcamentos = new HashSet<Orcamento>();
+
+            if (Sexo == "Masculino")
+            {
+                Enum_sexo_client = Enum_sexo_client.Masculino;
+            }
+            else
+            {
+                Enum_sexo_client = Enum_sexo_client.Feminino;
+            }
+
         }
 
         public long Id { get; set; }

@@ -93,6 +93,7 @@ namespace MVC.Controllers
             {
                 return NotFound();
             }
+         
             ViewData["EnderecoId"] = new SelectList(_context.Enderecos, "Id", "Bairro", cliente.EnderecoId);
             return View(cliente);
         }
