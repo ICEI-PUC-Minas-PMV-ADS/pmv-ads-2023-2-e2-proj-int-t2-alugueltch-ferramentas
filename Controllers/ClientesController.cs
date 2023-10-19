@@ -109,7 +109,8 @@ namespace MVC.Controllers
                 try
                 {
                     _context.Update(cliente.Endereco);
-                    await _context.SaveChangesAsync();
+                    string sexo = (cliente.Enum_sexo_client.ToString() == "Masculino") ? "Masculino" : "Feminino";
+                    cliente.Sexo = sexo;
                     _context.Update(cliente);
                     await _context.SaveChangesAsync();
                 }
