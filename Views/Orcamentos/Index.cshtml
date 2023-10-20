@@ -57,9 +57,9 @@
                                     @Html.DisplayFor(modelItem => item.FerramentaCodigoNavigation.Codigo)
                                 </td>
                                 <td>
-                                    @Html.ActionLink("Edit", "Edit", new {  id =item.Id, cliente_cpf = item.ClienteCpfNavigation.Cpf, ferramenta_codigo = item.FerramentaCodigoNavigation.Codigo  }) |
-                                    @Html.ActionLink("Details", "Details", new {  id =item.Id, cliente_cpf = item.ClienteCpf, ferramenta_codigo = item.FerramentaCodigo }) |
-                                    @Html.ActionLink("Delete", "Delete", new {  id =item.Id, cliente_cpf = item.ClienteCpf, ferramenta_codigo = item.FerramentaCodigo })
+                                    @Html.ActionLink("Edit", "Edit", new {  id =item.Id, ClienteCpf = item.ClienteCpfNavigation.Cpf,fcod = item.FerramentaCodigoNavigation.Codigo }) |
+                                    @Html.ActionLink("Details", "Details", new {  id =item.Id, ClienteCpf = item.ClienteCpfNavigation.Cpf,fcod = item.FerramentaCodigoNavigation.Codigo  }) |
+                                    @Html.ActionLink("Delete", "Delete", new {  id =item.Id, ClienteCpf = item.ClienteCpfNavigation.Cpf,fcod = item.FerramentaCodigoNavigation.Codigo  })
                                 </td>
                             </tr>
                         }

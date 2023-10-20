@@ -72,14 +72,14 @@ namespace MVC.Controllers
         }
 
         // GET: Orcamentoes/Edit/5
-        public async Task<IActionResult> Edit(long id, string ClienteCpf, string FerramentaCodigo)
+        public async Task<IActionResult> Edit(long id, string ClienteCpf, string fcod)
         {
             if (id == null || _context.Orcamentos == null)
             {
                 return NotFound();
             }
 
-            var orcamento = await _context.Orcamentos.FindAsync(id, ClienteCpf, FerramentaCodigo);
+            var orcamento = await _context.Orcamentos.FindAsync(id, ClienteCpf,fcod);
             if (orcamento == null)
             {
                 return NotFound();
