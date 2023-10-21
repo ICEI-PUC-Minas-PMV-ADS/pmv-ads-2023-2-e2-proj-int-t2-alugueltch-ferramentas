@@ -27,6 +27,8 @@ namespace MVC.Models
 
         public virtual Cliente? ClienteCpfNavigation { get; set; } = null!;
         public virtual Ferramentum? FerramentaCodigoNavigation { get; set; } = null!;
+
+        
     }
 
  

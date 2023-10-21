@@ -30,16 +30,16 @@
             @Html.DisplayFor(model => model.DataValidade)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.ClienteCpfNavigation)
+            @Html.DisplayNameFor(model => model.ClienteCpfNavigation.Nome)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.ClienteCpfNavigation.Cpf)
+            @Html.DisplayFor(model => model.ClienteCpfNavigation.Nome)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.FerramentaCodigoNavigation)
+            @Html.DisplayNameFor(model => model.FerramentaCodigoNavigation.Descricao)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.FerramentaCodigoNavigation.Codigo)
+            @Html.DisplayFor(model => model.FerramentaCodigoNavigation.Descricao)
         </dd>
     </dl>
 </div>

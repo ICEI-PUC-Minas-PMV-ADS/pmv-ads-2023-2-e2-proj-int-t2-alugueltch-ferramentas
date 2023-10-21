@@ -17,7 +17,7 @@ namespace MVC.Models
 
         [Display(Name = "Código")]
         public string Codigo { get; set; } = null!;
-        [Display(Name = "Tipo Ferramenta")]
+        [Display(Name = "Categoria")]
         public long TipoId { get; set; }
 
         public string? Marca { get; set; } = null!;
