@@ -25,8 +25,9 @@
 Link da Aplicação: https://alugueltech.azurewebsites.net/
 
 Usuários:
-Admin - Login: FUNC345 Senha: puc123
-Funcionário - Login: FUNC123 Senha: puc123
+<br>
+- Admin - Login: FUNC345 Senha: puc123
+- Funcionário - Login: FUNC123 Senha: puc123
 
 # Documentação
 
