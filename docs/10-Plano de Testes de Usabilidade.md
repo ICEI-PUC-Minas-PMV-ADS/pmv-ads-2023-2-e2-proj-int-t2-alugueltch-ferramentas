@@ -48,6 +48,9 @@ Verificar se há um local no sistema destinado para auxiliar e documentar as inf
 - Definir cenários de teste realistas que abranjam as principais funcionalidades do software.
 - Preparar um ambiente de teste que inclua acesso ao software e ferramentas de registro de feedback.<br><br>
 
+### Metodologia
+Serão utilizados os testes de “Heurística de Nielsen” e o de “Descoberta de problemas”. O teste heurístico será aplicado ao longo do desenvolvimento, a medida em que as funcionalidades forem entregues. Já o de descoberta de problemas será aplicado na entrega da primeira versão funcional da solução.
+
 ### Teste de Cadastro de Clientes
    
 **Cenário de teste:** Um novo cliente deseja se cadastrar no sistema.<br>
