@@ -23,7 +23,7 @@ Os resultados obtidos nos testes de software realizados são descritos abaixo.
 
 
 ![DetalhesAluguel](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e2-proj-int-t2-alugueltch-ferramentas/assets/126488218/7778c227-bda9-4464-bf6d-e9e01bd19dae)
-<p> Figura5 -   Acompanhamento de Datas de Retirada e devolução. </p>
+<p> Figura5 -   Acompanhamento de Datas de Retirada e Devolução. </p>
 
 
 
