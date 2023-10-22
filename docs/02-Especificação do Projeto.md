@@ -72,14 +72,24 @@ As tabelas que se seguem apresentam os requisitos funcionais e não funcionais q
 
 |ID    | Descrição do Requisito  | Prioridade |
 |------|-----------------------------------------|----|
-|RF-001| Registrar as ferramentas disponíveis para aluguel, incluindo descrição, categoria e condição. Permitindo adição, edição e exclusão de ferramentas no sistema. | ALTA | 
-|RF-002| Acompanhar o status de cada ferramenta (disponível, alugada, em manutenção, etc.).   | ALTA |
-|RF-003| O usuário deve ser capaz de gerar reservas equipamentos para datas específicas. A disponibilidade dos equipamentos deve ser verificada em tempo real para evitar conflitos. | ALTA |
-|RF-004| Gerar contratos de aluguel com detalhes do cliente, ferramentas, dados e termos.   | MÉDIA |
-|RF-005| Registrar as manutenções realizadas em cada equipamento, incluindo datas e detalhes.   | ALTA |
-|RF-006| Agendar automaticamente manutenções regulares para as ferramentas. | MÉDIA |
-|RF-007| Acompanhar informações sobre datas de retirada, devolução e manutenção. | ALTA |
-|RF-008| Gerar relatórios detalhados de gastos,ferramentas mais alugadas e alocação de recursos. | ALTA |
+|RF-001| O sistema deve fornecer uma funcionalidade de login que permita o acesso a dois tipos de usuários: administradores e usuários comuns. | ALTA | 
+|RF-002| Os administradores terão acesso a funcionalidades e recursos avançados de gerenciamento de funcionários. | ALTA | 
+|RF-003| O sistema deve permitir aos usuários criar novos orçamentos. Os orçamentos devem incluir informações como descrição, valor, data de criação e cliente associado. | ALTA | 
+|RF-004| Os usuários devem ser capazes de visualizar uma lista de orçamentos existentes.| ALTA | 
+|RF-005| O sistema deve permitir aos usuários editar informações em orçamentos existentes. | ALTA | 
+|RF-006| Deve haver uma opção para excluir orçamentos que não são mais necessários. | ALTA | 
+|RF-007| O sistema deve oferecer a funcionalidade de cadastro de novos clientes. Os detalhes do cliente devem incluir nome, endereço, número de telefone e outras informações relevantes. | ALTA | 
+|RF-008| Os usuários devem ser capazes de visualizar uma lista de clientes registrados. | ALTA | 
+|RF-009| O sistema deve permitir a edição das informações do cadastro de clientes existentes. | ALTA | 
+|RF-010| Deve haver uma opção para excluir o cadastro de clientes quando não for mais relevante. | ALTA | 
+|RF-011| Registrar as ferramentas disponíveis para aluguel, incluindo descrição, categoria e condição. Permitindo adição, edição e exclusão de ferramentas no sistema. | ALTA | 
+|RF-012| Acompanhar o status de cada ferramenta (disponível, alugada, em manutenção, etc.).   | ALTA |
+|RF-013| O usuário deve ser capaz de gerar reservas equipamentos para datas específicas. A disponibilidade dos equipamentos deve ser verificada em tempo real para evitar conflitos. | ALTA |
+|RF-014| Gerar contratos de aluguel com detalhes do cliente, ferramentas, dados e termos.   | MÉDIA |
+|RF-015| Registrar as manutenções realizadas em cada equipamento, incluindo datas e detalhes.   | ALTA |
+|RF-016| Agendar automaticamente manutenções regulares para as ferramentas. | MÉDIA |
+|RF-017| Acompanhar informações sobre datas de retirada, devolução e manutenção. | ALTA |
+|RF-018| Gerar relatórios detalhados de gastos,ferramentas mais alugadas e alocação de recursos. | ALTA |
 
 
 
