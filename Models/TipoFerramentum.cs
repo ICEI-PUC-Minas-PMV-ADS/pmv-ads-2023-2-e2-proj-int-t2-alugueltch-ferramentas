@@ -15,7 +15,7 @@ namespace MVC.Models
 
         public long Id { get; set; }
 
-        [Display(Name = "Tipo de Ferramenta")]
+        [Display(Name = "Categoria")]
         public string Nome { get; set; } = null!;
 
         public virtual ICollection<Ferramentum> Ferramenta { get; set; }

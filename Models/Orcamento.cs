@@ -26,8 +26,14 @@ namespace MVC.Models
         [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = false)]
         public DateTime DataValidade { get; set; }
 
+
+        [Display(Name = "Cliente")]
         public virtual Cliente? ClienteCpfNavigation { get; set; } = null!;
+
+        [Display(Name = "Categoria")]
         public virtual Ferramentum? FerramentaCodigoNavigation { get; set; } = null!;
+
+        
     }
 
  
