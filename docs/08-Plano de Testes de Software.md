@@ -5,7 +5,7 @@
 | **Caso de Teste** 	| **CT-01 – Login de Usuário** 	|
 |:---:	|:---:	|
 |	Requisito Associado 	| RF-001: O sistema deve fornecer uma funcionalidade de login que permita o acesso a dois tipos de usuários: administradores e usuários comuns.|
-| Objetivo do Teste 	| - Verificar se a funcionalidade de login permite que ambos os tipos de usuários acessem o sistema.|
+| Objetivo do Teste 	| Verificar se a funcionalidade de login permite que ambos os tipos de usuários acessem o sistema.|
 | Passos 	| - Acessar a página de login do sistema. <br> - Inserir as credenciais de um usuário administrador (nome de usuário ou e-mail e senha). <br> - Clicar no botão "Login". <br> - Verificar se o sistema permite o acesso, redirecionando o usuário para a página de administrador. <br> - Fazer logout. <br> - Inserir as credenciais de um usuário comum (nome de usuário ou e-mail e senha). <br> - Clicar no botão "Login". <br> - Verificar se o sistema permite o acesso, redirecionando o usuário para a página de usuário comum. |
 | Critérios de Êxito 	| - Os casos de teste são executados sem erros ou falhas. <br> - Para os passos 4 e 8, o sistema permite o acesso aos tipos de usuários correspondentes (administrador ou usuário comum) após o login. <br> - O sistema redireciona corretamente os usuários para suas páginas correspondentes após o login.<br> - Não ocorrem erros durante o processo de login. <br> - Senhas inválidas ou credenciais incorretas não permitem o login.|
 
