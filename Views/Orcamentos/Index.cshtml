@@ -2,7 +2,7 @@
 
 @{
     ViewData["Title"] = "Index";
-        
+
 }
 
 <link rel="stylesheet" href="~/css/sidebar.css" asp-append-version="true" />
@@ -13,13 +13,14 @@
         @Html.Partial("_SidebarComponent")
 
         <div class="col py-3">
-            <div class="d-flex flex-column table-bg align-items-end gap-5">                
-                    <a class="btn btn-custom-primary" asp-action="Create">Criar novo</a>                
+            <div class="d-flex flex-column table-bg align-items-end gap-5">
+                <a class="btn btn-custom-primary" asp-action="Create">Criar novo</a>
                 <table class="table">
                     <thead class="bg-yellow">
                         <tr>
                             <th>
-                                @Html.DisplayNameFor(model => model.ValorTotal)
+                                @Html.DisplayNameFor(model => model.Id)
+
                             </th>
                             <th>
                                 @Html.DisplayNameFor(model => model.DataOrcamento)
@@ -28,12 +29,15 @@
                                 @Html.DisplayNameFor(model => model.DataValidade)
                             </th>
                             <th>
-                                @Html.DisplayNameFor(model => model.ClienteCpfNavigation)
+                                @Html.DisplayNameFor(model => model.ClienteCpfNavigation.Nome)
                             </th>
-
                             <th>
-                                @Html.DisplayNameFor(model => model.FerramentaCodigoNavigation)
+                                @Html.DisplayNameFor(model => model.ValorTotal)
+                            <th>
+
                             </th>
+                            <th>
+                            <th>
                             <th></th>
                         </tr>
                     </thead>
@@ -42,7 +46,7 @@
                         {
                             <tr>
                                 <td>
-                                    @Html.DisplayFor(modelItem => item.ValorTotal)
+                                    @Html.DisplayFor(modelItem => item.Id)
                                 </td>
                                 <td>
                                     @Html.DisplayFor(modelItem => item.DataOrcamento)
@@ -51,24 +55,33 @@
                                     @Html.DisplayFor(modelItem => item.DataValidade)
                                 </td>
                                 <td>
-                                    @Html.DisplayFor(modelItem => item.ClienteCpfNavigation.Cpf)
+                                    @Html.DisplayFor(modelItem => item.ClienteCpfNavigation.Nome)
                                 </td>
                                 <td>
-                                    @Html.DisplayFor(modelItem => item.FerramentaCodigoNavigation.Codigo)
+
+                                    @Html.DisplayFor(modelItem => item.ValorTotal)
                                 </td>
                                 <td>
-                                    @Html.ActionLink("Edit", "Edit", new {  id =item.Id, ClienteCpf = item.ClienteCpfNavigation.Cpf,fcod = item.FerramentaCodigoNavigation.Codigo }) |
-                                    @Html.ActionLink("Details", "Details", new {  id =item.Id, ClienteCpf = item.ClienteCpfNavigation.Cpf,fcod = item.FerramentaCodigoNavigation.Codigo  }) |
-                                    @Html.ActionLink("Delete", "Delete", new {  id =item.Id, ClienteCpf = item.ClienteCpfNavigation.Cpf,fcod = item.FerramentaCodigoNavigation.Codigo  })
+                                <td class="table-actions d-flex gap-2">
+                                    <a href="@Url.Action("Edit", new { id =item.Id, ClienteCpf = item.ClienteCpfNavigation.Cpf,fcod = item.FerramentaCodigoNavigation.Codigo })" title="Editar">
+                                        <i class="bi bi-pencil-square"></i>
+                                    </a>
+                                    <a href="@Url.Action("Details", new { id =item.Id, ClienteCpf = item.ClienteCpfNavigation.Cpf,fcod = item.FerramentaCodigoNavigation.Codigo  })" title="Detalhes">
+                                        <i class="bi bi-info-circle"></i>
+                                    </a>
+
+                                    <a href="@Url.Action("Delete", new { id =item.Id, ClienteCpf = item.ClienteCpfNavigation.Cpf,fcod = item.FerramentaCodigoNavigation.Codigo  })" title="Delete">
+                                        <i class="bi bi-trash"></i>
+                                    </a>
                                 </td>
                             </tr>
                         }
                     </tbody>
                 </table>
             </div>
-           
+
         </div>
 
 
-</div>
+    </div>
 </div>

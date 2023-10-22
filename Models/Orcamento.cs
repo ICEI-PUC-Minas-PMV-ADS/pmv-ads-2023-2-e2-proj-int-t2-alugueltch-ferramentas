@@ -11,6 +11,7 @@ namespace MVC.Models
         [Display(Name = "Cliente")]
         public string ClienteCpf { get; set; } = null!;
         public string FerramentaCodigo { get; set; } = null!;
+        [Display(Name = "Valor")]
         public decimal ValorTotal { get; set; }
 
 
