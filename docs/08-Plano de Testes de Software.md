@@ -44,6 +44,20 @@
 | Passos 	| 1. Fazer login no sistema como um usuário comum. <br> 2. Navegar até a seção de visualização de orçamentos. <br> 3. Verificar se uma lista de orçamentos existentes é exibida na tela.<br> 4. Encontrar a opção de exclusão e clicar nela. <br> 5. Confirmar a exclusão na janela de confirmação, se for exibida. <br> 6. Verificar se o orçamento selecionado foi removido com sucesso da lista de orçamentos. |
 | Critérios de Êxito 	| - Os casos de teste são executados sem erros ou falhas. <br> - Após a execução dos passos, o orçamento selecionado é excluído com sucesso da lista de orçamentos. <br> - Não ocorrem erros durante o processo de exclusão de orçamentos. <br> - Caso exista uma janela de confirmação, a exclusão é confirmada com êxito. |
 
+| **Caso de Teste** 	| **CT-07 – Cadastro de Novos Clientes** 	|
+|:---:	|:---:	|
+|	Requisito Associado 	| RF-007: O sistema deve oferecer a funcionalidade de cadastro de novos clientes. Os detalhes do cliente devem incluir nome, endereço, número de telefone e outras informações relevantes.|
+| Objetivo do Teste 	| Verificar se a funcionalidade de cadastro de novos clientes permite que os usuários registrem com sucesso informações de novos clientes.|
+| Passos 	| 1. Fazer login no sistema como um usuário comum. <br> 2. Acessar a seção de cadastro de novos clientes. <br> 3. Preencher os campos obrigatórios, como nome, endereço e número de telefone. <br> 4. Inserir informações adicionais, como e-mail, data de nascimento, ou outras informações relevantes, se necessário. <br> 5.Clicar no botão "Cadastrar Cliente". <br> 6. Verificar se o novo cliente é criado com sucesso no sistema. |
+| Critérios de Êxito 	| - Os casos de teste são executados sem erros ou falhas. <br> - Após a execução dos passos, um novo cliente é criado com sucesso no sistema. <br> - Todas as informações fornecidas durante o cadastro do cliente são armazenadas corretamente. <br> - Não ocorrem erros durante o processo de cadastro de novos clientes. |
+
+| **Caso de Teste** 	| **CT-08 – Visualização da Lista de Clientes Registrados** 	|
+|:---:	|:---:	|
+|	Requisito Associado 	| RF-008: Os usuários devem ser capazes de visualizar uma lista de clientes registrados.|
+| Objetivo do Teste 	| Verificar se a funcionalidade de visualização da lista de clientes registrados permite aos usuários acessarem com sucesso a lista de clientes registrados.|
+| Passos 	| 1. Fazer login no sistema como um usuário comum. <br> 2. Navegar até a seção de visualização da lista de clientes registrados. <br> 3. Verificar se uma lista de clientes registrados é exibida na tela. <br> 4. Verificar se a lista contém pelo menos um cliente registrado. <br> 5. Selecionar um cliente na lista. <br> 6. Verificar se as informações detalhadas do cliente são exibidas corretamente, incluindo nome, endereço, número de telefone e outras informações relevantes. |
+| Critérios de Êxito 	| - Os casos de teste são executados sem erros ou falhas. <br> - Após a execução dos passos, uma lista de clientes registrados é exibida no sistema. <br> - Pelo menos um cliente registrado é listado na tela. <br> - A seleção de um cliente na lista exibe as informações detalhadas de forma correta, incluindo nome, endereço, número de telefone e outras informações relevantes. <br> - Não ocorrem erros durante o processo de visualização da lista de clientes registrados. |
+
 | **Caso de Teste** 	| **CT-01 – Gerenciar Ferramentas** 	|
 |:---:	|:---:	|
 |	Requisito Associado 	| - RF-01: O sistema deve permitir o registro de ferramentas disponíveis para aluguel, incluindo descrição, preço, marca, tipo. <br> - RF-02: O sistema deve permitir a adição, edição e exclusão de ferramentas no sistema. |
