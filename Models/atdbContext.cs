@@ -212,6 +212,10 @@ namespace MVC.Models
                     .HasMaxLength(30)
                     .HasColumnName("marca");
 
+                entity.Property(e => e.Quantidade)
+                .HasColumnName("quantidade")
+                .HasColumnType("bigint");
+
                 entity.Property(e => e.SituacaoId).HasColumnName("situacao_id");
 
                 entity.Property(e => e.TipoId).HasColumnName("tipo_id");

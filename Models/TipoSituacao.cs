@@ -19,5 +19,9 @@ namespace MVC.Models
 
         [JsonIgnore]
         public virtual ICollection<Ferramentum> Ferramenta { get; set; }
+
+        
+
+        
     }
 }

@@ -34,6 +34,9 @@
             <th>
                 @Html.DisplayNameFor(model => model.Tipo.Nome)
             </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Quantidade)
+            </th>
 
             <th>
                 @Html.DisplayNameFor(model => model.ValorDiaria)
@@ -70,6 +73,10 @@
             <td>
                 @Html.DisplayFor(modelItem => item.Tipo.Nome)
             </td>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.Quantidade)
+                </td>
 
                 <td>
                     @Html.DisplayFor(modelItem => item.ValorDiaria)
