@@ -126,7 +126,7 @@ namespace MVC.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(long id, [Bind("Id,Codigo,TipoId,Marca,Descricao,SituacaoId,FuncionarioCadastroFuncional,ValorDiaria,ValorCompra")] Ferramentum ferramentum)
+        public async Task<IActionResult> Edit(long id, [Bind("Id,Codigo,TipoId,Marca,Descricao,SituacaoId,FuncionarioCadastroFuncional,ValorDiaria,ValorCompra,Quantidade")] Ferramentum ferramentum)
         {
             if (id != ferramentum.Id)
             {
