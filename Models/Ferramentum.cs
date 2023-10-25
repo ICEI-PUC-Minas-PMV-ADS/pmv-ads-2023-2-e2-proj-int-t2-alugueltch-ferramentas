@@ -49,7 +49,7 @@ namespace MVC.Models
        
         public virtual TipoSituacao? Situacao { get; set; } = null!;
 
-        
+
         public virtual TipoFerramentum? Tipo { get; set; } = null!;
         public virtual ICollection<Emprestimo> Emprestimos { get; set; }
         public virtual ICollection<Orcamento> Orcamentos { get; set; }

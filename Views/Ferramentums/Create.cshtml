@@ -38,7 +38,13 @@
             <label asp-for="SituacaoId" class="control-label">Situação</label>
             <select asp-for="SituacaoId" class="form-control" asp-items="ViewBag.SituacaoId"></select>
             </div>
-            
+
+            <div class="form-group">
+                <label asp-for="Quantidade" class="control-label"></label>
+                <input asp-for="Quantidade" class="form-control" />
+                <span asp-validation-for="Quantidade" class="text-danger"></span>
+
+            </div>
             
             
             <div class="form-group">
@@ -46,11 +52,7 @@
                 <select asp-for="FuncionarioCadastroFuncional" class ="form-control" asp-items="ViewBag.FuncionarioCadastroFuncional"></select>
             </div>
 
-            <div class="form-group">
-                <label asp-for="Quantidade" class="control-label"></label>
-                <input asp-for="Quantidade" class="form-control" />
-                <span asp-validation-for="Quantidade" class="text-danger"></span>
-            </div>
+           
 
             <div class="form-group">
                 <label asp-for="ValorDiaria" class="control-label"></label>

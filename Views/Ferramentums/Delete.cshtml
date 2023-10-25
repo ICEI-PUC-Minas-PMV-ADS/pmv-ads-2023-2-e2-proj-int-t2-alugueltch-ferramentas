@@ -29,6 +29,12 @@
         <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Quantidade)
         </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Situacao)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Situacao.Nome)
+        </dd>
         <dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.ValorDiaria)
         </dt>
@@ -47,12 +53,7 @@
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.FuncionarioCadastroFuncionalNavigation.Nome)
         </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Situacao)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Situacao.Nome)
-        </dd>
+        
         <dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.Tipo)
         </dt>

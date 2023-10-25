@@ -32,10 +32,11 @@
                 @Html.DisplayNameFor(model => model.Situacao.Nome)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Tipo.Nome)
-            </th>
-            <th>
                 @Html.DisplayNameFor(model => model.Quantidade)
+            </th>
+
+            <th>
+                @Html.DisplayNameFor(model => model.Tipo.Nome)
             </th>
 
             <th>
@@ -44,6 +45,7 @@
             <th>
                 @Html.DisplayNameFor(model => model.ValorCompra)
             </th>
+            
 
             
 
@@ -70,14 +72,14 @@
             <td>
                 @Html.DisplayFor(modelItem => item.Situacao.Nome)
             </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Tipo.Nome)
-            </td>
-
                 <td>
                     @Html.DisplayFor(modelItem => item.Quantidade)
                 </td>
 
+            <td>
+                @Html.DisplayFor(modelItem => item.Tipo.Nome)
+            </td>
+            
                 <td>
                     @Html.DisplayFor(modelItem => item.ValorDiaria)
                 </td>
