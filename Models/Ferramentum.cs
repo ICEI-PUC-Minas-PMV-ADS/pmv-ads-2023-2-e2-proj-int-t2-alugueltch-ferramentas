@@ -11,8 +11,8 @@ namespace MVC.Models
             Emprestimos = new HashSet<Emprestimo>();
             Orcamentos = new HashSet<Orcamento>();
             Processos = new HashSet<Processo>();
+        
         }
-
         public long Id { get; set; }
 
         [Display(Name = "Código")]
@@ -40,6 +40,8 @@ namespace MVC.Models
 
         [Display(Name = "Responsável")]
         public virtual Funcionario? FuncionarioCadastroFuncionalNavigation { get; set; } = null!;
+        
+
 
 
        
