@@ -1,4 +1,4 @@
-import { debounce, formatPhoneNumber } from "../js/utils.js"
+import { debounce, formatPhoneNumber } from "../utils.js"
 
 
 const formatClientAddress = ({logradouro, numero, bairro}) => {
