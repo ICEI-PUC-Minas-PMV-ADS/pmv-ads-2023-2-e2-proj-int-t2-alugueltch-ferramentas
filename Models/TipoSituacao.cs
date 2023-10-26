@@ -10,6 +10,7 @@ namespace MVC.Models
         public TipoSituacao()
         {
             Ferramenta = new HashSet<Ferramentum>();
+            
         }
 
         public short Id { get; set; }
@@ -19,5 +20,16 @@ namespace MVC.Models
 
         [JsonIgnore]
         public virtual ICollection<Ferramentum> Ferramenta { get; set; }
+
+        public string Quantidade()
+        {
+            if (Ferramenta != null && Ferramenta.Count >= 1)
+            {
+                return "Disponível"; //  pelo menos uma ferramenta disponível
+            }
+            return "Indisponível"; // se não houver ferramentas, indisponível
+        }
+
+
     }
 }
