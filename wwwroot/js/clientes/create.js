@@ -30,6 +30,7 @@ const getAddressByCep = async (cep) => {
 } 
 
 const fillAddressFields = (address) => {
+    console.log(address)
 
     const {
         complemento,
@@ -42,20 +43,17 @@ const fillAddressFields = (address) => {
     const inputLogradouro = document.getElementById('input-logradouro')
     inputLogradouro.textContent = logradouro
 
-    console.log(inputLogradouro)
-    console.log(logradouro)
+    const inputComplemento = document.getElementById('input-complemento')
+    inputComplemento.textContent = complemento
 
-    // const inputComplemento = document.getElementById('input-complemento')
-    // inputComplemento.textContent = complemento
+    const inputBairro = document.getElementById('input-bairro')
+    inputBairro.textContent = bairro
 
-    // const inputBairro = document.getElementById('input-bairro')
-    // inputBairro.textContent = bairro
+    const inputCidade = document.getElementById('input-cidade')
+    inputCidade.textContent = localidade
 
-    // const inputCidade = document.getElementById('input-cidade')
-    // inputCidade.textContent = localidade
-
-    // const inputEstado = document.getElementById('input-estado')
-    // inputEstado.textContent = uf
+    const inputEstado = document.getElementById('input-estado')
+    inputEstado.textContent = uf
 }
 
 
