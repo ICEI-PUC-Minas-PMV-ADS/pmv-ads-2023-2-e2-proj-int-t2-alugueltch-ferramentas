@@ -4,7 +4,6 @@
 
 import { debounce } from "../utils.js"
 
-
 const checkIfValidCep = (cep) => {
     const isValidCep = /^\d{5}\d{3}$/.test(cep)
 
@@ -30,8 +29,6 @@ const getAddressByCep = async (cep) => {
 } 
 
 const fillAddressFields = (address) => {
-    console.log(address)
-
     const {
         complemento,
         localidade,
@@ -41,19 +38,19 @@ const fillAddressFields = (address) => {
     } = address
 
     const inputLogradouro = document.getElementById('input-logradouro')
-    inputLogradouro.textContent = logradouro
+    inputLogradouro.value = logradouro
 
     const inputComplemento = document.getElementById('input-complemento')
-    inputComplemento.textContent = complemento
+    inputComplemento.value = complemento
 
     const inputBairro = document.getElementById('input-bairro')
-    inputBairro.textContent = bairro
+    inputBairro.value = bairro
 
     const inputCidade = document.getElementById('input-cidade')
-    inputCidade.textContent = localidade
+    inputCidade.value = localidade
 
     const inputEstado = document.getElementById('input-estado')
-    inputEstado.textContent = uf
+    inputEstado.value = uf
 }
 
 
@@ -70,11 +67,6 @@ const handleCepFieldChange = debounce(async (event) => {
 }, 300)
 
 /**
- * Fim buscar CEP pelo input
- */
-
-
-/**
  * Preencher países
  */
 
@@ -87,6 +79,10 @@ const getCountries = async () => {
 
 const createSelectOptions = (data) => {
     return data.map(({name, code}) => {
+        if(name === "Brazil") {
+            return `<option value="${code}" selected>${name}</option>`
+        }
+
         return `<option value="${code}">${name}</option>`
     })
 }
