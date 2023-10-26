@@ -4,43 +4,77 @@
     ViewData["Title"] = "Edit";
 }
 
-<h1>Edit</h1>
+<link rel="stylesheet" href="~/css/sidebar.css" asp-append-version="true" />
+<link rel="stylesheet" href="~/css/tables.css" asp-append-version="true" />
 
-<h4>Orcamento</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="Edit">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <input type="hidden" asp-for="Id" />
-            <input type="hidden" asp-for="ClienteCpf" />
-            <input type="hidden" asp-for="FerramentaCodigo" />
-            <div class="form-group">
-                <label asp-for="ValorTotal" class="control-label"></label>
-                <input asp-for="ValorTotal" class="form-control" />
-                <span asp-validation-for="ValorTotal" class="text-danger"></span>
+<div class="container-fluid position-fixed">
+    <div class="row flex-nowrap">
+        @Html.Partial("_SidebarComponent")
+
+        <div class="col-6 py-5 container-fluid">
+            <div class="table-bg" style="max-height: 100vh; overflow:auto;">
+
+                <form class="d-flex flex-column gap-2" asp-action="Edit">
+                    <h3>Editar Orçamento</h3>
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <input type="hidden" asp-for="Id" />
+                    <input type="hidden" asp-for="ClienteCpf" />
+                    <input type="hidden" asp-for="FerramentaCodigo" />
+                    <div class="form-group">
+                        <label asp-for="ClienteCpfNavigation.Nome" class="control-label"></label>
+                        <input asp-for="ClienteCpfNavigation.Nome" class="form-control" readonly="readonly" />
+                        <span asp-validation-for="ClienteCpfNavigation.Nome" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="ClienteCpf" class="control-label">CPF</label>
+                        <input asp-for="ClienteCpf" class="form-control" readonly="readonly" />
+                        <span asp-validation-for="ClienteCpf" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="ClienteCpfNavigation.Telefone" class="control-label"></label>
+                        <input asp-for="ClienteCpfNavigation.Telefone" class="form-control" readonly="readonly" />
+                        <span asp-validation-for="ClienteCpfNavigation.Telefone" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="ClienteCpfNavigation.Endereco.Logradouro" class="control-label">Endereço</label>
+
+                        <input asp-for="ClienteCpfNavigation.Endereco.Logradouro" class="form-control" readonly="readonly" value="@($"{Model.ClienteCpfNavigation.Endereco.Logradouro}, {Model.ClienteCpfNavigation.Endereco.Numero}, {Model.ClienteCpfNavigation.Endereco.Bairro}, {Model.ClienteCpfNavigation.Endereco.Cidade} - {Model.ClienteCpfNavigation.Endereco.Estado}")" />
+
+                        <span asp-validation-for="ClienteCpfNavigation.Endereco.Logradouro" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="ClienteCpfNavigation.Email" class="control-label"></label>
+                        <input asp-for="ClienteCpfNavigation.Email" class="form-control" readonly="readonly" />
+                        <span asp-validation-for="ClienteCpfNavigation.Email" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="ValorTotal" class="control-label"></label>
+                        <input asp-for="ValorTotal" class="form-control" />
+                        <span asp-validation-for="ValorTotal" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="DataOrcamento" class="control-label"></label>
+                        <input asp-for="DataOrcamento" class="form-control" />
+                        <span asp-validation-for="DataOrcamento" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="DataValidade" class="control-label"></label>
+                        <input asp-for="DataValidade" class="form-control" />
+                        <span asp-validation-for="DataValidade" class="text-danger"></span>
+                    </div>
+                    <div class="form-group mt-3">
+                        <a class="btn btn-custom-secondary" asp-action="Index">Voltar</a>
+                        <input type="submit" value="Salvar" class="btn btn-custom-primary" />
+                    </div>
+                </form>
             </div>
-            <div class="form-group">
-                <label asp-for="DataOrcamento" class="control-label"></label>
-                <input asp-for="DataOrcamento" class="form-control" />
-                <span asp-validation-for="DataOrcamento" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="DataValidade" class="control-label"></label>
-                <input asp-for="DataValidade" class="form-control" />
-                <span asp-validation-for="DataValidade" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-primary" />
-            </div>
-        </form>
+        </div>
     </div>
 </div>
 
-<div>
-    <a asp-action="Index">Back to List</a>
-</div>
-
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
 }
