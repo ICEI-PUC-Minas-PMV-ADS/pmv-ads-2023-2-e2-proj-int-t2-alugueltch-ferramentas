@@ -79,7 +79,13 @@ namespace MVC.Controllers
                 return NotFound();
             }
 
-            var orcamento = await _context.Orcamentos.FindAsync(id, ClienteCpf,fcod);
+            var orcamento = await _context.Orcamentos
+                                 .Include(c => c.ClienteCpfNavigation)
+                                 .ThenInclude(cl => cl.Endereco)
+                                 .Include(c => c.FerramentaCodigoNavigation)
+                                 .FirstOrDefaultAsync(x => x.Id == id && x.ClienteCpf == ClienteCpf && x.FerramentaCodigo == fcod);
+
+
             if (orcamento == null)
             {
                 return NotFound();

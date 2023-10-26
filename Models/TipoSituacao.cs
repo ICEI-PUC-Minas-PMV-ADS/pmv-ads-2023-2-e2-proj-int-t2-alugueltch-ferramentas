@@ -13,6 +13,7 @@ namespace MVC.Models
             
         }
 
+
         public short Id { get; set; }
 
         [Display(Name = "Situação")]
@@ -21,13 +22,13 @@ namespace MVC.Models
         [JsonIgnore]
         public virtual ICollection<Ferramentum> Ferramenta { get; set; }
 
-        public string Quantidade()
+        public string GetDisponibilidade()
         {
-            if (Ferramenta != null && Ferramenta.Count >= 1)
+            if (Ferramenta != null && Ferramenta.Any(f => f.Quantidade >= 1))
             {
-                return "Disponível"; //  pelo menos uma ferramenta disponível
+                return "Disponível"; // Se houver pelo menos uma ferramenta com quantidade >= 1, está disponível
             }
-            return "Indisponível"; // se não houver ferramentas, indisponível
+            return "Indisponível"; // Se não houver ferramentas com quantidade >= 1, está indisponível
         }
 
 

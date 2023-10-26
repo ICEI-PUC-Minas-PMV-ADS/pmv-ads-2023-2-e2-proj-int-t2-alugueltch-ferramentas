@@ -11,7 +11,6 @@ namespace MVC.Models
             Emprestimos = new HashSet<Emprestimo>();
             Orcamentos = new HashSet<Orcamento>();
             Processos = new HashSet<Processo>();
-           
         }
 
         public long Id { get; set; }
@@ -36,7 +35,12 @@ namespace MVC.Models
 
         public long? Quantidade { get; set; }
 
-       [Display(Name = "Valor diária")]
+        public bool IsDisponivel()
+        {
+            return Quantidade >= 1;
+        }
+
+        [Display(Name = "Valor diária")]
         public decimal ValorDiaria { get; set; }
 
         [Display(Name = "Valor compra")]
@@ -44,6 +48,8 @@ namespace MVC.Models
 
         [Display(Name = "Responsável")]
         public virtual Funcionario? FuncionarioCadastroFuncionalNavigation { get; set; } = null!;
+        
+
 
 
        
