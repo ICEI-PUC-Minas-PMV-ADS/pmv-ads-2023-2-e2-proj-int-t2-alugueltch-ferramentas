@@ -36,7 +36,12 @@ namespace MVC.Models
 
         public long? Quantidade { get; set; }
 
-       [Display(Name = "Valor diária")]
+        public bool IsDisponivel()
+        {
+            return Quantidade >= 1;
+        }
+
+        [Display(Name = "Valor diária")]
         public decimal ValorDiaria { get; set; }
 
         [Display(Name = "Valor compra")]

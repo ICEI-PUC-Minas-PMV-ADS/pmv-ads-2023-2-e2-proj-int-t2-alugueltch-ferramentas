@@ -69,9 +69,9 @@
             <td>
                 @Html.DisplayFor(modelItem => item.FuncionarioCadastroFuncionalNavigation.Nome)
             </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Situacao.Nome)
-            </td>
+                <td>
+                    @(item.IsDisponivel() ? "Disponível" : "Indisponível")
+                </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.Quantidade)
                 </td>
