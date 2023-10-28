@@ -57,18 +57,39 @@ const getTools = async (descricao) => {
 
 const obterInputFerramenta = () => {
     const inputTools = document.getElementById("tools-input");
+    const selectedItemsContainer = document.getElementById("selected-tools-container");
+    const saveButton = document.getElementById("save-button");
+
+    let selectedItems = [];
 
     inputTools.addEventListener('input', async (event) => {
-        const inputValue = event.target.value
-        const ferramentasArray = await getTools(inputValue)
-        const dataList = document.getElementById("tools-names")
+        const inputValue = event.target.value;
+        const ferramentasArray = await getTools(inputValue);
+        const dataList = document.getElementById("tools-names");
 
-        dataList.innerHTML = ""
+        dataList.innerHTML = "";
 
-        ferramentasArray.forEach((ferramentum) => {           
-           dataList.innerHTML += `<option value="${ferramentum.descricao}"></option>`
-        })
-    })    
+        ferramentasArray.forEach((ferramentum) => {
+            dataList.innerHTML += `<option value="${ferramentum.descricao}"></option>`;
+        });
+    });
+
+    saveButton.addEventListener('click', () => {
+        const selectedValue = inputTools.value;
+        console.log(selectedValue)
+        if (selectedValue) {
+            selectedItems.push(selectedValue);
+            updateSelectedItemsContainer();
+            inputTools.value = "";
+        }
+    });
+
+    function updateSelectedItemsContainer() {
+        selectedItemsContainer.innerHTML = "";
+        selectedItems.forEach((item) => {
+            selectedItemsContainer.innerHTML += `<div>${item}</div>`;
+        });
+    }
 }
 
 window.onload = () => {

@@ -38,13 +38,19 @@
                         <label asp-for="ClienteCpfNavigation.Endereco" class="control-label">Endereço</label>
                         <input asp-for="ClienteCpfNavigation.Endereco" class="form-control" id="adress-input"/>
             </div>
-            <div class="form-group">
+                    <div class="form-group">
                         <label asp-for="FerramentaCodigoNavigation.Descricao" class="control-label">Ferramenta</label>
-                        <input asp-for="FerramentaCodigoNavigation.Descricao" class="form-control" id="tools-input" list="tools-names"/>
+                        <input asp-for="FerramentaCodigoNavigation.Descricao" class="form-control" id="tools-input" list="tools-names" />
                         <datalist id="tools-names">
                         </datalist>
-            </div>            
-            <div class="form-group">
+                    </div>
+
+                    <div class="form-group">
+                        <div id="selected-tools-container">
+                        </div>
+                        <button id="save-button" type="button">Salvar</button>
+                    </div>
+                    <div class="form-group">
                 <label asp-for="DataOrcamento" class="control-label"></label>
                 <input asp-for="DataOrcamento" class="form-control" />
                 <span asp-validation-for="DataOrcamento" class="text-danger"></span>
