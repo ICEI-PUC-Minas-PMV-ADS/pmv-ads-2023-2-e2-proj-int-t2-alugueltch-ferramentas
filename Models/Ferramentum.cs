@@ -60,5 +60,7 @@ namespace MVC.Models
         public virtual ICollection<Emprestimo> Emprestimos { get; set; }
         public virtual ICollection<Orcamento> Orcamentos { get; set; }
         public virtual ICollection<Processo> Processos { get; set; }
+
+
     }
 }

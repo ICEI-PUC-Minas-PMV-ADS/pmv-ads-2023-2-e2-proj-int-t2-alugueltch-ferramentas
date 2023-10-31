@@ -10,7 +10,7 @@ namespace MVC.Models
 
         [Display(Name = "Cliente")]
         public string ClienteCpf { get; set; } = null!;
-        public string FerramentaCodigo { get; set; } = null!;
+        public string? FerramentaCodigo { get; set; } = null!;
         [Display(Name = "Valor")]
         public decimal ValorTotal { get; set; }
 
@@ -33,7 +33,8 @@ namespace MVC.Models
         [Display(Name = "Categoria")]
         public virtual Ferramentum? FerramentaCodigoNavigation { get; set; } = null!;
 
-        
+        public virtual ICollection<Ferramentum> Ferramentas { get; set; }
+
     }
 
  
