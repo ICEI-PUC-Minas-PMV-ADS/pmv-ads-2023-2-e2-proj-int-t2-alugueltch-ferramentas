@@ -33,7 +33,6 @@ namespace MVC.Models
         [Display(Name = "Categoria")]
         public virtual Ferramentum? FerramentaCodigoNavigation { get; set; } = null!;
 
-        public virtual ICollection<Ferramentum> Ferramentas { get; set; }
 
     }
 
