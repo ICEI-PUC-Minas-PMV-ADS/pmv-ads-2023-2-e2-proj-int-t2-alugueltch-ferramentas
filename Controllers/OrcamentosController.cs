@@ -35,6 +35,7 @@ namespace MVC.Controllers
 
             var orcamento = await _context.Orcamentos
                 .Include(o => o.ClienteCpfNavigation)
+                .ThenInclude(cl => cl.Endereco)
                 .Include(o => o.FerramentaCodigoNavigation)
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (orcamento == null)
