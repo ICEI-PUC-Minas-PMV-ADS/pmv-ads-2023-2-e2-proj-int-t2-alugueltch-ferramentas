@@ -3,51 +3,57 @@
 @{
     ViewData["Title"] = "Delete";
 }
+<link rel="stylesheet" href="~/css/sidebar.css" asp-append-version="true" />
+<link rel="stylesheet" href="~/css/tables.css" asp-append-version="true" />
 
-<h1>Delete</h1>
+<div class="container-fluid position-fixed">
+    <div class="row flex-nowrap">
+        @Html.Partial("_SidebarComponent")
 
-<h3>Tem certeza que deseja excluir este orçamento?</h3>
-<div>
-    <h4>Orcamento</h4>
-    <hr />
-    <dl class="row">
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.ValorTotal)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.ValorTotal)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.DataOrcamento)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.DataOrcamento)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.DataValidade)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.DataValidade)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.ClienteCpfNavigation)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.ClienteCpfNavigation.Cpf)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.FerramentaCodigoNavigation)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.FerramentaCodigoNavigation.Codigo)
-        </dd>
-    </dl>
-    
-    <form asp-action="Delete">
-        <input type="hidden" asp-for="Id" />
-        <input type="hidden" asp-for="ClienteCpf" />
-        <input type="hidden" asp-for="FerramentaCodigo" />
-        <input type="submit" value="Delete" class="btn btn-danger" /> |
-        <a asp-action="Index">Back to List</a>
-    </form>
-</div>
+        <div class="col-8 container-fluid py-3 container-fluid">
+            <div class="py-3 table-bg">
+                <h3>Excluir Funcionário do Sistema</h3>
+                <h3>Tem certeza? Essa ação não pode ser revertida.</h3>
+                <dl class="col-6">
+                    <dt class="col-sm-2">
+                        @Html.DisplayNameFor(model => model.ValorTotal)
+                    </dt>
+                    <dd class="col-sm-10">
+                        @Html.DisplayFor(model => model.ValorTotal)
+                    </dd>
+                    <dt class="col-sm-10">
+                        @Html.DisplayNameFor(model => model.DataOrcamento)
+                    </dt>
+                    <dd class="col-sm-10">
+                        @Html.DisplayFor(model => model.DataOrcamento)
+                    </dd>
+                    <dt class="col-sm-10">
+                        @Html.DisplayNameFor(model => model.DataValidade)
+                    </dt>
+                    <dd class="col-sm-10">
+                        @Html.DisplayFor(model => model.DataValidade)
+                    </dd>
+                    <dt class="col-sm-2">
+                        @Html.DisplayNameFor(model => model.ClienteCpfNavigation)
+                    </dt>
+                    <dd class="col-sm-10">
+                        @Html.DisplayFor(model => model.ClienteCpfNavigation.Cpf)
+                    </dd>
+                    <dt class="col-sm-2">
+                        @Html.DisplayNameFor(model => model.FerramentaCodigoNavigation)
+                    </dt>
+                    <dd class="col-sm-10">
+                        @Html.DisplayFor(model => model.FerramentaCodigoNavigation.Codigo)
+                    </dd>
+                </dl>
+
+                <form asp-action="Delete">
+                    <input type="hidden" asp-for="Id" />
+                    <input type="hidden" asp-for="ClienteCpf" />
+                    <input type="hidden" asp-for="FerramentaCodigo" />
+                    <a class="btn btn-custom-secondary" asp-action="Index">Voltar</a>
+                    <input type="submit" value="Delete" class="btn btn-danger" />
+                </form>
+            </div>
+        </div>
+    </div>

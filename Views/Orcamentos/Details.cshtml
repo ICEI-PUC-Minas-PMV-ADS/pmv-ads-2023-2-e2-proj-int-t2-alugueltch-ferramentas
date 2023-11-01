@@ -11,9 +11,8 @@
     <div class="row flex-nowrap">
         @Html.Partial("_SidebarComponent")
 
-        <div class="col-6 py-5 container-fluid" style="max-height: 100vh; overflow:auto;">
-            <div class="col py-3 table-bg">
-
+        <div class="col-6 container-fluid py-3 container-fluid">
+            <div class="col py-3 table-bg" style="max-height: 100vh; overflow:auto;">
                 <h3>Detalhes</h3>
                 <dl class="d-flex flex-column gap-2">
                     <h6>Número do Orçamento @Html.DisplayFor(Orcamento => Orcamento.Id)</h6>

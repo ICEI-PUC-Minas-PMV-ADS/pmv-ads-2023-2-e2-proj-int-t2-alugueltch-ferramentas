@@ -7,8 +7,8 @@
 <link rel="stylesheet" href="~/css/sidebar.css" asp-append-version="true" />
 <link rel="stylesheet" href="~/css/tables.css" asp-append-version="true" />
 <link rel="stylesheet" href="~/css/orcamentos.css" asp-append-version="true" />
-<link rel="stylesheet" href="~/lib/magic-suggest/magicsuggest.css"  asp-append-version="true"/>
-<link rel="stylesheet" href="~/lib/daterangepicker/daterangepicker.css" asp-append-version="true"/>
+<link rel="stylesheet" href="~/lib/magic-suggest/magicsuggest.css" asp-append-version="true" />
+<link rel="stylesheet" href="~/lib/daterangepicker/daterangepicker.css" asp-append-version="true" />
 
 
 
@@ -19,34 +19,34 @@
             <div class="col-md-4 py-5 container-fluid">
                 <div class= "table-bg" style="max-height: 100vh; overflow:auto;">
                 <form class="d-flex flex-column gap-2" asp-action="Create" id="form">
-                    <h3>Novo Orçamento</h3>                
+                    <h3>Novo Orçamento</h3>
                 <div asp-validation-summary="ModelOnly" class="text-danger"></div>
 
-                <div class="form-group">               
+                <div class="form-group">
                     <label asp-for="ClienteCpfNavigation.Nome" class="control-label">Cliente</label>
-                    <input asp-for="ClienteCpfNavigation.Nome" 
-                        class="form-control"  
-                        style="display: none;" 
-                        id="hidden-client-input" 
+                    <input asp-for="ClienteCpfNavigation.Nome"
+                        class="form-control"
+                        style="display: none;"
+                        id="hidden-client-input"
                     />
                     <div id="client-select" class="form-control"></div>
                 </div>
-                
+
                 <div class="form-group">
                     <label asp-for="ClienteCpfNavigation.Telefone" class="control-label">Telefone</label>
                     <input asp-for="ClienteCpfNavigation.Telefone" class="form-control" id="phone-input" disabled/>
                 </div>
-                
+
                 <div class="form-group">
                     <label asp-for="ClienteCpfNavigation.Email" class="control-label">E-mail</label>
                     <input asp-for="ClienteCpfNavigation.Email" class="form-control" id="email-input" disabled/>
                 </div>
-                
+
                 <div class="form-group">
                     <label asp-for="ClienteCpfNavigation.Endereco" class="control-label">Endereço</label>
                     <input asp-for="ClienteCpfNavigation.Endereco" class="form-control" id="address-input" disabled/>
                 </div>
-                    
+
                 <div class="form-group">
                     <label asp-for="FerramentaCodigoNavigation.Descricao" class="control-label">Ferramenta</label>
                     <input asp-for="FerramentaCodigoNavigation.Descricao" class="form-control" id="hidden-tools-input" style="display: none;" />
@@ -76,7 +76,7 @@
                     <input asp-for="ValorTotal" class="form-control"  value="00,00" id="total-input" disabled />
                     <span asp-validation-for="ValorTotal" class="text-danger"></span>
                 </div>
-                
+
                 <div class="form-group">
                     <a class="btn btn-custom-ghost" asp-action="Index" id="gerar-orcamento">Gerar Orçamento</a>
                     <input type="submit" value="Gerar Aluguel" class="btn btn-custom-primary" />
@@ -90,172 +90,174 @@
 <div class="container-fluid position-fixed">
     <div class="row flex-nowrap">
         @await Html.PartialAsync("_SidebarComponent")
-         <div class="col-6 py-6 container-fluid">
+        <div class="col-6 py-6 container-fluid">
             <div class="table-bg" style="max-height: 100vh; overflow:auto;">
                 <h3>Novo Orçamento</h3>
                 <form class="row">
-                <div class="col-md-12">
-                    <label class="form-label">Cliente</label>
-                    <div id="client-select" class="form-control"></div>
-                </div>
-
-                <div class="col-md-12 mt-2">
-                    <div class="form-label">Email</div>
-                    <div class="form-control" style="background-color: #f8f9fa; border: 1px solid #ced4da; cursor: not-allowed; min-height: 36px;" id="email">
+                    <div class="col-md-12">
+                        <label class="form-label">Cliente</label>
+                        <div id="client-select" class="form-control"></div>
                     </div>
-                </div>
 
-                <div class="col-md-6 mt-2">
-                    <div class="form-label">Telefone</div>
-                    <div class="form-control" style="background-color: #f8f9fa; border: 1px solid #ced4da; cursor: not-allowed; min-height: 36px;" id="telefone">
+                    <div class="col-md-12 mt-2">
+                        <div class="form-label">Email</div>
+                        <div class="form-control" style="background-color: #f8f9fa; border: 1px solid #ced4da; cursor: not-allowed; min-height: 36px;" id="email">
+                        </div>
                     </div>
-                </div>
 
-                 <div class="col-md-6 mt-2">
-                    <div class="form-label">Data Nascimento</div>
-                    <div class="form-control" style="background-color: #f8f9fa; border: 1px solid #ced4da; cursor: not-allowed; min-height: 36px;" id="data-nascimento">
+                    <div class="col-md-6 mt-2">
+                        <div class="form-label">Telefone</div>
+                        <div class="form-control" style="background-color: #f8f9fa; border: 1px solid #ced4da; cursor: not-allowed; min-height: 36px;" id="telefone">
+                        </div>
                     </div>
-                </div>
 
-                <div class="col-md-8 mt-2">
-                    <div class="form-label">Rua</div>
-                    <div class="form-control" style="background-color: #f8f9fa; border: 1px solid #ced4da; cursor: not-allowed; min-height: 36px;" id="logradouro">
+                    <div class="col-md-6 mt-2">
+                        <div class="form-label">Data Nascimento</div>
+                        <div class="form-control" style="background-color: #f8f9fa; border: 1px solid #ced4da; cursor: not-allowed; min-height: 36px;" id="data-nascimento">
+                        </div>
                     </div>
-                </div>
+
+                    <div class="col-md-8 mt-2">
+                        <div class="form-label">Rua</div>
+                        <div class="form-control" style="background-color: #f8f9fa; border: 1px solid #ced4da; cursor: not-allowed; min-height: 36px;" id="logradouro">
+                        </div>
+                    </div>
 
                     <div class="col-md-4 mt-2">
-                    <div class="form-label">Complemento</div>
-                    <div class="form-control" style="background-color: #f8f9fa; border: 1px solid #ced4da; cursor: not-allowed; min-height: 36px;" id="complemento">
-                    </div>
-                </div>
-
-                <div class="col-md-3 mt-2">
-                    <div class="form-label">Número</div>
-                    <div class="form-control" style="background-color: #f8f9fa; border: 1px solid #ced4da; cursor: not-allowed; min-height: 36px;" id="numero">
-                    </div>
-                </div>
-
-                <div class="col-md-9 mt-2">
-                    <div class="form-label">Bairro</div>
-                    <div class="form-control" style="background-color: #f8f9fa; border: 1px solid #ced4da; cursor: not-allowed; min-height: 36px;" id="bairro">
-                    </div>
-                </div>
-
-                 <div class="col-md-6 mt-2">
-                    <div class="form-label">Cidade</div>
-                    <div class="form-control" style="background-color: #f8f9fa; border: 1px solid #ced4da; cursor: not-allowed; min-height: 36px;" id="cidade">
-                    </div>
-                </div>
-
-                <div class="col-md-6 mt-2">
-                    <div class="form-label">UF</div>
-                    <div class="form-control" style="background-color: #f8f9fa; border: 1px solid #ced4da; cursor: not-allowed; min-height: 36px;" id="estado">
-                    </div>
-                </div>
-
-                <div class="col-md-8 mt-2">
-                    <div class="form-label">CEP</div>
-                    <div class="form-control" style="background-color: #f8f9fa; border: 1px solid #ced4da; cursor: not-allowed; min-height: 36px;" id="cep">
-                    </div>
-                </div>
-
-                  <div class="col-md-4 mt-2">
-                    <div class="form-label">País</div>
-                    <div class="form-control" style="background-color: #f8f9fa; border: 1px solid #ced4da; cursor: not-allowed; min-height: 36px;" id="pais">
-                    </div>
-                </div>
-
-                <div class="col-md-12 mt-2">
-                    <div class="form-label">Ferramenta</div>
-                    <div id="tools-select" class="form-control"></div>
-                </div>
-    
-                <div class="col-md-12 mt-2">
-                    <div  class="form-label">Período</div>
-                    <input type="text" name="daterange" class="form-control" id="date-range"/>
-                </div>
-
-                <div class="col-md-4 mt-2">
-                    <div  class="form-label">Valor Total</div>
-                    <div class="input-group mb-3">
-                        <span class="input-group-text">R$</span>
-                        <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)" id="total-input" disabled>
-                        
-                    </div>
-                </div>
-
-                <div class="row">
-                    <div class="col-md-6 text-center">
-                        <a class="btn btn-custom-ghost"id="gerar-orcamento">Gerar Orçamento</a>
+                        <div class="form-label">Complemento</div>
+                        <div class="form-control" style="background-color: #f8f9fa; border: 1px solid #ced4da; cursor: not-allowed; min-height: 36px;" id="complemento">
+                        </div>
                     </div>
 
-                    <div class="col-md-6 text-center">
-                         <input type="submit" value="Gerar Aluguel" class="btn btn-custom-primary" />
+                    <div class="col-md-3 mt-2">
+                        <div class="form-label">Número</div>
+                        <div class="form-control" style="background-color: #f8f9fa; border: 1px solid #ced4da; cursor: not-allowed; min-height: 36px;" id="numero">
+                        </div>
                     </div>
-                </div>
 
-            </form>
+                    <div class="col-md-9 mt-2">
+                        <div class="form-label">Bairro</div>
+                        <div class="form-control" style="background-color: #f8f9fa; border: 1px solid #ced4da; cursor: not-allowed; min-height: 36px;" id="bairro">
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 mt-2">
+                        <div class="form-label">Cidade</div>
+                        <div class="form-control" style="background-color: #f8f9fa; border: 1px solid #ced4da; cursor: not-allowed; min-height: 36px;" id="cidade">
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 mt-2">
+                        <div class="form-label">UF</div>
+                        <div class="form-control" style="background-color: #f8f9fa; border: 1px solid #ced4da; cursor: not-allowed; min-height: 36px;" id="estado">
+                        </div>
+                    </div>
+
+                    <div class="col-md-8 mt-2">
+                        <div class="form-label">CEP</div>
+                        <div class="form-control" style="background-color: #f8f9fa; border: 1px solid #ced4da; cursor: not-allowed; min-height: 36px;" id="cep">
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 mt-2">
+                        <div class="form-label">País</div>
+                        <div class="form-control" style="background-color: #f8f9fa; border: 1px solid #ced4da; cursor: not-allowed; min-height: 36px;" id="pais">
+                        </div>
+                    </div>
+
+                    <div class="col-md-12 mt-2">
+                        <div class="form-label">Ferramenta</div>
+                        <div id="tools-select" class="form-control"></div>
+                    </div>
+
+                    <div class="col-md-12 mt-2">
+                        <div class="form-label">Período</div>
+                        <input type="text" name="daterange" class="form-control" id="date-range" />
+                    </div>
+
+                    <div class="col-md-4 mt-2">
+                        <div class="form-label">Valor Total</div>
+                        <div class="input-group mb-3">
+                            <span class="input-group-text">R$</span>
+                            <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)" id="total-input" disabled>
+
+                        </div>
+                    </div>
+
+                    <div class="container d-flex justify-content-between">
+                        <div class="align-left">
+                            <a class="btn btn-custom-ghost" asp-action="Index">Voltar</a>
+                        </div>
+                        <div class="d-flex align-right">
+                            <a class="btn btn-custom-secondary" id="gerar-orcamento">Gerar Orçamento</a>
+                            <input type="submit" value="Gerar Aluguel" class="btn btn-custom-primary" />
+                        </div>
+                    </div>
+
+                </form>
+            </div>
         </div>
-         </div>
-            @* <div class="col-md-4 py-5 container-fluid">
-                <form class="d-flex flex-column gap-2" id="form">
-                    <h3>Novo Orçamento</h3>                
+        @* <div class="col-md-4 py-5 container-fluid">
+        <form class="d-flex flex-column gap-2" id="form">
+        <h3>Novo Orçamento</h3>
 
-                <div class="form-group">               
-                    <label class="control-label">Cliente</label>
-                    <input
-                        class="form-control"  
-                        style="display: none;" 
-                        id="hidden-client-input" 
-                    />
-                    <div id="client-select" class="form-control"></div>
-                </div>
-                
-                <div class="form-group">
-                    <label class="control-label">Telefone</label>
-                    <input class="form-control" id="phone-input" disabled/>
-                </div>
-                
-                <div class="form-group">
-                    <label class="control-label">E-mail</label>
-                    <input class="form-control" id="email-input" disabled/>
-                </div>
-                
-                <div class="form-group">
-                    <label class="control-label">Endereço</label>
-                    <input class="form-control" id="address-input" disabled/>
-                </div>
-                    
-                <div class="form-group">
-                    <label class="control-label">Ferramenta</label>
-                    <input class="form-control" id="hidden-tools-input" style="display: none;" />
+        <div class="form-group">
+        <label class="control-label">Cliente</label>
+        <input
+        class="form-control"
+        style="display: none;"
+        id="hidden-client-input"
+        />
+        <div id="client-select" class="form-control"></div>
+        </div>
 
-                    <div id="tools-select" class="form-control"></div>
-                </div>
+        <div class="form-group">
+        <label class="control-label">Telefone</label>
+        <input class="form-control" id="phone-input" disabled/>
+        </div>
 
-                <div class="form-group">
-                    <label  class="control-label">Período</label>
-                    <input type="text" name="daterange" class="form-control" id="date-range"/>
-                </div>
+        <div class="form-group">
+        <label class="control-label">E-mail</label>
+        <input class="form-control" id="email-input" disabled/>
+        </div>
 
-                <div class="form-group">
-                    <label class="control-label">Valor Total: R$</label>
-                    <input class="form-control"  value="00,00" id="total-input" disabled />
-                </div>
-                
-                <div class="form-group">
-                    <a class="btn btn-custom-ghost" id="gerar-orcamento">Gerar Orçamento</a>
-                    <input type="submit" value="Gerar Aluguel" class="btn btn-custom-primary" />
-                </div>
-            </form>
+        <div class="form-group">
+        <label class="control-label">Endereço</label>
+        <input class="form-control" id="address-input" disabled/>
+        </div>
+
+        <div class="form-group">
+        <label class="control-label">Ferramenta</label>
+        <input class="form-control" id="hidden-tools-input" style="display: none;" />
+
+        <div id="tools-select" class="form-control"></div>
+        </div>
+
+        <div class="form-group">
+        <label  class="control-label">Período</label>
+        <input type="text" name="daterange" class="form-control" id="date-range"/>
+        </div>
+
+        <div class="form-group">
+        <label class="control-label">Valor Total: R$</label>
+        <input class="form-control"  value="00,00" id="total-input" disabled />
+        </div>
+
+        <div class="form-group">
+        <a class="btn btn-custom-ghost" id="gerar-orcamento">Gerar Orçamento</a>
+        <input type="submit" value="Gerar Aluguel" class="btn btn-custom-primary" />
+        </div>
+        </form>
         </div> *@
     </div>
 </div>
 
 
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
-    
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+
     <script type="text/javascript" src="~/lib/daterangepicker/moment.min.js"></script>
     <script type="text/javascript" src="~/lib/daterangepicker/daterangepicker.js"></script>
     <script src="~/lib/magic-suggest/magicsuggest.js"></script>
