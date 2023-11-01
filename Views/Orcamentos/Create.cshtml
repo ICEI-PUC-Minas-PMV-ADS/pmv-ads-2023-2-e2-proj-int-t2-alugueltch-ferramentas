@@ -90,8 +90,10 @@
 <div class="container-fluid position-fixed">
     <div class="row flex-nowrap">
         @await Html.PartialAsync("_SidebarComponent")
-         <div class="col-10 col-sm-7 col-md-7 col-lg-6 col-xl-5 col-xxl-3 py-5 container-fluid">
-            <form class="row">
+         <div class="col-6 py-6 container-fluid">
+            <div class="table-bg" style="max-height: 100vh; overflow:auto;">
+                <h3>Novo Orçamento</h3>
+                <form class="row">
                 <div class="col-md-12">
                     <label class="form-label">Cliente</label>
                     <div id="client-select" class="form-control"></div>
@@ -173,12 +175,12 @@
                     <input type="text" name="daterange" class="form-control" id="date-range"/>
                 </div>
 
-                <div class="col-md-12 mt-2">
+                <div class="col-md-4 mt-2">
                     <div  class="form-label">Valor Total</div>
                     <div class="input-group mb-3">
                         <span class="input-group-text">R$</span>
                         <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)" id="total-input" disabled>
-                        <span class="input-group-text">,00</span>
+                        
                     </div>
                 </div>
 
@@ -193,7 +195,7 @@
                 </div>
 
             </form>
-        
+        </div>
          </div>
             @* <div class="col-md-4 py-5 container-fluid">
                 <form class="d-flex flex-column gap-2" id="form">
