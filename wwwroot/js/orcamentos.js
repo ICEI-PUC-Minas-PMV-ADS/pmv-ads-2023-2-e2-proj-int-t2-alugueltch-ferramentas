@@ -1,6 +1,7 @@
 ﻿import { CURRENT_DATE, DAYS_OF_WEEK, MONTH_NAMES } from "./utils/constants.js";
 import { formatNumberToCurrency } from "./utils/index.js";
 
+
 let rangeDatePicker;
 let instances = {};
 
@@ -181,6 +182,33 @@ const configureMagicSuggestField = (
   instances[keyName] = instance;
 };
 
+const setPdfConfigurations = (element) => {
+  const jsPdfInstance = new jsPDF();          
+  const elementHandler = {
+    '#ignorePDF': function (_, renderer) {
+      return true;
+    }
+  };
+
+  jsPdfInstance.fromHTML(
+    element,
+      15,
+      15,
+      {
+        'width': 180,'elementHandlers': elementHandler
+      });
+
+  const stringyfiedPdf = jsPdfInstance.output('datauristring')
+  const template = "<embed width='100%' height='100%' src='" + stringyfiedPdf + "'/>"
+
+  const windowInstance = window.open();
+
+  windowInstance.document.open();
+  windowInstance.document.write(template);
+  windowInstance.document.close();
+  
+}
+
 $.ready.then(() => {
   configureMagicSuggestField(
     "#tools-select",
@@ -220,5 +248,13 @@ $.ready.then(() => {
     "client"
   );
 
+  $('#gerar-orcamento').on('click', (_) => {
+    const element = document.getElementById('pdfTemplate')
+
+    setPdfConfigurations(element)
+  })
+  
+
+ 
   configureDatePickerField();
 });

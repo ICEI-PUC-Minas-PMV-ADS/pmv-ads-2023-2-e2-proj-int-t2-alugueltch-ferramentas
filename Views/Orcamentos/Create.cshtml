@@ -197,6 +197,19 @@
                 </form>
             </div>
         </div>
+
+        <div id="pdfTemplate" hidden>
+          <div class="container">
+                <h1 style="background-color: #007bff; color: #fff;">Título do Documento PDF</h1>
+                <p style="background-color: #f8f9fa;">Este é um exemplo de trecho HTML estilizado com Bootstrap para criar um PDF usando jsPDF.</p>
+                <ul style="background-color: #28a745; color: #fff;">
+                    <li>Item 1</li>
+                    <li>Item 2</li>
+                    <li>Item 3</li>
+                </ul>
+            </div>
+        </div>
+
         @* <div class="col-md-4 py-5 container-fluid">
         <form class="d-flex flex-column gap-2" id="form">
         <h3>Novo Orçamento</h3>
@@ -258,6 +271,11 @@
         await Html.RenderPartialAsync("_ValidationScriptsPartial");
     }
 
+
+
+   
+   
+    <script type="text/javascript" src="~/lib/jsPDF/jspdf.min.js"></script>
     <script type="text/javascript" src="~/lib/daterangepicker/moment.min.js"></script>
     <script type="text/javascript" src="~/lib/daterangepicker/daterangepicker.js"></script>
     <script src="~/lib/magic-suggest/magicsuggest.js"></script>
