@@ -30,6 +30,8 @@ namespace MVC.Models
         public virtual DbSet<TipoProcesso> TipoProcessos { get; set; } = null!;
         public virtual DbSet<TipoSituacao> TipoSituacaos { get; set; } = null!;
 
+        public virtual DbSet<Orcamento_ferramenta> Orcamentos_ferramentas { get; set; } = null!;
+
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             if (!optionsBuilder.IsConfigured)
@@ -344,9 +346,11 @@ namespace MVC.Models
                     .HasMaxLength(255)
                     .HasColumnName("ferramenta_codigo");
 
-                entity.Property(e => e.DataOrcamento).HasColumnName("data_orcamento");
+                entity.Property(e => e.DataOrcamento).HasColumnName("data_orcamento")
+                                      .HasColumnType("timestamp without time zone");
 
-                entity.Property(e => e.DataValidade).HasColumnName("data_validade");
+                entity.Property(e => e.DataValidade).HasColumnName("data_validade")
+                                      .HasColumnType("timestamp without time zone");
 
                 entity.Property(e => e.ValorTotal)
                     .HasPrecision(10, 2)
@@ -483,8 +487,41 @@ namespace MVC.Models
                     .HasColumnName("nome");
             });
 
+            modelBuilder.Entity<Orcamento_ferramenta>(entity =>
+            {
+                entity.ToTable("Orcamento_Ferramenta");
+
+                entity.Property(e => e.Id).HasColumnName("id");
+
+                entity.Property(e => e.ferramenta_id)
+                        .HasMaxLength(255)
+                        .HasColumnName("ferramenta_ID");
+
+                entity.Property(e => e.orcamento_id)
+                        .HasColumnName("orcamento_ID");
+
+                entity.HasOne(d => d.Ferramenta_Orc)
+                        .WithMany(p => p.Processos_Many)
+                        .HasPrincipalKey(p => p.Codigo)
+                        .HasForeignKey(d => d.ferramenta_id)
+                        .OnDelete(DeleteBehavior.ClientSetNull)
+                        .HasConstraintName("FK_Ferramenta");
+
+                entity.HasOne(d => d.Orcamento_Orc)
+                        .WithMany(p => p.Processos_Many)
+                        .HasPrincipalKey(p => p.Id)
+                        .HasForeignKey(d => d.orcamento_id)
+                        .OnDelete(DeleteBehavior.ClientSetNull)
+                        .HasConstraintName("Fk_Orcamento");
+
+
+
+
+            });
+
             OnModelCreatingPartial(modelBuilder);
         }
+
 
         private void HasColumnType(string v)
         {

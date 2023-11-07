@@ -33,7 +33,7 @@ namespace MVC.Models
         [Display(Name = "Categoria")]
         public virtual Ferramentum? FerramentaCodigoNavigation { get; set; } = null!;
 
-
+        public virtual ICollection<Orcamento_ferramenta> Processos_Many { get; set; }
     }
 
  
