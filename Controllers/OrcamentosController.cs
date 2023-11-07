@@ -21,7 +21,10 @@ namespace MVC.Controllers
         // GET: Orcamentoes
         public async Task<IActionResult> Index()
         {
-            var atdbContext = _context.Orcamentos.Include(o => o.ClienteCpfNavigation).Include(o => o.FerramentaCodigoNavigation);
+            var atdbContext = _context.Orcamentos
+                .Include(o => o.ClienteCpfNavigation)
+                .Include(o => o.FerramentaCodigoNavigation)
+                 .Where(o => o.active == true);
             return View(await atdbContext.ToListAsync());
         }
 
@@ -156,16 +159,17 @@ namespace MVC.Controllers
         // POST: Orcamentoes/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> DeleteConfirmed(long id)
+        public async Task<IActionResult> DeleteConfirmed(long id, string ClienteCpf, string FerramentaCodigo)
         {
             if (_context.Orcamentos == null)
             {
                 return Problem("Entity set 'atdbContext.Orcamentos'  is null.");
             }
-            var orcamento = await _context.Orcamentos.FindAsync(id);
+            var orcamento = await _context.Orcamentos.FindAsync(id, ClienteCpf, FerramentaCodigo);
             if (orcamento != null)
             {
-                _context.Orcamentos.Remove(orcamento);
+                //_context.Orcamentos.Remove(orcamento);
+                orcamento.active = false;
             }
             
             await _context.SaveChangesAsync();

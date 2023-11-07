@@ -39,10 +39,11 @@ namespace MVC.Controllers.API
             IQueryable<Cliente> ClientQuery = _context.Clientes.AsQueryable();
             IQueryable<Ferramentum> FQuery = _context.Ferramenta.AsQueryable();
 
-            ClientQuery = ClientQuery.Where(cliente => cliente.Cpf
-                        .Contains(orcamentoRequest.ClienteCpf));
+            ClientQuery = ClientQuery.Where(cliente => cliente.Cpf == orcamentoRequest.ClienteCpf);
 
             Cliente cliente = ClientQuery.FirstOrDefault();
+            if (cliente == null) return BadRequest("Status code 400 - Cliente não encontrado");
+
             List<Orcamento_ferramenta> new_ofs = new List<Orcamento_ferramenta>();
             Orcamento new_orcamento = new Orcamento
             {
@@ -55,42 +56,51 @@ namespace MVC.Controllers.API
             };
 
 
-
-
             for (int i = 0; i < orcamentoRequest.Ferramenta.Count; i++)
             {
-                FQuery = FQuery.Where(F => F.Codigo
-                        .Contains(orcamentoRequest.Ferramenta[i].Codigo));
+
+                foreach (FerramentaModel codigo in orcamentoRequest.Ferramenta)
+                {
+                    if (codigo.Codigo == "") return BadRequest($"Status code 400 - Código da ferramenta não foi preenchido corretamente");
+
+                
+                }
+
+                FQuery = FQuery.Where(F => F.Codigo == orcamentoRequest.Ferramenta[i].Codigo);
                 Ferramentum ferramenta = FQuery.FirstOrDefault();
+
 
                 if (ferramenta.Quantidade - orcamentoRequest.Ferramenta[i].Quantidade >= 0)
                 {
                     ferramenta.Quantidade -= orcamentoRequest.Ferramenta[i].Quantidade;
+
+
+                    if (new_orcamento.FerramentaCodigo == null)
+                    {
+                        new_orcamento.FerramentaCodigo += ferramenta.Codigo;
+                    }
+
+
+                    var new_of = new Orcamento_ferramenta
+                    {
+                        ferramenta_id = ferramenta.Codigo,
+                        orcamento_id = 1,
+                        Orcamento_Orc = new_orcamento,
+                        Ferramenta_Orc = ferramenta
+                    };
+                    _context.Entry(ferramenta).State = EntityState.Modified;
+                    _context.Orcamentos_ferramentas.Add(new_of);
+                    _context.SaveChanges();
                 }
-                else {
+
+                else
+                {
                     return BadRequest("Quantidade insuficiente de ferramentas disponíveis.");
                 }
 
-                if (new_orcamento.FerramentaCodigo == null)
-                {
-                    new_orcamento.FerramentaCodigo += ferramenta.Codigo;
-                }
-
-
-                var new_of = new Orcamento_ferramenta
-                {
-                    ferramenta_id = ferramenta.Codigo,
-                    orcamento_id = 1,
-                    Orcamento_Orc = new_orcamento,
-                    Ferramenta_Orc = ferramenta
-                };
-                _context.Entry(ferramenta).State = EntityState.Modified;
-                _context.Orcamentos_ferramentas.Add(new_of);
-                _context.SaveChanges();
-
-
             }
-            return Ok(new_orcamento); 
+
+            return Ok($"Status Code 200 - Criado com sucesso! {new_orcamento}"); 
         }
 
     }

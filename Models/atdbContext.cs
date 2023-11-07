@@ -342,6 +342,9 @@ namespace MVC.Models
                     .HasMaxLength(11)
                     .HasColumnName("cliente_cpf");
 
+                entity.Property(e => e.active)
+                        .HasColumnName("active");
+
                 entity.Property(e => e.FerramentaCodigo)
                     .HasMaxLength(255)
                     .HasColumnName("ferramenta_codigo");
