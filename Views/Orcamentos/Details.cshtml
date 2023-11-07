@@ -4,31 +4,18 @@
     ViewData["Title"] = "Details";
 }
 
-<h1>Details</h1>
+<link rel="stylesheet" href="~/css/sidebar.css" asp-append-version="true" />
+<link rel="stylesheet" href="~/css/tables.css" asp-append-version="true" />
 
-<div>
-    <h4>Orcamento</h4>
-    <hr />
-    <dl class="row">
-        <h6>Número do Orçamento @Html.DisplayFor(Orcamento => Orcamento.Id)</h6>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.ValorTotal)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.ValorTotal)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.DataOrcamento)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.DataOrcamento)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.DataValidade)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.DataValidade)
-        </dd>
+<div class="container-fluid position-fixed">
+    <div class="row flex-nowrap">
+        @Html.Partial("_SidebarComponent")
+
+        <div class="col-6 container-fluid py-3 container-fluid">
+            <div class="col py-3 table-bg" style="max-height: 100vh; overflow:auto;">
+                <h3>Detalhes</h3>
+                <dl class="d-flex flex-column gap-2">
+                    <h6>Número do Orçamento @Html.DisplayFor(Orcamento => Orcamento.Id)</h6>
         <dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.ClienteCpfNavigation.Nome)
         </dt>
@@ -36,14 +23,44 @@
             @Html.DisplayFor(model => model.ClienteCpfNavigation.Nome)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.FerramentaCodigoNavigation.Descricao)
+            @Html.DisplayNameFor(model => model.ClienteCpf)
         </dt>
         <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ClienteCpf)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.ClienteCpfNavigation.Telefone)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ClienteCpfNavigation.Telefone)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.ClienteCpfNavigation.Email)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ClienteCpfNavigation.Email)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.ClienteCpfNavigation.Endereco)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ClienteCpfNavigation.Endereco.Logradouro), @Html.DisplayFor(model => model.ClienteCpfNavigation.Endereco.Numero), @Html.DisplayFor(model => model.ClienteCpfNavigation.Endereco.Bairro), @Html.DisplayFor(model => model.ClienteCpfNavigation.Endereco.Cidade) - @Html.DisplayFor(model => model.ClienteCpfNavigation.Endereco.Estado)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.FerramentaCodigoNavigation.Descricao)
+        </dt>
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.FerramentaCodigoNavigation.Descricao)
         </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ValorTotal)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ValorTotal)
+        </dd>
     </dl>
-</div>
-<div>
-    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
-    <a asp-action="Index">Back to List</a>
+                <a class="btn btn-custom-secondary" asp-action="Index">Voltar</a>
+            </div>
+        </div>
+    </div>
 </div>

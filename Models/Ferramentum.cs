@@ -22,7 +22,7 @@ namespace MVC.Models
 
         public string? Marca { get; set; } = null!;
 
-        [Display(Name = "Descrição")]
+        [Display(Name = "Ferramenta")]
         public string Descricao { get; set; } = null!;
 
         [Display(Name = "Situação")]
