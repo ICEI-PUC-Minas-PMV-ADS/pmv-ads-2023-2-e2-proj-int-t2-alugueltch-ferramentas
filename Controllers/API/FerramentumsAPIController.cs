@@ -15,13 +15,13 @@ namespace MVC.Controllers.API
         }
 
         [HttpGet]
-        public async Task<ActionResult<List<Ferramentum>>> Listar([FromQuery] string? descricao)
+        public async Task<ActionResult<List<Ferramentum>>> Listar([FromQuery] string descricao)
         {
             var query = _context.Ferramenta.AsQueryable();
 
             if (!string.IsNullOrEmpty(descricao))
             {
-                query = query.Where(ferramenta => 
+                query = query.Where(ferramenta =>
                     ferramenta.Descricao
                         .ToUpper()
                         .Contains(descricao.ToUpper()));
@@ -29,11 +29,15 @@ namespace MVC.Controllers.API
 
             var resultados = await query
                 .Include(ferramenta => ferramenta.Situacao)
+                .Select(ferramentum => new
+                {
+                    Codigo = ferramentum.Codigo,
+                    Descricao = ferramentum.Descricao,
+                    Quantidade = ferramentum.Quantidade
+                })
                 .ToListAsync();
 
             return Ok(resultados);
         }
     }
 }
-
-
