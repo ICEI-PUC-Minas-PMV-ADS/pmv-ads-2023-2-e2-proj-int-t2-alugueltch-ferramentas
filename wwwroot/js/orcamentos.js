@@ -182,31 +182,54 @@ const configureMagicSuggestField = (
   instances[keyName] = instance;
 };
 
-const setPdfConfigurations = (element) => {
-  const jsPdfInstance = new jsPDF();          
-  const elementHandler = {
-    '#ignorePDF': function (_, renderer) {
-      return true;
-    }
-  };
+// const setPdfConfigurations = (element) => {
+//   const jsPdfInstance = new jsPDF();    
 
-  jsPdfInstance.fromHTML(
-    element,
-      15,
-      15,
-      {
-        'width': 180,'elementHandlers': elementHandler
-      });
+//   const pdfContent = document.getElementById('pdf-content');
 
-  const stringyfiedPdf = jsPdfInstance.output('datauristring')
-  const template = "<embed width='100%' height='100%' src='" + stringyfiedPdf + "'/>"
+//   html2pdf()
+//   .from(pdfContent)
+//  .save()
 
+
+//   const elementHandler = {
+//     '#ignorePDF': function (_, renderer) {
+//       return true;
+//     }
+//   };
+
+//   jsPdfInstance.fromHTML(
+//     element,
+//       15,
+//       15,
+//       {
+//         'width': 180,'elementHandlers': elementHandler
+//       });
+
+//   const stringyfiedPdf = jsPdfInstance.output('datauristring')
+//   const template = "<embed width='100%' height='100%' src='" + stringyfiedPdf + "'/>"
+
+//   const windowInstance = window.open();
+
+//   windowInstance.document.open();
+//   windowInstance.document.write(template);
+//   windowInstance.document.close();
+  
+// }
+
+
+const generatePdf = async (element) => {
+  
+  const stringyfiedPdf = await html2pdf()
+    .from(element)
+    .outputPdf('datauristring')
+ 
+  const template = `<embed width='100%' height='100%' src="${stringyfiedPdf}"/>`
   const windowInstance = window.open();
 
   windowInstance.document.open();
   windowInstance.document.write(template);
   windowInstance.document.close();
-  
 }
 
 $.ready.then(() => {
@@ -249,9 +272,9 @@ $.ready.then(() => {
   );
 
   $('#gerar-orcamento').on('click', (_) => {
-    const element = document.getElementById('pdfTemplate')
+    const element = document.getElementById('pdf-content')
 
-    setPdfConfigurations(element)
+    generatePdf(element)
   })
   
 
