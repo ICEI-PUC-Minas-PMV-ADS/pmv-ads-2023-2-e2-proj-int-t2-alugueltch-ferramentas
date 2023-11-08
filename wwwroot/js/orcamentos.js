@@ -182,41 +182,6 @@ const configureMagicSuggestField = (
   instances[keyName] = instance;
 };
 
-// const setPdfConfigurations = (element) => {
-//   const jsPdfInstance = new jsPDF();    
-
-//   const pdfContent = document.getElementById('pdf-content');
-
-//   html2pdf()
-//   .from(pdfContent)
-//  .save()
-
-
-//   const elementHandler = {
-//     '#ignorePDF': function (_, renderer) {
-//       return true;
-//     }
-//   };
-
-//   jsPdfInstance.fromHTML(
-//     element,
-//       15,
-//       15,
-//       {
-//         'width': 180,'elementHandlers': elementHandler
-//       });
-
-//   const stringyfiedPdf = jsPdfInstance.output('datauristring')
-//   const template = "<embed width='100%' height='100%' src='" + stringyfiedPdf + "'/>"
-
-//   const windowInstance = window.open();
-
-//   windowInstance.document.open();
-//   windowInstance.document.write(template);
-//   windowInstance.document.close();
-  
-// }
-
 
 const generatePdf = async (element) => {
   
