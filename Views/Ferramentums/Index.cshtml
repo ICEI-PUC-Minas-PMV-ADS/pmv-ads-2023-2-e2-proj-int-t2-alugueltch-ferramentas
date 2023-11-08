@@ -4,100 +4,117 @@
     ViewData["Title"] = "Index";
 }
 
-<h1>Lista de Equipamentos</h1>
-
-<p>
-    <a class="btn btn-primary" asp-action="Create">Adicionar novo Equiapemento</a>
-</p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Marca)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Descricao)
-            </th>
-
-            <th>
-                @Html.DisplayNameFor(model => model.Codigo)
-            </th>
-
-           
-            <th>
-                @Html.DisplayNameFor(model => model.FuncionarioCadastroFuncionalNavigation)
-            </th>
-            <th>
-
-                @Html.DisplayNameFor(model => model.Situacao.Nome)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Quantidade)
-            </th>
-
-            <th>
-                @Html.DisplayNameFor(model => model.Tipo.Nome)
-            </th>
-
-            <th>
-                @Html.DisplayNameFor(model => model.ValorDiaria)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.ValorCompra)
-            </th>
-            
-
-            
-
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Marca)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Descricao)
-            </td>
-
-                <td>
-                    @Html.DisplayFor(modelItem => item.Codigo)
-                </td>
-           
-            <td>
-                @Html.DisplayFor(modelItem => item.FuncionarioCadastroFuncionalNavigation.Nome)
-            </td>
-                <td>
-                    @(item.IsDisponivel() ? "Disponível" : "Indisponível")
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Quantidade)
-                </td>
-
-            <td>
-                @Html.DisplayFor(modelItem => item.Tipo.Nome)
-            </td>
-            
-                <td>
-                    @Html.DisplayFor(modelItem => item.ValorDiaria)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.ValorCompra)
-                </td>
-
-                
-            <td>
-                    @Html.ActionLink("Edit", "Edit", new {  id=item.Id, item.Codigo/* id=item.PrimaryKey */}) |
-                    @Html.ActionLink("Details", "Details", new { id=item.Id, item.Codigo/* id=item.PrimaryKey */ }) |
-                    @Html.ActionLink("Delete", "Delete", new { id=item.Id, item.Codigo/* id=item.PrimaryKey */ })
+<link rel="stylesheet" href="~/css/sidebar.css" asp-append-version="true" />
+<link rel="stylesheet" href="~/css/tables.css" asp-append-version="true" />
 
 
-            </td>
-        </tr>
+@section scripts {
+    <script src="~/js/funcionarios.js" type="module"></script>
 }
-    </tbody>
-</table>
 
- 
+<div class="container-fluid position-fixed">
+    <div class="row flex-nowrap">
+        @Html.Partial("_SidebarComponent")
+
+
+        <div class="col py-3" style="max-height: 100vh; overflow:auto;">
+            <div class="d-flex flex-column table-bg align-items-end gap-5">
+                <a class="btn btn-custom-primary" asp-action="Create">Criar novo</a>
+                <table class="table">
+                    <thead class="bg-yellow">
+                        <tr>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Marca)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Descricao)
+                            </th>
+
+                            <th>
+                                @Html.DisplayNameFor(model => model.Codigo)
+                            </th>
+
+
+                           @*  <th>
+                                @Html.DisplayNameFor(model => model.FuncionarioCadastroFuncionalNavigation)
+                            </th> *@
+                            <th>
+
+                                @Html.DisplayNameFor(model => model.Situacao.Nome)
+                            </th>
+                           @*  <th>
+                                @Html.DisplayNameFor(model => model.Quantidade)
+                            </th> *@
+
+                            <th>
+                                @Html.DisplayNameFor(model => model.Tipo.Nome)
+                            </th>
+
+                            <th>
+                                @Html.DisplayNameFor(model => model.ValorDiaria)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.ValorCompra)
+                            </th>
+                            <th></th>
+                            <th></th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Marca)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Descricao)
+                                </td>
+
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Codigo)
+                                </td>
+
+                              @*   <td>
+                                    @Html.DisplayFor(modelItem => item.FuncionarioCadastroFuncionalNavigation.Nome)
+                                </td> *@
+                                <td>
+                                    @(item.IsDisponivel() ? "Disponível" : "Indisponível")
+                                </td>
+                                @* <td>
+                                    @Html.DisplayFor(modelItem => item.Quantidade)
+                                </td> *@
+
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Tipo.Nome)
+                                </td>
+
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.ValorDiaria)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.ValorCompra)
+                                </td>
+
+
+                                <td class="table-actions d-flex gap-2">
+                                    <a href="@Url.Action("Edit", new { id = item.Id, item.Codigo,})" title="Editar">
+                                        <i class="bi bi-pencil-square"></i>
+                                    </a>
+                                    <a href="@Url.Action("Details", new { id = item.Id, item.Codigo,})" title="Detalhes">
+                                        <i class="bi bi-info-circle"></i>
+                                    </a>
+                                    <a href="@Url.Action("Delete", new { id = item.Id, item.Codigo,})" title="Deletar">
+                                        <i class="bi bi-trash"></i>
+                                    </a>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
