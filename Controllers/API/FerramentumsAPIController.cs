@@ -15,7 +15,7 @@ namespace MVC.Controllers.API
         }
 
         [HttpGet]
-        public async Task<ActionResult<List<Ferramentum>>> Listar([FromQuery] string descricao)
+        public async Task<ActionResult<List<Ferramentum>>> Listar([FromQuery] string? descricao)
         {
             var query = _context.Ferramenta.AsQueryable();
 
@@ -29,12 +29,18 @@ namespace MVC.Controllers.API
 
             var resultados = await query
                 .Include(ferramenta => ferramenta.Situacao)
-                .Select(ferramentum => new
-                {
-                    Codigo = ferramentum.Codigo,
-                    Descricao = ferramentum.Descricao,
-                    Quantidade = ferramentum.Quantidade
-                })
+                .ToListAsync();
+
+            return Ok(resultados);
+        }
+        [HttpGet("listar")]
+
+        public async Task<ActionResult<List<Ferramentum>>> ListarComCodigoQuantidade()
+        {
+            var query = _context.Ferramenta.AsQueryable();
+
+            var resultados = await query
+                .Include(ferramenta => ferramenta.Situacao)
                 .ToListAsync();
 
             return Ok(resultados);
