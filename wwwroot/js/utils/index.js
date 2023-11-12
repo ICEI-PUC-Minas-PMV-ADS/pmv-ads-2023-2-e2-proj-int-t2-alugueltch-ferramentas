@@ -26,4 +26,20 @@ const formatNumberToCurrency = (number) => {
   }).format(number);
 };
 
-export { debounce, formatPhoneNumber, formatNumberToCurrency };
+const calculatePeriodInDays = (startDate, endDate) => {
+  return endDate.diff(startDate, "days");
+};
+
+const reloadWindow = () => {
+  setTimeout(() => {
+    location.reload();
+  }, 1000);
+};
+
+export {
+  debounce,
+  reloadWindow,
+  formatPhoneNumber,
+  formatNumberToCurrency,
+  calculatePeriodInDays,
+};

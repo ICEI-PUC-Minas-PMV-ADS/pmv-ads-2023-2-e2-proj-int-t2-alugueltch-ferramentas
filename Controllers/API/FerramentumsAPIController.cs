@@ -21,7 +21,7 @@ namespace MVC.Controllers.API
 
             if (!string.IsNullOrEmpty(descricao))
             {
-                query = query.Where(ferramenta => 
+                query = query.Where(ferramenta =>
                     ferramenta.Descricao
                         .ToUpper()
                         .Contains(descricao.ToUpper()));
@@ -33,9 +33,17 @@ namespace MVC.Controllers.API
 
             return Ok(resultados);
         }
+        [HttpGet("listar")]
 
+        public async Task<ActionResult<List<Ferramentum>>> ListarComCodigoQuantidade()
+        {
+            var query = _context.Ferramenta.AsQueryable();
 
+            var resultados = await query
+                .Include(ferramenta => ferramenta.Situacao)
+                .ToListAsync();
+
+            return Ok(resultados);
+        }
     }
 }
-
-

@@ -7,6 +7,7 @@
 <link rel="stylesheet" href="~/css/sidebar.css" asp-append-version="true" />
 <link rel="stylesheet" href="~/css/tables.css" asp-append-version="true" />
 <link rel="stylesheet" href="~/css/orcamentos.css" asp-append-version="true" />
+<link rel="stylesheet" href="~/lib/toastify/toastify.css" asp-append-version="true" />
 <link rel="stylesheet" href="~/lib/magic-suggest/magicsuggest.css" asp-append-version="true" />
 <link rel="stylesheet" href="~/lib/daterangepicker/daterangepicker.css" asp-append-version="true" />
 
@@ -90,13 +91,13 @@
 <div class="container-fluid position-fixed">
     <div class="row flex-nowrap">
         @await Html.PartialAsync("_SidebarComponent")
-        <div class="col-6 py-6 container-fluid">
+        <div class="col-6  col-lg-6 col-xl-4 py-6 container-fluid">
             <div class="table-bg" style="max-height: 100vh; overflow:auto;">
                 <h3>Novo Orçamento</h3>
                 <form class="row">
                     <div class="col-md-12">
                         <label class="form-label">Cliente</label>
-                        <div id="client-select" class="form-control"></div>
+                        <div id="client-select" class="form-control" ></div>
                     </div>
 
                     <div class="col-md-12 mt-2">
@@ -172,14 +173,14 @@
 
                     <div class="col-md-12 mt-2">
                         <div class="form-label">Período</div>
-                        <input type="text" name="daterange" class="form-control" id="date-range" />
+                        <input type="text"  class="form-control" id="date-range" />
                     </div>
 
                     <div class="col-md-4 mt-2">
                         <div class="form-label">Valor Total</div>
                         <div class="input-group mb-3">
                             <span class="input-group-text">R$</span>
-                            <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)" id="total-input" disabled>
+                            <input type="text" class="form-control" name="total" aria-label="Amount (to the nearest dollar)" id="total-input" disabled>
 
                         </div>
                     </div>
@@ -189,7 +190,7 @@
                             <a class="btn btn-custom-ghost" asp-action="Index">Voltar</a>
                         </div>
                         <div class="d-flex align-right">
-                            <a class="btn btn-custom-secondary" id="gerar-orcamento">Gerar Orçamento</a>
+                            <a class="btn btn-custom-secondary me-2" id="gerar-orcamento">Gerar Orçamento</a>
                             <input type="submit" value="Gerar Aluguel" class="btn btn-custom-primary" />
                         </div>
                     </div>
@@ -199,69 +200,30 @@
         </div>
 
         <div id="pdfTemplate" hidden>
-          <div class="container">
-                <h1 style="background-color: #007bff; color: #fff;">Título do Documento PDF</h1>
-                <p style="background-color: #f8f9fa;">Este é um exemplo de trecho HTML estilizado com Bootstrap para criar um PDF usando jsPDF.</p>
-                <ul style="background-color: #28a745; color: #fff;">
-                    <li>Item 1</li>
-                    <li>Item 2</li>
-                    <li>Item 3</li>
-                </ul>
+            <div class="container" id="pdf-content">
+                <img class="container d-flex align-content-center mt-5" src="~/assets/img/alugueltechlogo.svg" style="max-width: 200px;">
+                <h4 class="text-center fw-bold mt-5">Orçamento</h4>
+
+                <div class="ms-4">
+                    <div class="container p-5" id="customer-info">
+                        <h6><span class="fw-bold">Cliente:</span> <span id="customer-name">Pedro Santos</span></h6>
+                        <h6><span class="fw-bold">Telefone:</span> <span id="customer-phone">31 99999-9999</span></h6>
+                        <h6><span class="fw-bold">Email:</span> <span id="customer-email">pedro@teste.com</span></h6>
+                        <h6><span class="fw-bold">Endereço:</span> <span id="customer-address">Rua Logo Ali, 10, Pertinho - Belo Horizonte - MG</span></h6>
+                        <br />
+
+                        <h6 class="fw-bold mb-4">Ferramentas:</h6>
+                        <div id="tools">
+                        </div>
+
+                        <h6 >Retirada: <small id="rent" >Data: 08/11/2023</small></h6>
+                        <h6>Devolução: <small id="devolution">Data: 08/11/2023</small></h6>
+                        
+                        <h6 class="fw-bold mt-3" id="total">TOTAL: R$ 0,00</h6>
+                    </div>
+                </div>
             </div>
         </div>
-
-        @* <div class="col-md-4 py-5 container-fluid">
-        <form class="d-flex flex-column gap-2" id="form">
-        <h3>Novo Orçamento</h3>
-
-        <div class="form-group">
-        <label class="control-label">Cliente</label>
-        <input
-        class="form-control"
-        style="display: none;"
-        id="hidden-client-input"
-        />
-        <div id="client-select" class="form-control"></div>
-        </div>
-
-        <div class="form-group">
-        <label class="control-label">Telefone</label>
-        <input class="form-control" id="phone-input" disabled/>
-        </div>
-
-        <div class="form-group">
-        <label class="control-label">E-mail</label>
-        <input class="form-control" id="email-input" disabled/>
-        </div>
-
-        <div class="form-group">
-        <label class="control-label">Endereço</label>
-        <input class="form-control" id="address-input" disabled/>
-        </div>
-
-        <div class="form-group">
-        <label class="control-label">Ferramenta</label>
-        <input class="form-control" id="hidden-tools-input" style="display: none;" />
-
-        <div id="tools-select" class="form-control"></div>
-        </div>
-
-        <div class="form-group">
-        <label  class="control-label">Período</label>
-        <input type="text" name="daterange" class="form-control" id="date-range"/>
-        </div>
-
-        <div class="form-group">
-        <label class="control-label">Valor Total: R$</label>
-        <input class="form-control"  value="00,00" id="total-input" disabled />
-        </div>
-
-        <div class="form-group">
-        <a class="btn btn-custom-ghost" id="gerar-orcamento">Gerar Orçamento</a>
-        <input type="submit" value="Gerar Aluguel" class="btn btn-custom-primary" />
-        </div>
-        </form>
-        </div> *@
     </div>
 </div>
 
@@ -271,13 +233,11 @@
         await Html.RenderPartialAsync("_ValidationScriptsPartial");
     }
 
-
-
-   
-   
+    <script type="text/javascript" src="~/lib/toastify/toastify.min.js"></script>
     <script type="text/javascript" src="~/lib/jsPDF/jspdf.min.js"></script>
+    <script type="text/javascript" src="~/lib/html2canvas/html2canvas.min.js"></script>
     <script type="text/javascript" src="~/lib/daterangepicker/moment.min.js"></script>
     <script type="text/javascript" src="~/lib/daterangepicker/daterangepicker.js"></script>
-    <script src="~/lib/magic-suggest/magicsuggest.js"></script>
-    <script src="~/js/orcamentos.js" type=module></script>
+    <script type="text/javascript" src="~/lib/magic-suggest/magicsuggest.js"></script>
+    <script type=module src="~/js/orcamentos.js" ></script>
 }
