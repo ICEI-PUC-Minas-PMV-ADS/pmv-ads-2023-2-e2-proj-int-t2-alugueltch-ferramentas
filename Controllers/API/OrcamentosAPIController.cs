@@ -103,6 +103,23 @@ namespace MVC.Controllers.API
             return Ok($"Status Code 200 - Criado com sucesso! {new_orcamento}"); 
         }
 
+
+
+        [HttpGet("relatorios/{dataInicial:DateTime}/{dataFinal:DateTime}")]
+        public async Task<ActionResult<List<Orcamento>>> relatorios(DateTime dataInicial, DateTime datafinal)
+        {
+            var query = _context.Orcamentos.AsQueryable();
+
+                query = query.Where(orc => orc.DataOrcamento > dataInicial && orc.DataOrcamento <= datafinal)
+                             .Include(orc => orc.ClienteCpfNavigation)
+                             .Include(orc => orc.Processos_Many)
+                                  .ThenInclude(proc_Many => proc_Many.Ferramenta_Orc);
+
+            return Ok(query);
+        }
+
+
+
     }
 
 
