@@ -197,7 +197,6 @@ const updateRendHtmlTemplate = () => {
   );
 
   const tools = instances["tools"].getSelection();
-  let total = 0;
 
   const toolsContainer = $("#tools");
 
@@ -210,16 +209,15 @@ const updateRendHtmlTemplate = () => {
           <hr />
       `);
     toolsContainer.append(toolElement);
-
-    total += tool.valorCompra;
   });
 
   const datePattern = "DD/MM/YYYY";
+  const total = calculateTotal();
 
   $("#rent").text(moment(startDate).format(datePattern));
   $("#devolution").text(moment(endDate).format(datePattern));
 
-  $("#total").text(`TOTAL: R$ ${total.toFixed(2)}`);
+  $("#total").text(`TOTAL: ${formatNumberToCurrency(total)}`);
 
   reloadWindow();
 };
