@@ -33,5 +33,18 @@ namespace MVC.Controllers.API
 
             return Ok(resultados);
         }
+        [HttpGet("listar")]
+
+        public async Task<ActionResult<List<Ferramentum>>> ListarComCodigoQuantidade()
+        {
+            var query = _context.Ferramenta.AsQueryable();
+
+            var resultados = await query
+                .Include(ferramenta => ferramenta.Situacao)
+                .ToListAsync();
+
+            return Ok(resultados);
+        }
+
     }
 }
