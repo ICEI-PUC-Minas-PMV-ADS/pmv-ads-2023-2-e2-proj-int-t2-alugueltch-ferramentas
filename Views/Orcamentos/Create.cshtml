@@ -7,6 +7,7 @@
 <link rel="stylesheet" href="~/css/sidebar.css" asp-append-version="true" />
 <link rel="stylesheet" href="~/css/tables.css" asp-append-version="true" />
 <link rel="stylesheet" href="~/css/orcamentos.css" asp-append-version="true" />
+<link rel="stylesheet" href="~/lib/toastify/toastify.css" asp-append-version="true" />
 <link rel="stylesheet" href="~/lib/magic-suggest/magicsuggest.css" asp-append-version="true" />
 <link rel="stylesheet" href="~/lib/daterangepicker/daterangepicker.css" asp-append-version="true" />
 
@@ -96,7 +97,7 @@
                 <form class="row">
                     <div class="col-md-12">
                         <label class="form-label">Cliente</label>
-                        <div id="client-select" class="form-control"></div>
+                        <div id="client-select" class="form-control" ></div>
                     </div>
 
                     <div class="col-md-12 mt-2">
@@ -172,14 +173,14 @@
 
                     <div class="col-md-12 mt-2">
                         <div class="form-label">Período</div>
-                        <input type="text" name="daterange" class="form-control" id="date-range" />
+                        <input type="text"  class="form-control" id="date-range" />
                     </div>
 
                     <div class="col-md-4 mt-2">
                         <div class="form-label">Valor Total</div>
                         <div class="input-group mb-3">
                             <span class="input-group-text">R$</span>
-                            <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)" id="total-input" disabled>
+                            <input type="text" class="form-control" name="total" aria-label="Amount (to the nearest dollar)" id="total-input" disabled>
 
                         </div>
                     </div>
@@ -199,42 +200,30 @@
         </div>
 
         <div id="pdfTemplate" hidden>
-            <div class="container"  id="pdf-content">
+            <div class="container" id="pdf-content">
                 <img class="container d-flex align-content-center mt-5" src="~/assets/img/alugueltechlogo.svg" style="max-width: 200px;">
                 <h4 class="text-center fw-bold mt-5">Orçamento</h4>
-                
+
                 <div class="ms-4">
-                    <div class="container p-5">
-                        <h6><span class="fw-bold">Cliente:</span> Pedro Santos</h6>
-                        <h6><span class="fw-bold">Telefone:</span> 31 99999-9999</h6>
-                        <h6><span class="fw-bold">Email:</span> pedro@teste.com</h6>
-                        <h6><span class="fw-bold">Endereço:</span> Rua Logo Ali, 10, Pertinho - Belo Horizonte - MG</h6>
+                    <div class="container p-5" id="customer-info">
+                        <h6><span class="fw-bold">Cliente:</span> <span id="customer-name">Pedro Santos</span></h6>
+                        <h6><span class="fw-bold">Telefone:</span> <span id="customer-phone">31 99999-9999</span></h6>
+                        <h6><span class="fw-bold">Email:</span> <span id="customer-email">pedro@teste.com</span></h6>
+                        <h6><span class="fw-bold">Endereço:</span> <span id="customer-address">Rua Logo Ali, 10, Pertinho - Belo Horizonte - MG</span></h6>
                         <br />
 
                         <h6 class="fw-bold mb-4">Ferramentas:</h6>
-                        <h6>WAP Furadeira e Parafusadeira 600W</h6>
-                        <span>Valor Aluguel: R$30,00</span>
-                        <span>Valor Diária: R$10,00</span>
-                        <hr />
+                        <div id="tools">
+                        </div>
 
-                        <h6>Bosch Serra Circular Gks 150 1500W 220V</h6>
-                        <span>Valor Aluguel: R$30,00</span>
-                        <span>Valor Diária: R$10,00</span>
-                        <hr />
-
-                        <h6>Martelo de aço</h6>
-                        <span>Valor Aluguel: R$10,00</span>
-                        <span>Valor Diária: R$8,00</span>
-                        <hr />
-
-
-                        <h6 class="fw-bold mt-3">TOTAL: R$ 306,00</h6>
-                        <h6>Data: 08/11/2023</h6>
+                        <h6 >Retirada: <small id="rent" >Data: 08/11/2023</small></h6>
+                        <h6>Devolução: <small id="devolution">Data: 08/11/2023</small></h6>
+                        
+                        <h6 class="fw-bold mt-3" id="total">TOTAL: R$ 0,00</h6>
                     </div>
-                </div>  
+                </div>
             </div>
         </div>
-
     </div>
 </div>
 
@@ -244,15 +233,11 @@
         await Html.RenderPartialAsync("_ValidationScriptsPartial");
     }
 
-
-
-   
-   
+    <script type="text/javascript" src="~/lib/toastify/toastify.min.js"></script>
     <script type="text/javascript" src="~/lib/jsPDF/jspdf.min.js"></script>
-     @* <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.min.js"></script> *@
     <script type="text/javascript" src="~/lib/html2canvas/html2canvas.min.js"></script>
     <script type="text/javascript" src="~/lib/daterangepicker/moment.min.js"></script>
     <script type="text/javascript" src="~/lib/daterangepicker/daterangepicker.js"></script>
-    <script src="~/lib/magic-suggest/magicsuggest.js"></script>
-    <script src="~/js/orcamentos.js" type=module></script>
+    <script type="text/javascript" src="~/lib/magic-suggest/magicsuggest.js"></script>
+    <script type=module src="~/js/orcamentos.js" ></script>
 }

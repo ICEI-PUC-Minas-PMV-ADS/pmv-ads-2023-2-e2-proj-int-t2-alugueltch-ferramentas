@@ -1,6 +1,12 @@
-﻿import { CURRENT_DATE, DAYS_OF_WEEK, MONTH_NAMES } from "./utils/constants.js";
-import { formatNumberToCurrency } from "./utils/index.js";
-
+﻿import {
+  CURRENT_DATE,
+  DAYS_OF_WEEK,
+  ERROR_TOAST_CONFIG,
+  MONTH_NAMES,
+  SUCCESS_TOAST_CONFIG,
+  VALIDATION_ERROR_TOAST_CONFIG,
+} from "./utils/constants.js";
+import { formatNumberToCurrency, reloadWindow } from "./utils/index.js";
 
 let rangeDatePicker;
 let instances = {};
@@ -26,13 +32,19 @@ const calculateTotal = () => {
     const totalValue = calculateTotalValue(selectedTools, periodInDays);
 
     $("#total-input").val(totalValue.toFixed(2));
+
+    return totalValue;
   }
+
+  return "0.0";
 };
 
-const configureDatePickerField = () => {
+const buildRangeDateFieldConfiguration = () => {
   rangeDatePicker = $("#date-range").daterangepicker({
     startDate: CURRENT_DATE,
     autoApply: true,
+    timePicker: true,
+    timePickerSeconds: true,
     locale: {
       format: "DD/MM/YYYY",
       fromLabel: "De",
@@ -51,11 +63,6 @@ const configureDatePickerField = () => {
   $(rangeDatePicker).on(
     "apply.daterangepicker",
     function (_, { startDate, endDate }) {
-      const pattern = "YYYY-MM-DD";
-
-      $("#hidden-initial-date-input").val(startDate.format(pattern));
-      $("#hidden-final-date-input").val(endDate.format(pattern));
-
       calculateTotal();
     }
   );
@@ -156,11 +163,6 @@ const onChangeClientValue = (_, magicSuggest) => {
 
 const onChangeToolsValue = (_, magicSuggest) => {
   const optionsValues = magicSuggest.getValue();
-  const hiddenToolsInput = $("#hidden-tools-input");
-
-  hiddenToolsInput.val(
-    optionsValues.length ? JSON.stringify(optionsValues) : "[]"
-  );
 
   calculateTotal();
 };
@@ -182,22 +184,62 @@ const configureMagicSuggestField = (
   instances[keyName] = instance;
 };
 
+const updateRendHtmlTemplate = () => {
+  const { startDate, endDate } = getFormData();
+  const [{ nome, email, endereco, telefone }] =
+    instances["client"].getSelection();
+
+  $("#customer-name").text(nome);
+  $("#customer-phone").text(telefone);
+  $("#customer-email").text(email);
+  $("#customer-address").text(
+    `${endereco.logradouro}, ${endereco.numero}, ${endereco.bairro} - ${endereco.cidade} ${endereco.estado}`
+  );
+
+  const tools = instances["tools"].getSelection();
+  let total = 0;
+
+  const toolsContainer = $("#tools");
+
+  tools.forEach((tool) => {
+    const toolElement = $("<div>");
+    toolElement.html(`
+          <h6>${tool.descricao}</h6>
+          <small>Valor Aluguel: R$${tool.valorCompra.toFixed(2)}</small> | 
+          <small>Valor Diária: R$${tool.valorDiaria.toFixed(2)}</small>
+          <hr />
+      `);
+    toolsContainer.append(toolElement);
+
+    total += tool.valorCompra;
+  });
+
+  const datePattern = "DD/MM/YYYY";
+
+  $("#rent").text(moment(startDate).format(datePattern));
+  $("#devolution").text(moment(endDate).format(datePattern));
+
+  $("#total").text(`TOTAL: R$ ${total.toFixed(2)}`);
+
+  reloadWindow();
+};
 
 const generatePdf = async (element) => {
-  
+  updateRendHtmlTemplate();
+
   const stringyfiedPdf = await html2pdf()
     .from(element)
-    .outputPdf('datauristring')
- 
-  const template = `<embed width='100%' height='100%' src="${stringyfiedPdf}"/>`
+    .outputPdf("datauristring");
+
+  const template = `<embed width='100%' height='100%' src="${stringyfiedPdf}"/>`;
   const windowInstance = window.open();
 
   windowInstance.document.open();
   windowInstance.document.write(template);
   windowInstance.document.close();
-}
+};
 
-$.ready.then(() => {
+const buildToolsFieldConfiguration = () => {
   configureMagicSuggestField(
     "#tools-select",
     {
@@ -215,7 +257,9 @@ $.ready.then(() => {
     onChangeToolsValue,
     "tools"
   );
+};
 
+const buildClientFieldConfiguration = () => {
   configureMagicSuggestField(
     "#client-select",
     {
@@ -235,14 +279,92 @@ $.ready.then(() => {
     onChangeClientValue,
     "client"
   );
+};
 
-  $('#gerar-orcamento').on('click', (_) => {
-    const element = document.getElementById('pdf-content')
+const createRental = async (clientCpf, toolsIds, startDate, endDate) => {
+  const requestPayload = {
+    clienteCpf: clientCpf,
+    ferramenta: toolsIds.map((toolId) => ({
+      codigo: toolId,
+      quantidade: 1,
+    })),
+    dataOrcamento: startDate,
+    dataValidade: endDate,
+  };
 
-    generatePdf(element)
-  })
-  
+  const response = await fetch("/api/orcamentosapi", {
+    method: "POST",
+    body: JSON.stringify(requestPayload),
+    headers: {
+      "Content-Type": "application/json",
+    },
+  });
 
- 
-  configureDatePickerField();
+  if (response.ok) {
+    Toastify(SUCCESS_TOAST_CONFIG).showToast();
+    reloadWindow();
+  } else {
+    Toastify(ERROR_TOAST_CONFIG).showToast();
+  }
+};
+
+const initOnGenerateRentalListener = () => {
+  $("#gerar-orcamento").on("click", (_) => {
+    const element = document.getElementById("pdf-content");
+
+    if (checkIfFormIsValid()) {
+      generatePdf(element);
+    }
+  });
+};
+
+const getFormData = () => {
+  const datePattern = "YYYY-MM-DDTHH:mm:ss";
+  const datePickerInstance = rangeDatePicker.data("daterangepicker");
+
+  const [clientCpf] = instances["client"].getValue();
+  const toolsValues = instances["tools"].getValue();
+  const startDate = datePickerInstance.startDate.format(datePattern);
+  const endDate = datePickerInstance.endDate.format(datePattern);
+
+  return {
+    clientCpf,
+    toolsValues,
+    startDate,
+    endDate,
+  };
+};
+
+const checkIfFormIsValid = () => {
+  const { clientCpf, toolsValues } = getFormData();
+  const isFormValid = clientCpf && toolsValues && toolsValues.length;
+
+  if (!isFormValid) {
+    Toastify(VALIDATION_ERROR_TOAST_CONFIG).showToast();
+
+    return;
+  }
+
+  return true;
+};
+
+const initFormSubmitListener = () => {
+  $("form").submit((event) => {
+    event.preventDefault();
+
+    if (checkIfFormIsValid()) {
+      const { clientCpf, toolsValues, startDate, endDate } = getFormData();
+
+      createRental(clientCpf, toolsValues, startDate, endDate);
+    }
+  });
+};
+
+$.ready.then(() => {
+  buildToolsFieldConfiguration();
+  buildClientFieldConfiguration();
+  buildRangeDateFieldConfiguration();
+
+  initOnGenerateRentalListener();
+  initFormSubmitListener();
 });
