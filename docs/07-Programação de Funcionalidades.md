@@ -16,16 +16,10 @@ Durante o desenvolvimento do projeto foram realizadas alterações em seu escopo
 |ID    | Descrição do Requisito  | Artefato(s) produzido(s) |
 |------|-----------------------------------------|----|
 |RF-001| Permitir login de usuários | Login.cshtml / FuncionariosController.cs / login.css | 
-|RF-002| Acesso de usuário admin   | Funcionarios[Create.cshtml / Edit.cshtml / Delete.cshtml] /  FuncionariosController.cs |
-|RF-003| Criar novo orçamento | Orcamentos[Create.cshtm] /  OrcamentosController.cs / orcamentos.js / orcamentos.css |
-|RF-004| Visualizar orçamentos | Orcamentos[Index.cshtm] /  OrcamentosController.cs |
-|RF-005| Editar orçamentos | Orcamentos[Edit.cshtm] /  OrcamentosController.cs |
-|RF-006| Excluir orçamentos | Orcamentos[Delete.cshtm] /  OrcamentosController.cs |
-|RF-007| Cadastrar cliente | Clientes[Create.cshtm] /  ClientesController.cs / Clientes[create.js] |
-|RF-008| Visualizar clientes | Clientes[Index.cshtm] /  ClientesController.cs / Clientes[index.js] |
-|RF-009| Edição de clientes | Clientes[Edit.cshtm] /  ClientesController.cs |
-|RF-010| Excluir clientes | Clientes[Delete.cshtm] /  ClientesController.cs |
-|RF-011 e RF-012| Registro de ferramentas | Ferramentums[Index.cshtm / Edit.cshtml / Details.cshtml / Delete.cshtml] /  FerramentumsController.cs |
+|RF-002| Acesso de usuário admin   | Funcionarios[Create.cshtml / Edit.cshtml / Delete.cshtml] /  FuncionariosController.cs / FuncionariosAPIController |
+|RF-003 RF-004 RF-005 RF-006| Criar, visualizar, editar e excluir orçamentos | Orcamentos[Create.cshtm / Index.cshtml / Edit.cshtml / Delete.cshtml] /  OrcamentosController.cs / OrcamentosAPIController.cs / orcamentos.js / orcamentos.css |
+|RF-007 RF-008 RF-009 RF-010| Cadastrar, visualizar, editar e excluir clientes | Clientes[Create.cshtm] /  ClientesController.cs / ClientesAPIController.cs / Clientes[create.js] / Clientes[index.js] |
+|RF-011 e RF-012| Registro de ferramentas | Ferramentums[Index.cshtm / Edit.cshtml / Details.cshtml / Delete.cshtml] /  FerramentumsController.cs / FerramentumsAPIController.cs |
 
 
 # Instruções de acesso
