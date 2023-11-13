@@ -11,6 +11,23 @@ Por exemplo: a tabela a seguir deverá ser preenchida considerando os artefatos 
 |RF-001| Permitir que o usuário cadastre tarefas | tarefas.shtml / tarefas.cs / controllertarefas.cs | 
 |RF-002| Emitir um relatório de tarefas no mês   | relatorio.shtml |
 
+Durante o desenvolvimento do projeto foram realizadas alterações em seu escopo que refletiram principalmente no design das telas. Portanto, as funcionalidades serão acompanhadas das imagens de cada sessão atualizadas.
+
+|ID    | Descrição do Requisito  | Artefato(s) produzido(s) |
+|------|-----------------------------------------|----|
+|RF-001| Permitir login de usuários | Login.cshtml / FuncionariosController.cs / login.css | 
+|RF-002| Acesso de usuário admin   | Funcionarios[Create.cshtml / Edit.cshtml / Delete.cshtml] /  FuncionariosController.cs |
+|RF-003| Criar novo orçamento | Orcamentos[Create.cshtm] /  OrcamentosController.cs / orcamentos.js / orcamentos.css |
+|RF-004| Visualizar orçamentos | Orcamentos[Index.cshtm] /  OrcamentosController.cs |
+|RF-005| Editar orçamentos | Orcamentos[Edit.cshtm] /  OrcamentosController.cs |
+|RF-006| Excluir orçamentos | Orcamentos[Delete.cshtm] /  OrcamentosController.cs |
+|RF-007| Cadastrar cliente | Clientes[Create.cshtm] /  ClientesController.cs / Clientes[create.js] |
+|RF-008| Visualizar clientes | Clientes[Index.cshtm] /  ClientesController.cs / Clientes[index.js] |
+|RF-009| Edição de clientes | Clientes[Edit.cshtm] /  ClientesController.cs |
+|RF-010| Excluir clientes | Clientes[Delete.cshtm] /  ClientesController.cs |
+|RF-011 e RF-012| Registro de ferramentas | Ferramentums[Index.cshtm / Edit.cshtml / Details.cshtml / Delete.cshtml] /  FerramentumsController.cs |
+
+
 # Instruções de acesso
 
 Não deixe de informar o link onde a aplicação estiver disponível para acesso (por exemplo: https://adota-pet.herokuapp.com/src/index.html).
