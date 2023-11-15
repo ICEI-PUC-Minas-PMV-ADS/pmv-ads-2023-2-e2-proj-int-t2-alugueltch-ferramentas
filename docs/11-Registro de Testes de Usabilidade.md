@@ -16,7 +16,7 @@ Foi definida a seguinte escala para definição dos níveis de problemas de usab
 |Nível 05 | Problema com altíssima necessidade de correção, inviabilizando a entrega da funcionalidade.
 
 
-## Resultados Iniciais
+## Resultados Iniciais (Etapa 3)
 
 Os primeiros testes realizados foram relacionados as telas de visualização, cadastro, edição e exclusão de Clientes e Funcionários.
 Os avaliadores receberam um roteiro onde deveriam logar no sistema com as credenciais fornecidas e, no caso dos usuários administradores, navegar pela plataforma e realizar o cadastro, edição, visualização das edições e exclusão de um novo funcionário.
@@ -38,6 +38,19 @@ Para os avaliadores que receberam credenciais de um funcionário, deveriam reali
 | 09-Ajude os usuários a reconhecer, diagnosticar e recuperar erros | Avaliador 1: 1  <br> Avaliador 2: 1 <br> Avaliador 3: 1 | 1 | O sistema informa através de mensagens na cor vermelha, exatamente abaixo do erro cometido além de marcá-lo com uma borda, indicando onde o usuário errou e dando a oportunidade de corrigir. O envio do formulário também é interrompido caso tenha dados errados ou não preenchidos. | N/A |
 | 10-Ajuda e documentação | Este teste não foi realizado devido a esta funcionalidade ainda não ter sido implementada no sistema. Todas as dúvidas registradas durante o uso do sistema foram sanadas diretamente com o monitor responsável.  | -/- | -/- | -/- |
 
-## Próximas Etapas
+## Etapa 4 - Resultados
 
-Para as próximas etapas serão realizados os testes de Descoberta de Problemas e em cada entrega o teste de Heurísticas será repetido.
+Conforme os testes da Etapa 3, foram feitas alterações no contraste dos títulos das páginas e seu conteúdo, além disso, foram adicionados títulos ou subtítulos especificando em qual tela do sistema o usuário se encontra no momento. Devido a isso o teste foi repetido e os resultados estão a seguir:
+
+Atualização:
+
+| Heurísticas (Nielsen)   |  Notas dos avaliadores   | Consenso | Considerações   | Melhorias   |
+| ------------------- | :---------------------: | :-----------: | -------------------- | -------------------- |
+| 01-Visibilidade do Status do Sistema | Avaliador 1: 0  <br> Avaliador 2: 0 <br> Avaliador 3: 1 | 1 | O sistema apresenta informações de onde o usuário está com títulos e subtítulos como por exemplo "Cadastro de Cliente" e nas telas onde essas informações estavam ausentes, foi feita a adição. | N/A |
+
+Para esta etapa, foram implementadas novas telas ao escopo dos testes, portanto além das anteriores, foram incluídas as telas de Ferramentas, Orçamentos e Relatórios.
+Os avaliadores receberam um roteiro onde deveriam: 
+- logar no sistema com as credenciais fornecidas
+- navegar pela plataforma e realizar o cadastro, edição, visualização das edições e exclusão de uma nova ferramenta.
+- cadastrar um novo aluguel e, na tela de cadastro, verificar a possibilidade de gerar um orçamento em PDF que deve conter as informações preenchidas no aluguel. E também as demais ações listadas: visualizar, editar e excluir.
+- Verificar se o sistema gera o relatório selecionado em formato PDF conforme a seleção do usuário.
