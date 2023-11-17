@@ -297,7 +297,7 @@ namespace MVC.Models
                 entity.Property(e => e.PermissaoId).HasColumnName("permissao_id");
 
                 entity.Property(e => e.Senha)
-                    .HasMaxLength(12)
+                    .HasMaxLength(200)
                     .HasColumnName("senha");
 
                 entity.Property(e => e.Sexo)

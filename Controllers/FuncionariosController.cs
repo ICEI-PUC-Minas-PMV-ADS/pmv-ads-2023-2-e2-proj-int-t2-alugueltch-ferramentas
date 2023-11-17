@@ -281,8 +281,7 @@ namespace MVC.Controllers
                 return View();
             }
 
-             var senha = BCrypt.Net.BCrypt.Verify(funcionario.Senha, funcDB.Senha); 
-            
+            var senha = BCrypt.Net.BCrypt.Verify(funcionario.Senha, funcDB.Senha);
 
             if (senha)
             {

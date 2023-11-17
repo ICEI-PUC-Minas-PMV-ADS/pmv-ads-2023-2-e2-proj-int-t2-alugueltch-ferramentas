@@ -60,15 +60,15 @@
                                     @Html.DisplayFor(modelItem => item.Telefone)
                                 </td>
                                 <td>
-                                    @Html.DisplayFor(modelItem => item.Permissao.Nome)
                                 </td>
+                                @Html.DisplayFor(modelItem => item.Permissao.Nome)
 
                                 <td class="table-actions d-flex gap-2">
                                     <a href="@Url.Action("Edit", new { id = item.Id, cpf = item.Cpf, funcional = item.Funcional })" title="Editar">
                                         <i class="bi bi-pencil-square"></i>
                                     </a>
 
-                                    <a href="@Url.Action("Details", new { id = item.Id, cpf = item.Cpf, funcional = item.Funcional })"  title="Detalhes" >
+                                    <a href="@Url.Action("Details", new { id = item.Id, cpf = item.Cpf, funcional = item.Funcional })" title="Detalhes">
                                         <i class="bi bi-info-circle"></i>
                                     </a>
 

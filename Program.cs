@@ -23,7 +23,7 @@ namespace MVC
             builder.Services.AddControllersWithViews();
             builder.Services.AddEntityFrameworkNpgsql()
                      .AddDbContext<atdbContext>(options =>
-                       options.UseNpgsql("Host=server-atdbv2.postgres.database.azure.com;Port=5432;Database=postgres;User ID=vitor;Password=@Postgres;"));
+                       options.UseNpgsql("Host=server-atdbv2.postgres.database.azure.com;Port=5432;Database=postgres;User ID=vitor;Password=@Pucminas;"));
 
 
             builder.Services.Configure<CookiePolicyOptions>(options =>
