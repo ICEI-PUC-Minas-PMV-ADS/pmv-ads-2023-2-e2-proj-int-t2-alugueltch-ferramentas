@@ -14,11 +14,6 @@ Durante o desenvolvimento do projeto foram realizadas alterações em seu escopo
 |RF-013 e RF-014| Gerar aluguel | Orcamentos[Index.cshtml / Create.cshtml / Edit.cshtml / Details.cshtml / Delete.cshtml] /  OrcamentosController.cs / OrcamentosAPIController.cs / orcamentos.js / orcamentos_detalhes.js / orcamentos.css |
 |RF-018| Relatórios | Relatorios[Index.cshtml] /  RelatoriosController.cs |
 
-
-
-
-
-# Instruções de acesso
 ![1 home](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e2-proj-int-t2-alugueltch-ferramentas/assets/128100886/124e1adf-b75a-4782-bef3-1721b5914c08)
 ![2 Home e gerenciamento de funcionarios](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e2-proj-int-t2-alugueltch-ferramentas/assets/128100886/4569284f-92e8-406a-833d-6244409172a1)
 ![3 visualizacao de funcionarios](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e2-proj-int-t2-alugueltch-ferramentas/assets/128100886/3efadbb5-19b8-4c05-8446-b52f34d3cd9d)
@@ -44,11 +39,7 @@ Durante o desenvolvimento do projeto foram realizadas alterações em seu escopo
 
 
 
-
-
-
-
-
+# Instruções de acesso
 
 Não deixe de informar o link onde a aplicação estiver disponível para acesso (por exemplo: https://adota-pet.herokuapp.com/src/index.html).
 
