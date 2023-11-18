@@ -20,7 +20,7 @@ const buildRangeDateFieldConfiguration = () => {
     parentEl: "data-retirada",
     customRangeLabel: "Intervalo Personalizado",
     autoUpdateInput: true,
-    isInvalidDate: (date) => date.isAfter(CURRENT_DATE),
+    isInvalidDate: (date) => date.isAfter(moment(CURRENT_DATE).add(1, "d")),
   });
 };
 
