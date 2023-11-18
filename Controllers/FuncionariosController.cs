@@ -105,6 +105,8 @@ namespace MVC.Controllers
                 funcionario.Permissao = permissao;
 
 
+                var papel = _context.TipoPapels.Find(1);
+                funcionario.Papel = papel;
 
 
 

@@ -103,7 +103,7 @@ namespace MVC.Controllers.API
         {
             var query = _context.Orcamentos.AsQueryable();
 
-                query = query.Where(orc => orc.DataOrcamento > dataInicial && orc.DataOrcamento <= datafinal)
+                query = query.Where(orc => orc.DataOrcamento >= dataInicial && orc.DataOrcamento <= datafinal)
                              .Include(orc => orc.ClienteCpfNavigation)
                              .Include(orc => orc.Processos_Many)
                                   .ThenInclude(proc_Many => proc_Many.Ferramenta_Orc);
