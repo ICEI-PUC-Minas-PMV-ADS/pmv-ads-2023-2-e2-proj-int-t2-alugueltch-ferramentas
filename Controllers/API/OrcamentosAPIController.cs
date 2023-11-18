@@ -52,6 +52,7 @@ namespace MVC.Controllers.API
                 DataValidade = orcamentoRequest.DataValidade,
                 ValorTotal = orcamentoRequest.ValorTotal,
                 ClienteCpfNavigation = cliente,
+                active = true,
                 
             };
 
