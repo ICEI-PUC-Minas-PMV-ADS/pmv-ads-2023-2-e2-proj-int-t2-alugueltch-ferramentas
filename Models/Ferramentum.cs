@@ -26,7 +26,7 @@ namespace MVC.Models
         public string Descricao { get; set; } = null!;
 
         [Display(Name = "Situação")]
-        public short SituacaoId { get; set; }
+        public short? SituacaoId { get; set; }
 
 
         [Display(Name = "Responsável")]
@@ -61,7 +61,7 @@ namespace MVC.Models
         public virtual ICollection<Orcamento> Orcamentos { get; set; }
         public virtual ICollection<Processo> Processos { get; set; }
 
-        public virtual ICollection<Orcamento_ferramenta> Processos_Many { get; set; }
+        public virtual ICollection<Orcamento_ferramenta>? Processos_Many { get; set; }
 
 
     }
