@@ -70,10 +70,6 @@ namespace MVC.Controllers.API
                 Ferramentum ferramenta = FQuery.FirstOrDefault();
 
 
-                if (ferramenta.Quantidade - orcamentoRequest.Ferramenta[i].Quantidade >= 0)
-                {
-                    ferramenta.Quantidade -= orcamentoRequest.Ferramenta[i].Quantidade;
-
 
                     if (new_orcamento.FerramentaCodigo == null)
                     {
@@ -93,12 +89,8 @@ namespace MVC.Controllers.API
                     _context.SaveChanges();
                 }
 
-                else
-                {
-                    return BadRequest("Quantidade insuficiente de ferramentas disponíveis.");
-                }
+  
 
-            }
 
             return Ok($"Status Code 200 - Criado com sucesso! {new_orcamento}"); 
         }
