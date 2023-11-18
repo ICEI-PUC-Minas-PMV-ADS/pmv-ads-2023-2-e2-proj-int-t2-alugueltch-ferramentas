@@ -89,8 +89,8 @@ As tabelas que se seguem apresentam os requisitos funcionais e não funcionais q
 |RF-015| Registrar as manutenções realizadas em cada equipamento, incluindo datas e detalhes.   | ALTA |
 |RF-016| Agendar automaticamente manutenções regulares para as ferramentas. | MÉDIA |
 |RF-017| Acompanhar informações sobre datas de retirada, devolução e manutenção. | ALTA |
-|RF-018| Gerar relatórios detalhados de gastos,ferramentas mais alugadas e alocação de recursos. | ALTA |
-|RF-019|  O sistema deve permitir a geração de relatórios detalhados de faturamento mensal, histórico de clientes e controle de estoque.| ALTA |
+|RF-018|  O sistema deve permitir a geração de relatórios detalhados de faturamento mensal, histórico de clientes e controle de estoque. | ALTA |
+
 
 
 
