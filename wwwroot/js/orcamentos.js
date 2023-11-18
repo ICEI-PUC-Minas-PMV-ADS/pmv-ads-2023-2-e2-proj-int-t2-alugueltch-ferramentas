@@ -279,15 +279,15 @@ const buildClientFieldConfiguration = () => {
   );
 };
 
-const createRental = async (clientCpf, toolsIds, startDate, endDate) => {
+const createRental = async (clientCpf, toolsIds, startDate, endDate, total) => {
   const requestPayload = {
     clienteCpf: clientCpf,
     ferramenta: toolsIds.map((toolId) => ({
       codigo: toolId,
-      quantidade: 1,
     })),
     dataOrcamento: startDate,
     dataValidade: endDate,
+    valorTotal: total,
   };
 
   const response = await fetch("/api/orcamentosapi", {
@@ -300,7 +300,7 @@ const createRental = async (clientCpf, toolsIds, startDate, endDate) => {
 
   if (response.ok) {
     Toastify(SUCCESS_TOAST_CONFIG).showToast();
-    reloadWindow();
+    window.location.href = "/Orcamentos";
   } else {
     Toastify(ERROR_TOAST_CONFIG).showToast();
   }
@@ -324,12 +324,14 @@ const getFormData = () => {
   const toolsValues = instances["tools"].getValue();
   const startDate = datePickerInstance.startDate.format(datePattern);
   const endDate = datePickerInstance.endDate.format(datePattern);
+  const total = $("#total-input").val();
 
   return {
     clientCpf,
     toolsValues,
     startDate,
     endDate,
+    total,
   };
 };
 
@@ -351,9 +353,10 @@ const initFormSubmitListener = () => {
     event.preventDefault();
 
     if (checkIfFormIsValid()) {
-      const { clientCpf, toolsValues, startDate, endDate } = getFormData();
+      const { clientCpf, toolsValues, startDate, endDate, total } =
+        getFormData();
 
-      createRental(clientCpf, toolsValues, startDate, endDate);
+      createRental(clientCpf, toolsValues, startDate, endDate, total);
     }
   });
 };
