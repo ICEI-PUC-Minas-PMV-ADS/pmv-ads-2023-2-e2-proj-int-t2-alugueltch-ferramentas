@@ -20,21 +20,79 @@ const buildRangeDateFieldConfiguration = () => {
     parentEl: "data-retirada",
     customRangeLabel: "Intervalo Personalizado",
     autoUpdateInput: true,
-    isInvalidDate: (date) => date.isBefore(CURRENT_DATE),
+    isInvalidDate: (date) => date.isAfter(CURRENT_DATE),
+  });
+};
+
+const updateRentHtmlTemplate = (data) => {
+  const tableBody = $("#report-table__body");
+
+  let template = "";
+
+  data.forEach((rent) => {
+    template += `
+        <tr>
+            <td scope="row">${rent.id}</td>
+            <td>${rent.clienteCpfNavigation.nome}</td>
+            <td>${rent.dataOrcamento.split("T")[0]}</td>
+            <td>${rent.dataValidade.split("T")[0]}</td>
+            <td>${rent.ferramentaCodigoNavigation.descricao}</td>
+            <td>${rent.valorTotal}</td>
+        </tr>;
+        `;
   });
 
-  $(rangeDatePicker).on(
-    "apply.daterangepicker",
-    function (_, { startDate, endDate }) {
-      calculateTotal();
-    }
+  tableBody.html(template);
+};
+
+const createRentReportPdf = async (element, data) => {
+  updateRentHtmlTemplate(data);
+
+  const opt = {
+    html2canvas: {
+      scale: 2,
+    },
+    jsPDF: {
+      unit: "in",
+      format: "a4",
+      orientation: "landscape",
+    },
+  };
+
+  const stringyfiedPdf = await html2pdf()
+    .set(opt)
+    .from(element)
+    .outputPdf("datauristring");
+
+  const template = `<embed width='100%' height='100%' src="${stringyfiedPdf}"/>`;
+  const windowInstance = window.open();
+
+  windowInstance.document.open();
+  windowInstance.document.write(template);
+  windowInstance.document.close();
+};
+
+const createReport = async (startDate, endDate) => {
+  const response = await fetch(
+    `/api/OrcamentosAPI/relatorios/${startDate}/${endDate}`
   );
+
+  const parsedResponse = await response.json();
+  const pdfTemplateElement = document.getElementById("pdf-content");
+
+  createRentReportPdf(pdfTemplateElement, parsedResponse);
 };
 
 $.ready.then(() => {
   buildRangeDateFieldConfiguration();
 
   $("#report-generate").on("click", (e) => {
-    console.log(e);
+    const datePattern = "YYYY-MM-DD HH:mm:ss";
+    const datePickerInstance = rangeDatePicker.data("daterangepicker");
+
+    const startDate = datePickerInstance.startDate.format(datePattern);
+    const endDate = datePickerInstance.endDate.format(datePattern);
+
+    createReport(startDate, endDate);
   });
 });
