@@ -111,10 +111,18 @@ namespace MVC.Controllers.API
             return Ok(query);
         }
 
+        [HttpGet("relatorios/{id:int}")] 
+        public async Task<ActionResult<Orcamento>> relatorios(int id)
+        {
+            var query = _context.Orcamentos.AsQueryable();
 
+                query = query.Where(orc => orc.Id == id)
+                             .Include(orc => orc.ClienteCpfNavigation)
+                             .Include(orc => orc.Processos_Many)
+                                  .ThenInclude(proc_Many => proc_Many.Ferramenta_Orc);
 
+            return Ok(query);
+        }
     }
-
-
 }
 

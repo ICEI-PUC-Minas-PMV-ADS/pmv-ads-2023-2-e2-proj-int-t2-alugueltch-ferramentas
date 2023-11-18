@@ -50,9 +50,16 @@
         <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.FerramentaCodigoNavigation.Descricao)
         </dt>
-        <dd class="col-sm-10">
+        <!-- <dd class="col-sm-10">
             @Html.DisplayFor(model => model.FerramentaCodigoNavigation.Descricao)
-        </dd>
+        </dd> -->
+    
+        <div >
+            <ul id=tools-list>
+
+            </ul>
+        </div>
+
         <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.ValorTotal)
         </dt>
@@ -65,3 +72,17 @@
         </div>
     </div>
 </div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+<!-- 
+    <script type="text/javascript" src="~/lib/toastify/toastify.min.js"></script>
+    <script type="text/javascript" src="~/lib/jsPDF/jspdf.min.js"></script>
+    <script type="text/javascript" src="~/lib/html2canvas/html2canvas.min.js"></script>
+    <script type="text/javascript" src="~/lib/daterangepicker/moment.min.js"></script>
+    <script type="text/javascript" src="~/lib/daterangepicker/daterangepicker.js"></script>
+    <script type="text/javascript" src="~/lib/magic-suggest/magicsuggest.js"></script> -->
+    <script type=module src="~/js/orcamentos_detalhes.js" ></script>
+}
