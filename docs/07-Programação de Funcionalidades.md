@@ -17,11 +17,9 @@ Durante o desenvolvimento do projeto foram realizadas alterações em seu escopo
 
 Não deixe de informar o link onde a aplicação estiver disponível para acesso (por exemplo: https://adota-pet.herokuapp.com/src/index.html).
 
-Para login no sistema utilize um dos usuários abaixo:
-Login de usuário administrador: FUNC012
-Senha: puc123
-Login de usuário: FUNC005
-Senha: puc123
+Para login no sistema utilize um dos usuários abaixo:<br>
+Login de usuário administrador: FUNC012 Senha: puc123<br>
+Login de usuário: FUNC005 Senha: puc123<br>
 
 
 > **Links Úteis**:
