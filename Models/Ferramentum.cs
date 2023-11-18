@@ -26,7 +26,7 @@ namespace MVC.Models
         public string Descricao { get; set; } = null!;
 
         [Display(Name = "Situação")]
-        public short SituacaoId { get; set; }
+        public short? SituacaoId { get; set; }
 
 
         [Display(Name = "Responsável")]
