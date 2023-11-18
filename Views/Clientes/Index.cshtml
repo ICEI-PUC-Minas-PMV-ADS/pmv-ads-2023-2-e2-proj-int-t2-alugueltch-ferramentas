@@ -18,7 +18,8 @@
 
 
         <div class="col py-3">
-            <div class="d-flex flex-column table-bg align-items-end gap-5">
+            <h3 class="table-bg text-center">Visualização de Clientes</h3>
+            <div class="d-flex flex-column table-bg align-items-end gap-5" style="max-height: 100vh; overflow:auto;">
            <div class="d-flex w-100 gap-3 search-bar">
                     <input id="search-input" placeholder="Pesquisar" class="rounded-2 border-0"/>
 
@@ -44,7 +45,6 @@
                                 Telefone
                             </th>
                             <th>
-                                Ultimo Aluguel
                             </th>
                             <th></th>
                         </tr>
@@ -67,7 +67,6 @@
                                     @Html.DisplayFor(modelItem => item.Telefone)
                                 </td>
                                 <td>
-                                    Em desenvolvimento
                                 </td>
 
 

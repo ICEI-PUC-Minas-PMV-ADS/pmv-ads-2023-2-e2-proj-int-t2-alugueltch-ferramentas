@@ -15,7 +15,8 @@
             <div class="col py-3 table-bg" style="max-height: 100vh; overflow:auto;">
                 <h3>Detalhes</h3>
                 <dl class="d-flex flex-column gap-2">
-                    <h6>Número do Orçamento @Html.DisplayFor(Orcamento => Orcamento.Id)</h6>
+                    <hr />
+                    <h6 class="fw-bold">Número do Orçamento: @Html.DisplayFor(Orcamento => Orcamento.Id)</h6>
         <dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.ClienteCpfNavigation.Nome)
         </dt>

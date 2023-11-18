@@ -17,9 +17,10 @@ Durante o desenvolvimento do projeto foram realizadas alterações em seu escopo
 
 Não deixe de informar o link onde a aplicação estiver disponível para acesso (por exemplo: https://adota-pet.herokuapp.com/src/index.html).
 
-Se houver usuário de teste, o login e a senha também deverão ser informados aqui (por exemplo: usuário - admin / senha - admin).
+Para login no sistema utilize um dos usuários abaixo:<br>
+Login de usuário administrador: FUNC012 Senha: puc123<br>
+Login de usuário: FUNC005 Senha: puc123<br>
 
-O link e o usuário/senha descritos acima são apenas exemplos de como tais informações deverão ser apresentadas.
 
 > **Links Úteis**:
 >

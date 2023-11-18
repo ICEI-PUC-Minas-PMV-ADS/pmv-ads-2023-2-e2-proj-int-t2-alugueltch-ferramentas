@@ -31,6 +31,33 @@
 </div>
 
 
+ <div id="pdfTemplate" hidden>
+    <div id="pdf-content">
+        <img class="container d-flex align-content-center mt-5" src="~/assets/img/alugueltechlogo.svg" style="max-width: 200px;">
+        <h4 class="text-center fw-bold mt-5">Relatório de Orçamentos</h4>
+
+        <div class="ms-4">
+            <div class="p-5" id="customer-info">
+                <table class="table">
+                    <thead class="thead-dark">
+                        <tr>
+                        <th scope="col"> Id</th>
+                        <th scope="col">Cliente</th>
+                        <th scope="col">Retirada</th>
+                        <th scope="col">Retorno</th>
+                        <th scope="col">Equipamentos</th>
+                        <th scope="col">Valor</th>
+                        </tr>
+                    </thead>
+                    <tbody id="report-table__body">
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+
 @section Scripts {
     @{
         await Html.RenderPartialAsync("_ValidationScriptsPartial");

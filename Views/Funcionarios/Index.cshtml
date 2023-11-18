@@ -17,6 +17,7 @@
         @Html.Partial("_SidebarComponent")
         
         <div class="col py-3" style="max-height: 100vh; overflow:auto;">
+            <h3 class="table-bg text-center">Visualização de Funcionários</h3>
             <div class="d-flex flex-column table-bg align-items-end gap-5">
 
                 <div class="d-flex w-100 gap-3 search-bar">
@@ -60,8 +61,8 @@
                                     @Html.DisplayFor(modelItem => item.Telefone)
                                 </td>
                                 <td>
+                                    @Html.DisplayFor(modelItem => item.Permissao.Nome)
                                 </td>
-                                @Html.DisplayFor(modelItem => item.Permissao.Nome)
 
                                 <td class="table-actions d-flex gap-2">
                                     <a href="@Url.Action("Edit", new { id = item.Id, cpf = item.Cpf, funcional = item.Funcional })" title="Editar">

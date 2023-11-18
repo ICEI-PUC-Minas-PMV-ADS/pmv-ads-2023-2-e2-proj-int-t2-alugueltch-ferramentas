@@ -71,7 +71,6 @@ namespace MVC.Controllers
         // GET: Funcionarios/Create
         public IActionResult Create()
         {
-            ViewData["Papel"] = new SelectList(_context.TipoPapels, "Id", "Nome");
             ViewData["Permissao"] = new SelectList(_context.TipoPermissaos, "Id", "Nome");
 
             return View();
@@ -105,11 +104,9 @@ namespace MVC.Controllers
                 funcionario.Permissao = permissao;
 
 
-                var papel = _context.TipoPapels.Find(1);
+                short PermissaoShort = 1;
+                var papel = _context.TipoPapels.Find(PermissaoShort); 
                 funcionario.Papel = papel;
-
-
-
                 funcionario.Senha = BCrypt.Net.BCrypt.HashPassword(funcionario.Senha);
                 _context.Add(funcionario);
                 await _context.SaveChangesAsync();

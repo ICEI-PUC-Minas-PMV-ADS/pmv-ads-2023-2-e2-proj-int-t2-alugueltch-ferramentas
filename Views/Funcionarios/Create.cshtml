@@ -15,6 +15,7 @@
         <div class="col-6 py-6 container-fluid"> 
             <div class="table-bg" style="max-height: 100vh; overflow:auto;">
                 <h3>Cadastrar Novo Funcionário</h3>
+                <hr />
                 <div>
                     <form asp-action="Create">
                         <div asp-validation-summary="ModelOnly" class="text-danger"></div>
@@ -63,10 +64,10 @@
                             <label asp-for="PermissaoId" class="control-label">Tipo de usuário</label>
                             <select asp-for="PermissaoId" class="form-control" asp-items="ViewBag.Permissao"></select>
                         </div>
-                        <div class="form-group">
+                      @*   <div class="form-group">
                             <label asp-for="PapelId" class="control-label">Área de atuação</label>
                             <select asp-for="PapelId" class="form-control" asp-items="ViewBag.Papel"></select>
-                        </div>
+                        </div> *@
                         <div class="form-group">
                             <label asp-for="DataAdmissao" class="control-label">Data de Admissão</label>
                             <input asp-for="DataAdmissao" class="form-control" />

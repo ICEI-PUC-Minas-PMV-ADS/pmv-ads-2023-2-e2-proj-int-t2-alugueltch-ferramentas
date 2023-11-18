@@ -84,9 +84,9 @@ namespace MVC.Models
         public virtual TipoPapel? Papel { get; set; }
 
         
+        [Display(Name = "Permissão")]
         public virtual TipoPermissao? Permissao { get; set; }
 
-      
         public virtual ICollection<Ferramentum> Ferramenta { get; set; }
         public virtual ICollection<Processo> Processos { get; set; }
 

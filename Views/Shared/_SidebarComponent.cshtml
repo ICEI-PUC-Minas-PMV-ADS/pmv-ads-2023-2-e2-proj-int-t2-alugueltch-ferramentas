@@ -1,10 +1,10 @@
 <div class="col-auto col-md-3 col-xl-2 px-sm-2 px-0 bg-custom-dark-grey">
-            <div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white min-vh-100">
-                <div class="bg-custom-dark-grey">
-                    <a href="/" class="d-flex align-items-center pb-3 mb-md-0 me-md-auto text-white text-decoration-none">
-                        <img src="~/assets/img/alugueltechlogo2.svg" class="fs-5 d-none d-sm-inline max-width-200"></img>
-                    </a>
-                </div>
+    <div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white min-vh-100">
+        <div class="bg-custom-dark-grey">
+            <a href="/" class="d-flex align-items-center pb-3 mb-md-0 me-md-auto text-white text-decoration-none">
+                <img src="~/assets/img/alugueltechlogo2.svg" class="fs-5 d-none d-sm-inline max-width-200"></img>
+            </a>
+        </div>
 
                 <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start sidebar-ul" id="menu">
                     <li class="nav-item">
@@ -29,11 +29,11 @@
                                 <a href="/Orcamentos/Create" class="nav-link px-0 bi-file-earmark-plus"> <span class="d-none d-sm-inline">Novo Orçamento</span></a>
                             </li>
                             <li>
-                                <a href="/Orcamentos" class="nav-link px-0 bi-file-text"> <span class="d-none d-sm-inline">Ver Orçamentos</span></a>
+                                <a href="/Orcamentos" class="nav-link px-0 bi-file-text"> <span class="d-none d-sm-inline">Ver Aluguéis</span></a>
                             </li>
-                            <li>
+                        @*     <li>
                                 <a href="#" class="nav-link px-0 bi-bag-check"> <span class="d-none d-sm-inline">Ver Aluguéis</span></a>
-                            </li>
+                            </li> *@
                         </ul>
                     </li>
                     <li>
@@ -45,8 +45,9 @@
                                 <a href="/Relatorios" class="nav-link px-0 bi-currency-dollar"> <span class="d-none d-sm-inline">Orçamentos</span></a>
                             </li>
                             <li>
-                                <a href="#" class="nav-link px-0 bi-person-video2"> <span class="d-none d-sm-inline">Ferramentas</span></a>
+                                <a href="/Ferramentas" class="nav-link px-0 bi-person-video2"> <span class="d-none d-sm-inline">Ferramentas</span></a>
                             </li>
+                          
                         </ul>
                     </li>
                     <li>
@@ -63,37 +64,37 @@
                         </ul>
                     </li>
 
-                </ul>
-                <hr>
-                <div class="dropdown pb-4">
-                    <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
-                        <img src="~/assets/icons/person-fill.svg" alt="hugenerd" width="20" height="20" class="rounded-circle">
-                        <span class="d-none d-sm-inline mx-1"> @User.Identity.Name </span>
-                    </a>
-                    <ul class="dropdown-menu dropdown-menu-dark text-small shadow">
+        </ul>
+        <hr>
+        <div class="dropdown pb-4">
+            <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
+                <img src="~/assets/icons/person-fill.svg" alt="hugenerd" width="20" height="20" class="rounded-circle">
+                <span class="d-none d-sm-inline mx-1"> @User.Identity.Name </span>
+            </a>
+            <ul class="dropdown-menu dropdown-menu-dark text-small shadow">
 
-                        @if (User.Identity.IsAuthenticated)
-                        {
-                            @if (User.IsInRole("Admin"))
-                            {
-                                <li class="dropdown-item sidebar-ul">
-                                    <a class="nav-link" asp-area="" asp-controller="Funcionarios" asp-action="Index">Gerenciar Funcionários</a>
-                                </li>
+                @if (User.Identity.IsAuthenticated)
+                {
+                    @if (User.IsInRole("Admin"))
+                    {
+                        <li class="dropdown-item sidebar-ul">
+                            <a class="nav-link" asp-area="" asp-controller="Funcionarios" asp-action="Index">Gerenciar Funcionários</a>
+                        </li>
 
-                                <li>
-                                    <hr class="dropdown-divider">
-                                </li>
-                            }
-
-                        }
                         <li>
-                            @if (User.Identity.IsAuthenticated)
-                            {
-                            <li class="nav-item sidebar-ul">
-                                <a class="nav-link" asp-area="" asp-controller="Funcionarios" asp-action="Logout">Sair</a>
-                            </li>
-                            }
-                    </ul>
-                </div>
-            </div>
+                            <hr class="dropdown-divider">
+                        </li>
+                    }
+
+                }
+                <li>
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                    <li class="nav-item sidebar-ul">
+                        <a class="nav-link" asp-area="" asp-controller="Funcionarios" asp-action="Logout">Sair</a>
+                    </li>
+                    }
+            </ul>
         </div>
+    </div>
+</div>
