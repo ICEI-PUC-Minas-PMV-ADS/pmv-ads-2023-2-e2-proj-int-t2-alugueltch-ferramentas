@@ -43,7 +43,7 @@ namespace MVC.Models
         [Display(Name = "Valor diária")]
         public decimal ValorDiaria { get; set; }
 
-        [Display(Name = "Valor compra")]
+        [Display(Name = "Valor retirada")]
         public decimal ValorCompra { get; set; }
 
         [Display(Name = "Responsável")]
