@@ -22,7 +22,7 @@
 
 ## Instruções de utilização
 
-Link da Aplicação: https://alugueltech.azurewebsites.net/
+Link da Aplicação: https://aluguel-tech.azurewebsites.net/
 
 Usuários:
 <br>
