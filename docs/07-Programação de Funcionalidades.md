@@ -147,7 +147,7 @@ Figura 52 - Deletar Orçamento/Aluguel</div>
 
 # Instruções de acesso
 
-A aplicação está disponível para acesso em: https://alugueltech.azurewebsites.net/
+A aplicação está disponível para acesso em: https://aluguel-tech.azurewebsites.net/
 
 Para login no sistema utilize um dos usuários abaixo:<br>
 Login de usuário administrador: FUNC012 Senha: puc123<br>
