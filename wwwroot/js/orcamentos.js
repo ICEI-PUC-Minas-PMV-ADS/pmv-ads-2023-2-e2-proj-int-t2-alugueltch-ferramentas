@@ -282,11 +282,9 @@ const buildClientFieldConfiguration = () => {
 const createRental = async (clientCpf, toolsIds, startDate, endDate, total) => {
   const requestPayload = {
     clienteCpf: clientCpf,
-    Processos_Many: {
-      ferramenta: toolsIds.map((toolId) => ({
-        codigo: toolId,
-      })),
-    },
+    ferramenta: toolsIds.map((toolId) => ({
+      codigo: toolId,
+    })),
     dataOrcamento: startDate,
     dataValidade: endDate,
     valorTotal: total,
