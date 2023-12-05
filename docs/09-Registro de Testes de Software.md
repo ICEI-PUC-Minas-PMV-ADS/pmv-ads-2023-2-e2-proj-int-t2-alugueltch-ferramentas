@@ -1,5 +1,14 @@
 # Registro de Testes de Software
-Os resultados obtidos nos testes de software realizados são descritos abaixo.
+
+### Erros Encontrados Durante os Testes
+Durante a execução dos testes, foram registrados os seguintes problemas:
+- A ferramenta de pesquisa de clientes já cadastrados não estava funcionando;
+- A hospedagem da aplicação foi finalizada devido a um problema de licença;
+- Os dados dos clientes já cadastrados não conseguiam ser acessados nas telas para preenchimento automático;
+- As ferramentas não estavam sendo exibidas corretamente no aluguel gerado;
+- O PDF não estava sendo gerado por erro de compatibilidade de versão.
+
+Os resultados obtidos nos testes de software realizados são descritos abaixo já devidamente corrigidos.
  
 ![login](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e2-proj-int-t2-alugueltch-ferramentas/assets/126488218/ceee9294-6d50-46d8-8249-b81b6a3f4682)
 <p>CT 001 -  Login de usuário.</p>
